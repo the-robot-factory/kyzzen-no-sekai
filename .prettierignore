@@ -1,0 +1,10 @@
+# Ignore artifacts:
+dist
+.next
+coverage
+**/*.html
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
