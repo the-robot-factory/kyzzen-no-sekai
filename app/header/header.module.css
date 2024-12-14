@@ -1,24 +1,24 @@
 .header {
-    position: sticky;
-    top: 0%;
-    z-index: 4;
-    background-color: white;
-    border-bottom: 4px solid var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5em 2em;
+  position: sticky;
+  top: 0%;
+  z-index: 4;
+  background-color: white;
+  border-bottom: 4px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em 2em;
 }
 
 .header_nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2em;
-    font-weight: 600;
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  font-weight: 600;
 }
 
 .header_action {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

@@ -2,7 +2,6 @@
   --background: #122645;
   --foreground: #101828;
   --primary-color: #122645;
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-main{
+main {
   margin: 0 2em;
 }
 * {
@@ -49,7 +48,7 @@ a {
   }
 }
 
-.con{
+.con {
   border: 4px solid var(--primary-color);
   background-color: white;
   max-width: 1500px;
@@ -57,4 +56,3 @@ a {
   height: 100vh;
   overflow-y: auto;
 }
-
