@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <div className={styles.art}>
             <div className={styles.panel_img}>
-              <Image src="/images/body-1.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
+              <Image src="/images/body-2.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
             </div>
             <div className={styles.panel_border}></div>
             <div className={styles.panel_text}>

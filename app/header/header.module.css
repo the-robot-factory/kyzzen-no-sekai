@@ -22,3 +22,13 @@
   align-items: center;
   gap: 10px;
 }
+@media (max-width:600px) {
+  .header {
+    padding: 1.5em 1em;
+    padding-left: 0em;
+  }
+  
+  .header_nav ul{
+    display: none;
+  }
+}
