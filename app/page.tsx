@@ -1,4 +1,4 @@
-import { Anton } from 'next/font/google';
+import {Anton} from 'next/font/google';
 import styles from './page.module.css';
 import Image from 'next/image';
 
@@ -12,9 +12,9 @@ export default function Home() {
     <div>
       <main>
         <div className={styles.hero + ' ' + anton.className}>
-        <div className={styles.panel_img}>
-              <Image src="/images/hero.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
-            </div>
+          <div className={styles.panel_img}>
+            <Image src="/images/hero.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
+          </div>
           <Image className={styles.hero_girl} src="/images/hero-girl.png" alt="girl" width={373} height={590} priority />
           <h1>
             <span>KYZZEN</span>
@@ -95,9 +95,9 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.launch}>
-        <div className={styles.panel_img}>
-              <Image src="/images/body-5.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
-            </div>
+          <div className={styles.panel_img}>
+            <Image src="/images/body-5.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
+          </div>
           <div className={styles.panel_text}>
             <h2 className={anton.className}>Launch Details</h2>
             <ul>

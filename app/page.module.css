@@ -15,16 +15,14 @@
   overflow: hidden;
 }
 
-
 .hero .bg,
 .about .bg,
 .art .bg,
 .founder .bg,
 .utility .bg,
 .launch .bg {
-  transition: transform 0.7s ease-in-out ;
+  transition: transform 0.7s ease-in-out;
 }
-
 
 .hero:hover .bg,
 .about:hover .bg,
@@ -34,7 +32,6 @@
 .launch:hover .bg {
   transform: scale(1.05);
 }
-
 
 .hero {
   position: relative;
@@ -131,10 +128,12 @@
 }
 
 .art .panel_img {
-  clip-path: polygon(calc(20% + 6px) 8px,
-      calc(100% - 8px) 8px,
-      calc(100% - 8px) calc(100% - 8px),
-      calc(5% + 10px) calc(100% - 8px));
+  clip-path: polygon(
+    calc(20% + 6px) 8px,
+    calc(100% - 8px) 8px,
+    calc(100% - 8px) calc(100% - 8px),
+    calc(5% + 10px) calc(100% - 8px)
+  );
 }
 
 .founder {
@@ -175,10 +174,12 @@
 }
 
 .utility .panel_img {
-  clip-path: polygon(calc(5% + 9px) 8px,
-      calc(100% - 8px) 8px,
-      calc(100% - 8px) calc(100% - 8px),
-      calc(12.6% + 7px) calc(100% - 8px));
+  clip-path: polygon(
+    calc(5% + 9px) 8px,
+    calc(100% - 8px) 8px,
+    calc(100% - 8px) calc(100% - 8px),
+    calc(12.6% + 7px) calc(100% - 8px)
+  );
 }
 
 .utility ul {
@@ -192,7 +193,7 @@
 }
 
 .utility li::before {
-  content: url("/svg/arrow.svg");
+  content: url('/svg/arrow.svg');
   position: absolute;
   left: 0;
   top: 50%;

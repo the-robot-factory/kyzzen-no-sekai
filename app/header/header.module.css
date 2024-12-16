@@ -20,7 +20,6 @@
   display: none;
 }
 
-
 .header_nav ul {
   list-style: none;
   display: flex;
@@ -56,7 +55,6 @@
 
 .header_action svg {
   transition: 0.2s;
-
 }
 
 .header_action svg:hover {
@@ -75,7 +73,6 @@
   .header_top {
     width: 100%;
     padding: 1.5em 1em 1.5em 0;
-
   }
 
   .header_menu {
@@ -95,7 +92,6 @@
     padding: 1.5em;
     border-top: 4px solid var(--primary-color);
     border-bottom: 4px solid var(--primary-color);
-
   }
 
   .header_nav ul li {
