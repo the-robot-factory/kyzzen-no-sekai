@@ -1,14 +1,20 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
 
-  useEffect(() => {
+  const updateScreenSize = () => {
     setToggle(window.innerWidth > 600 ? true : false);
-  }, [toggle]);
+  };
+
+  useEffect(() => {
+    updateScreenSize();
+    window.addEventListener('resize', updateScreenSize);
+    return () => window.removeEventListener('resize', updateScreenSize);
+  }, []);
 
   return (
     <div className={styles.header}>
