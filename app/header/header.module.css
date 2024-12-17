@@ -30,6 +30,7 @@
 .header_nav ul li {
   position: relative;
   z-index: 2;
+  cursor: pointer;
 }
 
 .header_nav ul li:hover::before {
@@ -55,6 +56,7 @@
 
 .header_action svg {
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .header_action svg:hover {
@@ -72,7 +74,7 @@
 
   .header_top {
     width: 100%;
-    padding: 1.5em 1em 1.5em 0;
+    padding: 1em 1em 1em 0;
   }
 
   .header_menu {

@@ -1,13 +1,13 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
 
 function Header() {
-  const [toggle, setToggle] = useState(window.innerWidth > 600 ? true : false);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    setToggle(window.innerWidth > 600 ? true : toggle);
+    setToggle(window.innerWidth > 600 ? true : false);
   }, [toggle]);
 
   return (
