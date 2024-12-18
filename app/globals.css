@@ -18,7 +18,7 @@ body {
   max-height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: white;
+  background-color: #F2F4F7;
 }
 
 body {
@@ -55,7 +55,7 @@ a {
 
 .con {
   border: 8px solid var(--primary-color);
-  background-color: white;
+  background-color: #F2F4F7;
   max-width: 1500px;
   margin: auto;
   height: 100vh;
