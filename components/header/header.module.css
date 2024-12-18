@@ -2,7 +2,7 @@
   position: sticky;
   top: 0%;
   z-index: 4;
-  background-color: #F2F4F7;
+  background-color: #f2f4f7;
   border-bottom: 8px solid var(--primary-color);
   display: flex;
   align-items: center;
@@ -33,7 +33,6 @@
   cursor: pointer;
 }
 
-
 .header_nav ul li:hover::before,
 .active::before {
   content: '';
@@ -49,8 +48,6 @@
 
   /* border-bottom: 4px solid greenyellow; */
 }
-
-
 
 .header_action {
   display: flex;

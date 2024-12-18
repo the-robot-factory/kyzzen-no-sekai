@@ -1,14 +1,14 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
-import { usePathname } from 'next/navigation';
+import {usePathname} from 'next/navigation';
 import Link from 'next/link';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const updateScreenSize = () => {
     setToggle(window.innerWidth > 600 ? true : false);
@@ -19,7 +19,6 @@ function Header() {
     window.addEventListener('resize', updateScreenSize);
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
-
 
   return (
     <div className={styles.header}>
@@ -52,23 +51,17 @@ function Header() {
               <li>Launch</li>
               <li>
                 <Link href="/whitelist" passHref>
-                  <span className={pathname === "/whitelist" ? styles.active : ""}>
-                    Whitelist
-                  </span>
+                  <span className={pathname === '/whitelist' ? styles.active : ''}>Whitelist</span>
                 </Link>
               </li>
               <li>
                 <Link href="/partners" passHref>
-                  <span className={pathname === "/partners" ? styles.active : ""}>
-                    Partners
-                  </span>
+                  <span className={pathname === '/partners' ? styles.active : ''}>Partners</span>
                 </Link>
               </li>
               <li>
                 <Link href="/network" passHref>
-                  <span className={pathname === "/network" ? styles.active : ""}>
-                    Network
-                  </span>
+                  <span className={pathname === '/network' ? styles.active : ''}>Network</span>
                 </Link>
               </li>
             </ul>
