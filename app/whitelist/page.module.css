@@ -4,6 +4,7 @@
 }
 
 .hero {
+  padding: 3em;
   position: relative;
   display: flex;
   align-items: center;
@@ -161,14 +162,71 @@
 @media (max-width: 600px) {
   .hero {
     overflow: hidden;
+    padding: 1em;
+    height: 75vh;
   }
 
-  .hero,
-  /* .about, */
-  /* .art, */
-  /* .founder,
-.utility, */
-  .launch {
-    height: 60vh;
+  .hero_content {
+    margin-bottom: 8em;
+  }
+
+  .hero_title {
+    font-size: 4rem;
+  }
+
+  .hero_list {
+    font-size: 1.2rem;
+  }
+
+  .leaderboard {
+    padding: 1rem;
+  }
+
+  .point_system {
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .hero {
+    height: 85vh;
+  }
+  .hero_list {
+    font-size: 1.1rem;
+  }
+  .section_title {
+    font-size: 3rem;
+  }
+
+
+  .leaderboard_table th,
+  .leaderboard_table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .leaderboard_table td img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .leaderboard_table th:first-child,
+  .leaderboard_table td:first-child {
+    padding-left: 10px;
+  }
+
+  .leaderboard_table th:last-child,
+  .leaderboard_table td:last-child {
+    padding-right: 10px;
+  }
+
+  .point_list {
+    padding-left: 15px;
+    font-size: 1.1rem;
+  }
+
+  .point_list ul {
+    padding-left: 20px;
   }
 }

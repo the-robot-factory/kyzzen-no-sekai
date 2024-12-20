@@ -11,6 +11,7 @@
   padding-left: 0.5em;
 }
 
+
 .header_top {
   display: flex;
   justify-content: space-between;
@@ -19,7 +20,9 @@
 .header_menu {
   display: none;
 }
-
+.header_nav{
+  margin-left: -5%;
+}
 .header_nav ul {
   list-style: none;
   display: flex;
@@ -86,6 +89,10 @@
 
   .header_menu svg {
     color: #101828;
+  }
+
+  .header_nav{
+    margin-left: 0%;
   }
 
   .header_nav ul {
