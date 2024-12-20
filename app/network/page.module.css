@@ -82,7 +82,7 @@
   color: #d0d5dd;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .network_container {
     padding: 20px;
   }
@@ -91,7 +91,7 @@
     font-weight: 400;
   }
 
-  .title span{
+  .title span {
     display: none;
   }
 

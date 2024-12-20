@@ -187,7 +187,6 @@
   }
 }
 
-
 @media (max-width: 450px) {
   .hero {
     height: 85vh;
@@ -198,7 +197,6 @@
   .section_title {
     font-size: 3rem;
   }
-
 
   .leaderboard_table th,
   .leaderboard_table td {

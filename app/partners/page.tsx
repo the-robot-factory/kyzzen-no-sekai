@@ -34,7 +34,9 @@ const Network = () => {
     <div className={styles.network_container}>
       {/* Header */}
       <section className={styles.header_section}>
-        <h1 className={styles.title + ' ' + anton.className}>Whitelist <span>Partners</span></h1>
+        <h1 className={styles.title + ' ' + anton.className}>
+          Whitelist <span>Partners</span>
+        </h1>
         <p className={styles.description}>1,500 whitelist spots are allocated to the following 52 partner communities:</p>
       </section>
 
