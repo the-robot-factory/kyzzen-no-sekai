@@ -25,7 +25,7 @@ function Header() {
       <div className={styles.header_top}>
         <div className={styles.header_logo}>
           <Link href="/">
-            <Image src="/svg/logo.svg" alt="Kyzzen Logo" width={180} height={38} priority />
+            <Image src="/svg/logo.png" alt="Kyzzen Logo" width={151.22} height={45} priority />
           </Link>
         </div>
         <button className={styles.header_menu} onClick={() => setToggle(current => !current)}>

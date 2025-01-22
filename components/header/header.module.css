@@ -1,14 +1,17 @@
 .header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0%;
   z-index: 4;
-  background-color: #f2f4f7;
-  border-bottom: 8px solid var(--primary-color);
+  background: linear-gradient(180deg, #0f0f1e 7.16%, rgba(0, 0, 0, 0) 97.7%);
+
+  /* background-color: #f2f4f7; */
+  /* border-bottom: 8px solid var(--primary-color); */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5em 2em;
-  padding-left: 0.5em;
+  /* padding-left: 0.5em; */
 }
 
 .header_top {
@@ -33,6 +36,7 @@
   position: relative;
   z-index: 2;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .header_nav ul li:hover::before,
@@ -60,6 +64,7 @@
 .header_action svg {
   transition: 0.2s;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .header_action svg:hover {
@@ -105,7 +110,7 @@
 
   .header_nav ul li {
     width: 100vw;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 17px;
   }
 
