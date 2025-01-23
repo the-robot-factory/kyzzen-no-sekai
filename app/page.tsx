@@ -72,7 +72,7 @@ export default function Home() {
           <div className={styles.hero_content}>
             <div className={styles.hero_title}>
               <div>
-                <Image src="/images/vector.png" alt="avatar" width={550} height={130} priority />
+                <Image src="/images/logo.png" alt="avatar" width={550} height={130} priority />
                 <h1>NO SEKAI</h1>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function Home() {
                 NFT data, analytics & <br />
                 EDUCATIONAL platform
               </p>
-              <Image src="/images/vector.png" alt="avatar" width={320} height={90} priority className={styles.about_logo} />
+              <Image src="/images/logo.png" alt="avatar" width={320} height={90} priority className={styles.about_logo} />
             </div>
           </div>
           <div className={styles.art}>
