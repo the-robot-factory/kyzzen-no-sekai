@@ -1,8 +1,8 @@
 import {Anton, Open_Sans} from 'next/font/google';
 import styles from './page.module.css';
 import Image from 'next/image';
-import EndlessImageScroll from './components/endless-scroll';
-import CustomCarousel from './components/carousel';
+import EndlessImageScroll from '../components/endless-scroll';
+import CustomCarousel from '../components/carousel';
 
 const anton = Anton({
   subsets: ['latin'],
