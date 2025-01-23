@@ -96,7 +96,6 @@
   margin-bottom: 10px;
   font-weight: 400;
   font-family: 'Monument', sans-serif !important;
-
 }
 
 .search_bar {
@@ -159,7 +158,7 @@
   flex: 1;
   background-color: #101828;
   padding: 2rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .point_list {

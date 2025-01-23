@@ -1,4 +1,4 @@
-.header_con{
+.header_con {
   position: fixed;
   width: 100%;
   top: 0%;
@@ -14,7 +14,7 @@
   padding: 1.5em 8em;
 }
 
-.con{
+.con {
   width: 100%;
   /* background-color: #101828; */
   max-width: 1700px;
@@ -70,7 +70,7 @@
   color: #ffffff;
   font-weight: 100;
 }
-.header_action span{
+.header_action span {
   font-size: 14px;
 }
 
