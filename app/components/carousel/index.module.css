@@ -1,0 +1,41 @@
+.carousel {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* background-color: #0c0c24; */
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+ 
+
+  
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 3;
+  }
+  
+  .navButton:hover {
+    color: #f39c12;
+  }
+  
+  .navButton:first-of-type {
+    left: 10px;
+  }
+  
+  .navButton:last-of-type {
+    right: 10px;
+  }
+  

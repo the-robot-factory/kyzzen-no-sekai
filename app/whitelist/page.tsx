@@ -37,7 +37,7 @@ export default function Whitelist() {
         </div>
         <section className={styles.info_section}>
           <div className={styles.leaderboard}>
-            <h2 className={styles.section_title + ' ' + anton.className}>Leaderboard</h2>
+            <h2 className={styles.section_title}>Leaderboard</h2>
             <input type="text" placeholder="Search username" className={styles.search_bar} />
             <table className={styles.leaderboard_table}>
               <thead>
@@ -62,7 +62,7 @@ export default function Whitelist() {
             </table>
           </div>
           <div className={styles.point_system}>
-            <h2 className={styles.section_title + ' ' + anton.className}>Point System</h2>
+            <h2 className={styles.section_title}>Point System</h2>
             <ul className={styles.point_list}>
               <li>10 pts for linking each social media:</li>
               <ul>

@@ -1,83 +1,98 @@
-import {Anton} from 'next/font/google';
+import { Anton, Open_Sans } from 'next/font/google';
 import styles from './page.module.css';
 import Image from 'next/image';
 import EndlessImageScroll from './components/endless-scroll';
+import CustomCarousel from './components/carousel';
 
 const anton = Anton({
   subsets: ['latin'],
   weight: '400',
 });
+const sans = Open_Sans({
+  subsets: ['latin'],
+});
 
 const networkMembers = [
-  {name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' '},
-  {name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' '},
-  {name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' '},
-  {name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' '},
-  {name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' '},
-  {name: 'Voshy', role: 'GREED Academy Founder', avatar: ' '},
-  {name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' '},
-  {name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' '},
-  {name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' '},
-  {name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' '},
-  {name: 'Nom', role: 'Bonk Co-Founder', avatar: ' '},
-  {name: 'Kais', role: 'Okay Bears Founder', avatar: ' '},
-  {name: 'Easy', role: 'BoDoggos Founder', avatar: ' '},
-  {name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' '},
-  {name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' '},
-  {name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' '},
-  {name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' '},
-  {name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' '},
-  {name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' '},
-  {name: 'SOK', role: 'Raposa Founder', avatar: ' '},
+  { name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' ' },
+  { name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' ' },
+  { name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' ' },
+  { name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' ' },
+  { name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' ' },
+  { name: 'Voshy', role: 'GREED Academy Founder', avatar: ' ' },
+  { name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' ' },
+  { name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' ' },
+  { name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' ' },
+  { name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' ' },
+  { name: 'Nom', role: 'Bonk Co-Founder', avatar: ' ' },
+  { name: 'Kais', role: 'Okay Bears Founder', avatar: ' ' },
+  { name: 'Easy', role: 'BoDoggos Founder', avatar: ' ' },
+  { name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' ' },
+  { name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' ' },
+  { name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' ' },
+  { name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' ' },
+  { name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' ' },
+  { name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' ' },
+  { name: 'SOK', role: 'Raposa Founder', avatar: ' ' },
 ];
 const images = [
-  {url: '/images/image 749.png'},
-  {url: '/images/image 750.png'},
-  {url: '/images/image 751.png'},
-  {url: '/images/image 752.png'},
-  {url: '/images/image 749.png'},
-  {url: '/images/image 750.png'},
-  {url: '/images/image 751.png'},
-  {url: '/images/image 752.png'},
-  {url: '/images/image 749.png'},
-  {url: '/images/image 750.png'},
-  {url: '/images/image 751.png'},
-  {url: '/images/image 752.png'},
+  { url: '/images/image 749.png' },
+  { url: '/images/image 750.png' },
+  { url: '/images/image 751.png' },
+  { url: '/images/image 752.png' },
+  { url: '/images/image 749.png' },
+  { url: '/images/image 750.png' },
+  { url: '/images/image 751.png' },
+  { url: '/images/image 752.png' },
+  { url: '/images/image 749.png' },
+  { url: '/images/image 750.png' },
+  { url: '/images/image 751.png' },
+  { url: '/images/image 752.png' },
 ];
 const imagesHero = [
-  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
-  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
+  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
+  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
 ];
 export default function Home() {
   return (
     <div>
       <main>
         <div className={styles.hero}>
-          <h1 className={styles.hero_title}>
-            <span>KYZZEN</span>
-            <br />
-            NO SEKAI
-          </h1>
-          <div className={styles.hero_people}>
-            <EndlessImageScroll images={imagesHero} />
+          <div className={styles.hero_content}>
+            <div className={styles.hero_title}>
+              <div>
+                <Image
+                  src="/images/vector.png"
+                  alt="avatar"
+                  width={550}
+                  height={130}
+                  priority
+                />
+                <h1>
+                  NO SEKAI
+                </h1>
+              </div>
+
+            </div>
+
+            <div className={styles.hero_people}>
+              <EndlessImageScroll images={imagesHero} />
+            </div>
           </div>
+
         </div>
-        <div className={styles.panel}>
-          <div className={styles.panel_img}>
-            <Image src="/images/body-1.png" alt="X" width={6096} height={3738} priority color="white" className={styles.bg} />
-          </div>
+        <div className={styles.panel + ' ' + styles.vs}>
           <div className={styles.about}>
             <div className={styles.panel_text}>
               <h2>
@@ -89,11 +104,11 @@ export default function Home() {
           </div>
           <div className={styles.art}>
             <div>
-              <Image src="/images/girl-card.png" alt="avatar" width={400} height={500} priority className={styles.art_girl} />
+              <Image src="/images/girl-card.png" alt="avatar" width={380} height={480} priority className={styles.art_girl} />
             </div>
             <div className={styles.art_vs + ' ' + anton.className}>VS</div>
             <div>
-              <Image src="/images/robot-card.png" alt="avatar" width={400} height={500} priority className={styles.art_robot} />
+              <Image src="/images/robot-card.png" alt="avatar" width={380} height={480} priority className={styles.art_robot} />
             </div>
           </div>
         </div>
@@ -108,10 +123,10 @@ export default function Home() {
               <Image
                 src="/images/vector.png"
                 alt="avatar"
-                width={300}
-                height={70}
+                width={320}
+                height={90}
                 priority
-                className={styles.hero_people_small}
+                className={styles.about_logo}
               />
             </div>
           </div>
@@ -128,40 +143,51 @@ export default function Home() {
 
             <EndlessImageScroll images={images} />
             <div className={styles.panel_text}>
-              <h2>to push the limits of generative art and creativity itself</h2>
+              <h2 className={styles.exp2}>to push the limits of generative art and creativity itself</h2>
             </div>
             <EndlessImageScroll images={images} direction="left" />
           </div>
         </div>
-
         <div className={styles.panel + ' ' + styles.founder}>
-          <div className={styles.founder_text}>
-            <div className={styles.founder_detail}>
-              <Image className={styles.hero_girl} src="/images/founder.png" alt="girl" width={60} height={60} priority />
-              <div>
-                <b>OhMeOhMy</b> <br />
-                <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" />
+          <div>
+            <div className={styles.panel_text}>
+              <h2>Led By</h2>
+              <p className={sans.className}>one of Solana’s earliest OGs</p>
+            </div>
+            <div className={styles.founder}>
+              <div className={styles.founder_text}>
+                <div className={styles.founder_detail}>
+                  <Image src="/images/founder.png" alt="girl" width={60} height={60} priority />
+                  <h2>OhMeOhMy</h2>
+                  <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" />
+                </div>
+                <ul>
+                  <li>Kyzzen & CEO</li>
+                  <li>MonkeDAO, Singapore Ambassador</li>
+                  <li>Solarians RoboDAO, Council Advisor</li>
+                  <li>Superteam, Singapore Member</li>
+                </ul>
+              </div>
+              <div className={styles.founder_img}>
+                <Image src="/images/body-3.png" alt="avatar" width={400} height={450} priority />
               </div>
             </div>
-            <ul>
-              <li>Kyzzen, Founder & CEO</li>
-              <li>MonkeDAO, Singapore Ambassador</li>
-              <li>Solarians RoboDAO, Council Advisor</li>
-              <li>Superteam, Singapore Member</li>
-            </ul>
           </div>
-          <div className={styles.founder_img}>
-            <Image src="/images/body-3.png" alt="avatar" width={400} height={450} priority />
-          </div>
+
         </div>
 
-        <div className={styles.panel + ' ' + styles.single}>
+
+        <div className={styles.panel + ' ' + styles.network}>
+          <div className={styles.panel_text}>
+            <p className={sans.className}>And supported by the</p>
+            <h2>KYZZEN NETWORK</h2>
+          </div>
           <div className={styles.network}>
             <div className={styles.grid_section}>
               {networkMembers.map((member, index) => (
                 <div key={index} className={styles.member_card}>
                   {member.avatar ? (
-                    <Image className={styles.avatar} src="/images/founder.png" alt="girl" width={60} height={60} priority />
+                    <Image className={styles.avatar} src="/images/founder.png" alt="girl" width={75} height={75} priority />
                   ) : (
                     <div className={styles.avatar_placeholder}></div>
                   )}
@@ -174,28 +200,79 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className={`${styles.slides} ${styles.panel}`}>
 
-        {/* <div className={styles.launch}>
-          <div className={styles.panel_img}>
-            <Image src="/images/body-5.png" alt="X" width={500} height={500} priority color="white" className={styles.bg} />
+          <CustomCarousel slides={[<Slide key="slide1" />, <Slide2 key="slide2" />]} />
+        </div>
+        <div className={`${styles.join_us} ${styles.panel}`}>
+          <div className={styles.join_us_text}>
+            <h1 className={styles.title}>JOIN US</h1>
+            <p className={styles.subtxitle}>
+              As we embark on this groundbreaking experiment to redefine the NFT space forever.
+            </p>
+            <div className={styles.details}>
+              <div className={styles.detail}>
+                <div className={`${styles.icon}`}>
+                  <Image src="/images/Featured icon.png" alt="girl" width={55} height={55} priority />
+
+                </div>
+                <h3 className={styles.label}>Date</h3>
+                <p className={styles.value}>TBD</p>
+              </div>
+              <div className={styles.detail}>
+                <div className={`${styles.icon}`}>
+                  <Image src="/images/Featured icon (1).png" alt="girl" width={55} height={55} priority />
+                </div>
+                <h3 className={styles.label}>Supply</h3>
+                <p className={styles.value}>5,000</p>
+              </div>
+              <div className={styles.detail}>
+                <div className={`${styles.icon}`}>
+                  <Image src="/images/Featured icon (2).png" alt="girl" width={55} height={55} priority />
+
+                </div>
+                <h3 className={styles.label}>Price</h3>
+                <p className={styles.value}>TBD</p>
+              </div>
+            </div>
+            <button className={styles.cta}>
+              <span className={styles.cta_text}>
+                View more details
+              </span>
+            </button>
+
           </div>
-          <div className={styles.panel_text}>
-            <h2>Launch Details</h2>
-            <ul>
-              <li>
-                <b>Date</b>&nbsp; TBD
-              </li>
-              <li>
-                <b>Supply</b>&nbsp; 5,000
-              </li>
-              <li>
-                <b>Price</b>&nbsp; TBD
-              </li>
-            </ul>
-            <button>Learn More</button>
-          </div>
-        </div> */}
+
+        </div>
+
       </main>
     </div>
   );
+}
+
+
+const Slide = () => {
+  return (
+    <div className={styles.slide}>
+      <Image src="/images/stass.png" alt="avatar" width={500} height={460} priority />
+      <div>
+        <h2>Alpha</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing  sit amet consectetur adipisicing.</p>
+      </div>
+
+    </div>
+  )
+}
+
+const Slide2 = () => {
+  return (
+    <div className={styles.slide}>
+      <Image src="/images/body-2.png" alt="avatar" width={500} height={460} priority />
+      <div>
+        <h2>Alpha</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing  sit amet consectetur adipisicing.</p>
+      </div>
+
+    </div>
+  )
 }
