@@ -1,4 +1,4 @@
-import { Anton, Open_Sans } from 'next/font/google';
+import {Anton, Open_Sans} from 'next/font/google';
 import styles from './page.module.css';
 import Image from 'next/image';
 import EndlessImageScroll from '../components/endless-scroll';
@@ -13,56 +13,56 @@ const sans = Open_Sans({
 });
 
 const networkMembers = [
-  { name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' ' },
-  { name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' ' },
-  { name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' ' },
-  { name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' ' },
-  { name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' ' },
-  { name: 'Voshy', role: 'GREED Academy Founder', avatar: ' ' },
-  { name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' ' },
-  { name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' ' },
-  { name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' ' },
-  { name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' ' },
-  { name: 'Nom', role: 'Bonk Co-Founder', avatar: ' ' },
-  { name: 'Kais', role: 'Okay Bears Founder', avatar: ' ' },
-  { name: 'Easy', role: 'BoDoggos Founder', avatar: ' ' },
-  { name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' ' },
-  { name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' ' },
-  { name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' ' },
-  { name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' ' },
-  { name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' ' },
-  { name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' ' },
-  { name: 'SOK', role: 'Raposa Founder', avatar: ' ' },
+  {name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' '},
+  {name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' '},
+  {name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' '},
+  {name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' '},
+  {name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' '},
+  {name: 'Voshy', role: 'GREED Academy Founder', avatar: ' '},
+  {name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' '},
+  {name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' '},
+  {name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' '},
+  {name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' '},
+  {name: 'Nom', role: 'Bonk Co-Founder', avatar: ' '},
+  {name: 'Kais', role: 'Okay Bears Founder', avatar: ' '},
+  {name: 'Easy', role: 'BoDoggos Founder', avatar: ' '},
+  {name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' '},
+  {name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' '},
+  {name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' '},
+  {name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' '},
+  {name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' '},
+  {name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' '},
+  {name: 'SOK', role: 'Raposa Founder', avatar: ' '},
 ];
 const images = [
-  { url: '/images/image 749.png' },
-  { url: '/images/image 750.png' },
-  { url: '/images/image 751.png' },
-  { url: '/images/image 752.png' },
-  { url: '/images/image 749.png' },
-  { url: '/images/image 750.png' },
-  { url: '/images/image 751.png' },
-  { url: '/images/image 752.png' },
-  { url: '/images/image 749.png' },
-  { url: '/images/image 750.png' },
-  { url: '/images/image 751.png' },
-  { url: '/images/image 752.png' },
+  {url: '/images/image 749.png'},
+  {url: '/images/image 750.png'},
+  {url: '/images/image 751.png'},
+  {url: '/images/image 752.png'},
+  {url: '/images/image 749.png'},
+  {url: '/images/image 750.png'},
+  {url: '/images/image 751.png'},
+  {url: '/images/image 752.png'},
+  {url: '/images/image 749.png'},
+  {url: '/images/image 750.png'},
+  {url: '/images/image 751.png'},
+  {url: '/images/image 752.png'},
 ];
 const imagesHero = [
-  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big },
-  { url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
+  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
 ];
 export default function Home() {
   return (
@@ -183,10 +183,10 @@ export default function Home() {
         </div>
         <div className={`${styles.slides} ${styles.panel}`}>
           <div>
-          <div className={styles.panel_text}>
-            <h2>With unprecedented utility focused on alpha, analytics and tools</h2>
-          </div>
-          <CustomCarousel slides={[<Slide key="slide1" />, <Slide2 key="slide2" />]} />
+            <div className={styles.panel_text}>
+              <h2>With unprecedented utility focused on alpha, analytics and tools</h2>
+            </div>
+            <CustomCarousel slides={[<Slide key="slide1" />, <Slide2 key="slide2" />]} />
           </div>
         </div>
         <div className={`${styles.join_us} ${styles.panel}`}>
