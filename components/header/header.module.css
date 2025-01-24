@@ -83,7 +83,22 @@
 .header_action svg:hover {
   color: gray;
 }
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.5em 3em;
+  }
 
+}
+@media (max-width: 900px) {
+  .header {
+    padding: 1.5em 2em;
+  }
+  .header_nav ul {
+    gap: 2em;
+  }
+}
+@media (max-width: 770px) {
+}
 @media (max-width: 600px) {
   .header {
     padding: 0em;
