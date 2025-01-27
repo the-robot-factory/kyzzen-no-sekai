@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={ styles.single}>
+        <div className={styles.single}>
           <div className={styles.experiment}>
             <div className={styles.panel_text}>
               <h2>Is about to launch the biggest AI art experiment</h2>
@@ -138,25 +138,24 @@ export default function Home() {
               <p className={sans.className}>one of Solana’s earliest OGs</p>
             </div>
             <div className={styles.founder}>
-            <div className={styles.founder_img}>
+              <div className={styles.founder_img}>
                 {/* <Image src="/images/body-3.png" alt="avatar" width={400} height={450} priority /> */}
               </div>
               <div className={styles.founder_text}>
                 <div>
-                <div className={styles.founder_detail}>
-                  <Image src="/images/founder.png" alt="girl" width={60} height={60} priority />
-                  <h2>OhMeOhMy</h2>
-                  <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" />
-                </div>
-                <ul>
-                  <li>Kyzzen & CEO</li>
-                  <li>MonkeDAO, Singapore Ambassador</li>
-                  <li>Solarians RoboDAO, Council Advisor</li>
-                  <li>Superteam, Singapore Member</li>
-                </ul>
+                  <div className={styles.founder_detail}>
+                    <Image src="/images/founder.png" alt="girl" width={60} height={60} priority />
+                    <h2>OhMeOhMy</h2>
+                    <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" />
+                  </div>
+                  <ul>
+                    <li>Kyzzen & CEO</li>
+                    <li>MonkeDAO, Singapore Ambassador</li>
+                    <li>Solarians RoboDAO, Council Advisor</li>
+                    <li>Superteam, Singapore Member</li>
+                  </ul>
                 </div>
               </div>
-            
             </div>
           </div>
         </div>
