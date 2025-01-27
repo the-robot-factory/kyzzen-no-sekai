@@ -17,7 +17,6 @@ const CustomCarousel: React.FC<ICarousel> = ({slides}) => {
     setCurrentIndex(prevIndex => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
   };
 
-  console.log(currentIndex);
 
   return (
     <div className={styles.carousel}>

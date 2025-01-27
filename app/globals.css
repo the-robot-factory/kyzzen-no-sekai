@@ -54,7 +54,7 @@ main {
 
 @media (max-width: 600px) {
   main {
-    display: none;
+    /* display: none; */
     /* margin: 0 1em; */
   }
 }
