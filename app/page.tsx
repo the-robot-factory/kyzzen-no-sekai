@@ -146,7 +146,7 @@ export default function Home() {
                   <div className={styles.founder_detail}>
                     <Image src="/images/founder.png" alt="girl" width={60} height={60} priority />
                     <h2>OhMeOhMy</h2>
-                    <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" />
+                    <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" className={styles.x} />
                   </div>
                   <ul>
                     <li>Kyzzen & CEO</li>
