@@ -153,7 +153,6 @@
 
   .header_nav ul li:hover::before,
   .active::before {
-
     width: 60px;
   }
 

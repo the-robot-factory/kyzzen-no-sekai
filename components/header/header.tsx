@@ -1,13 +1,13 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
-import { usePathname, useRouter } from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
   const pathname = usePathname();
 
   const updateScreenSize = () => {
@@ -21,16 +21,16 @@ function Header() {
   }, []);
 
   const nav = (route: string) => {
-    router.push(route)
+    router.push(route);
     updateScreenSize();
-  }
+  };
 
   return (
     <div className={styles.header_con}>
       <div className={styles.con}>
         <div className={styles.header}>
           <div className={styles.header_top}>
-            <div className={styles.header_logo} onClick={() => nav("/")}>
+            <div className={styles.header_logo} onClick={() => nav('/')}>
               <Image src="/svg/logo.png" alt="Kyzzen Logo" width={151.22} height={45} priority />
             </div>
             <button className={styles.header_menu} onClick={() => setToggle(current => !current)}>
@@ -53,14 +53,14 @@ function Header() {
             <>
               <div className={styles.header_nav}>
                 <ul>
-                  <li onClick={() => nav("/")}>Launch</li>
-                  <li onClick={() => nav("/whitelist")}>
+                  <li onClick={() => nav('/')}>Launch</li>
+                  <li onClick={() => nav('/whitelist')}>
                     <span className={pathname === '/whitelist' ? styles.active : ''}>Whitelist</span>
                   </li>
-                  <li onClick={() => nav("/partners")}>
+                  <li onClick={() => nav('/partners')}>
                     <span className={pathname === '/partners' ? styles.active : ''}>Partners</span>
                   </li>
-                  <li onClick={() => nav("/network")}>
+                  <li onClick={() => nav('/network')}>
                     <span className={pathname === '/network' ? styles.active : ''}>Network</span>
                   </li>
                 </ul>
