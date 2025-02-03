@@ -1,11 +1,7 @@
-import {Anton} from 'next/font/google';
 import styles from './page.module.css';
 import Image from 'next/image';
 
-const anton = Anton({
-  subsets: ['latin'],
-  weight: '400',
-});
+
 
 export default function Whitelist() {
   const leaderboardData = [
@@ -26,13 +22,16 @@ export default function Whitelist() {
         <div className={styles.hero}>
           <div className={styles.panel_img}></div>
           <div className={styles.hero_content}>
-            <h1 className={styles.hero_title + ' ' + anton.className}>Whitelist</h1>
+            <h1 className={styles.hero_title}>WHITELIST</h1>
             <ul className={styles.hero_list}>
               <li>500 spots are available via our Leaderboard.</li>
               <li>
                 1,500 spots are allocated to <a className={styles.partner_link}>50 partner communities</a>.
               </li>
             </ul>
+            <button className={styles.cta}>
+              <span className={styles.cta_text}>View more details</span>
+            </button>
           </div>
         </div>
         <section className={styles.info_section}>
