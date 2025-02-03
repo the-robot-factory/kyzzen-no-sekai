@@ -170,19 +170,19 @@
   color: white;
 }
 
-.panel_text h2 > span {
+.panel_text h2>span {
   display: block;
 }
 
-.panel_text h2 > span:first-child {
+.panel_text h2>span:first-child {
   font-size: 1.4em;
 }
 
-.panel_text h2 > span:nth-child(2) {
+.panel_text h2>span:nth-child(2) {
   font-size: 2.25em;
 }
 
-.panel_text h2 > span:last-child {
+.panel_text h2>span:last-child {
   font-size: 3.2em;
 }
 
@@ -673,15 +673,15 @@
     padding: 0em 2em;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 2.1em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 3.23em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 4.7em;
   }
 
@@ -790,15 +790,15 @@
     min-height: 50vh;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1.9em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 3em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 4.3em;
   }
 
@@ -839,15 +839,15 @@
     min-height: 50vh;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1.6em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 2.5em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 3.6em;
   }
 
@@ -892,15 +892,15 @@
     min-height: 50vh;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 1.6em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 2.4em;
   }
 
@@ -1001,6 +1001,61 @@
     width: 300px;
     height: 250px;
   }
+
+  .grid_section {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .member_card {
+    gap: 0.5em;
+    width: 100%;
+
+  }
+
+  .avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .avatar_placeholder {
+    width: 45px;
+    height: 45px;
+  }
+
+  .member_details {
+    width: calc(100% - 30px);
+  }
+
+  .member_name {
+    color: #ffffff;
+    font-size: 0.85rem;
+  }
+
+  .member_role {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .details {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Labels and values */
+  .label {
+    font-size: 0.9em;
+  }
+
+  .value {
+    font-size: 0.8em;
+  }
+
 }
 
 @keyframes slide {

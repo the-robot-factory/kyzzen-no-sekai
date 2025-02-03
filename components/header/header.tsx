@@ -1,13 +1,13 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
-import {usePathname} from 'next/navigation';
-import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
 
+  const router = useRouter()
   const pathname = usePathname();
 
   const updateScreenSize = () => {
@@ -20,15 +20,18 @@ function Header() {
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
+  const nav = (route: string) => {
+    router.push(route)
+    updateScreenSize();
+  }
+
   return (
     <div className={styles.header_con}>
       <div className={styles.con}>
         <div className={styles.header}>
           <div className={styles.header_top}>
-            <div className={styles.header_logo}>
-              <Link href="/">
-                <Image src="/svg/logo.png" alt="Kyzzen Logo" width={151.22} height={45} priority />
-              </Link>
+            <div className={styles.header_logo} onClick={() => nav("/")}>
+              <Image src="/svg/logo.png" alt="Kyzzen Logo" width={151.22} height={45} priority />
             </div>
             <button className={styles.header_menu} onClick={() => setToggle(current => !current)}>
               <svg
@@ -50,21 +53,15 @@ function Header() {
             <>
               <div className={styles.header_nav}>
                 <ul>
-                  <li>Launch</li>
-                  <li>
-                    <Link href="/whitelist" passHref>
-                      <span className={pathname === '/whitelist' ? styles.active : ''}>Whitelist</span>
-                    </Link>
+                  <li onClick={() => nav("/")}>Launch</li>
+                  <li onClick={() => nav("/whitelist")}>
+                    <span className={pathname === '/whitelist' ? styles.active : ''}>Whitelist</span>
                   </li>
-                  <li>
-                    <Link href="/partners" passHref>
-                      <span className={pathname === '/partners' ? styles.active : ''}>Partners</span>
-                    </Link>
+                  <li onClick={() => nav("/partners")}>
+                    <span className={pathname === '/partners' ? styles.active : ''}>Partners</span>
                   </li>
-                  <li>
-                    <Link href="/network" passHref>
-                      <span className={pathname === '/network' ? styles.active : ''}>Network</span>
-                    </Link>
+                  <li onClick={() => nav("/network")}>
+                    <span className={pathname === '/network' ? styles.active : ''}>Network</span>
                   </li>
                 </ul>
               </div>

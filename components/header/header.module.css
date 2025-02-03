@@ -139,7 +139,7 @@
   .header_nav ul {
     width: 100%;
     flex-direction: column;
-    height: 79.5vh;
+    height: calc(100vh - 140px);
     padding: 1.5em;
     border-top: 4px solid var(--primary-color);
     border-bottom: 4px solid var(--primary-color);
@@ -149,6 +149,12 @@
     width: 100vw;
     font-weight: 300;
     font-size: 17px;
+  }
+
+  .header_nav ul li:hover::before,
+  .active::before {
+
+    width: 60px;
   }
 
   .header_action {
