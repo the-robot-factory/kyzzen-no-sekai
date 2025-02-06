@@ -50,7 +50,7 @@
   color: #ffffff;
 }
 
-.header_nav ul li:hover::before,
+.header_nav .header_list:hover::before,
 .active::before {
   content: '';
   position: absolute;
@@ -63,7 +63,6 @@
   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
   transform: skew(20deg);
 
-  /* border-bottom: 4px solid greenyellow; */
 }
 
 .header_action {

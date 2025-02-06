@@ -1,8 +1,9 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
-import {usePathname, useRouter} from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import Select from '../select/select';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -53,14 +54,32 @@ function Header() {
             <>
               <div className={styles.header_nav}>
                 <ul>
-                  <li onClick={() => nav('/')}>Launch</li>
-                  <li onClick={() => nav('/whitelist')}>
-                    <span className={pathname === '/whitelist' ? styles.active : ''}>Whitelist</span>
+                  <li className={styles.header_list} onClick={() => nav('/')}>Launch</li>
+                  <li className={styles.header_list}  >
+                    <span className={pathname === '/whitelist' ? styles.active : ''}>
+                      <Select
+                        name={'whitelist'}
+                        defaultValue={{ label: 'whitelist', value: 'whitelist' }}
+                        options={[
+                          { label: 'whitelist Details', value: 'whitelist' },
+                          { label: 'whitelist Registration', value: 'reg' }
+                        ]}
+                        handleChange={(value: string) => {
+                          
+                          if (value === 'reg') {
+                          console.log(value);
+                          nav('/whitelist-reg')
+                          } else {
+                            nav('/whitelist')
+                          }
+                        }}
+                      />
+                    </span>
                   </li>
-                  <li onClick={() => nav('/partners')}>
+                  <li className={styles.header_list} onClick={() => nav('/partners')}>
                     <span className={pathname === '/partners' ? styles.active : ''}>Partners</span>
                   </li>
-                  <li onClick={() => nav('/network')}>
+                  <li className={styles.header_list} onClick={() => nav('/network')}>
                     <span className={pathname === '/network' ? styles.active : ''}>Network</span>
                   </li>
                 </ul>
