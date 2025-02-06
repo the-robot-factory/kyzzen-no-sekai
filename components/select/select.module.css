@@ -20,8 +20,8 @@
 
 .label {
   display: block;
-  font-size:inherit;
-  color:inherit;
+  font-size: inherit;
+  color: inherit;
   margin-bottom: 0.25rem;
 }
 
@@ -69,10 +69,15 @@
   animation: fadeIn 0.2s ease-in-out;
 }
 
-
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-0.5rem); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdownList::-webkit-scrollbar {
@@ -88,7 +93,7 @@
   padding: 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
-  background-color:#0c0c24;
+  background-color: #0c0c24;
   color: white;
   text-transform: capitalize;
 }

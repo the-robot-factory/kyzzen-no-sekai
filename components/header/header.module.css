@@ -62,7 +62,6 @@
   background-color: greenyellow;
   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
   transform: skew(20deg);
-
 }
 
 .header_action {

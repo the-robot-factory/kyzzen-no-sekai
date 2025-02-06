@@ -1,8 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
-import { usePathname, useRouter } from 'next/navigation';
+import {usePathname, useRouter} from 'next/navigation';
 import Select from '../select/select';
 
 function Header() {
@@ -54,23 +54,24 @@ function Header() {
             <>
               <div className={styles.header_nav}>
                 <ul>
-                  <li className={styles.header_list} onClick={() => nav('/')}>Launch</li>
-                  <li className={styles.header_list}  >
+                  <li className={styles.header_list} onClick={() => nav('/')}>
+                    Launch
+                  </li>
+                  <li className={styles.header_list}>
                     <span className={pathname === '/whitelist' ? styles.active : ''}>
                       <Select
                         name={'whitelist'}
-                        defaultValue={{ label: 'whitelist', value: 'whitelist' }}
+                        defaultValue={{label: 'whitelist', value: 'whitelist'}}
                         options={[
-                          { label: 'whitelist Details', value: 'whitelist' },
-                          { label: 'whitelist Registration', value: 'reg' }
+                          {label: 'whitelist Details', value: 'whitelist'},
+                          {label: 'whitelist Registration', value: 'reg'},
                         ]}
                         handleChange={(value: string) => {
-                          
                           if (value === 'reg') {
-                          console.log(value);
-                          nav('/whitelist-reg')
+                            console.log(value);
+                            nav('/whitelist-reg');
                           } else {
-                            nav('/whitelist')
+                            nav('/whitelist');
                           }
                         }}
                       />
