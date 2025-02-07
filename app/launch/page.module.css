@@ -1,0 +1,145 @@
+.container {
+  padding-top: 12em;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #0c0c24;
+  color: white;
+}
+
+.content {
+  margin: auto;
+  padding: 0em 8em;
+  text-align: center;
+  background-color: #0c0c24;
+  color: white;
+}
+
+.title {
+  font-family: 'Monument', sans-serif !important;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Details container */
+.details {
+  margin: 3em 0 0em 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  justify-content: center;
+  /* align-items: center; */
+  gap: 20px;
+  margin-bottom: 30px;
+  z-index: 1;
+  position: relative;
+}
+
+.detail {
+  background-color: rgba(0, 0, 0, 0.473);
+  border-radius: 20px;
+  padding: 1.4em 1em;
+  /* width: 260px; */
+  text-align: center;
+}
+
+/* Icons */
+.icon {
+  margin: auto;
+}
+
+/* Labels and values */
+.label {
+  font-family: 'Monument', sans-serif !important;
+  margin: 1em 0;
+  font-size: 0.85em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.value {
+  font-size: 100;
+  margin: 0;
+  font-size: 0.85em;
+  color: #e4e7ec;
+}
+
+.info {
+  margin-top: 4em;
+  border: 1px solid #122645;
+  padding: 1.3em;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.info h3 {
+  font-size: 1.2em;
+
+}
+
+.info ul {
+  padding-left: 2em;
+}
+
+.info ul li {
+  margin: 0.7em 0;
+  font-size: 1.2em;
+}
+
+.info ul li span {
+  background: -webkit-linear-gradient(90deg, #005EFF 0%, #246CC1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.info_list ul {
+  list-style: square;
+  padding-left: 2em;
+}
+
+.info_list ul li {
+  padding: 0.4em 0;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+.info_list img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  margin: 1em 0em;
+
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding: 1.5em 3em;
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding: 1.5em 2em;
+  }
+
+  .info_list ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 1.5em 1em;
+  }
+
+  .info_list ul li {
+    font-size: 0.8rem;
+  }
+
+  .info_list ul {
+    padding-left: 1em;
+  }
+}
