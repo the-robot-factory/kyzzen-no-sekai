@@ -26,7 +26,7 @@
   border-radius: 10px;
   z-index: 1;
   text-align: center;
-overflow-y: hidden;
+  overflow-y: hidden;
   &_icon {
     margin-bottom: 2em;
   }
@@ -43,8 +43,6 @@ overflow-y: hidden;
   &_lg {
     width: 800px;
   }
-
-
 }
 
 .modal_close_btn {
@@ -56,9 +54,7 @@ overflow-y: hidden;
   background-color: transparent;
   color: #0c0c24;
   border: none;
-
 }
-
 
 .modal_head {
   padding: 2rem 5rem;
@@ -86,12 +82,11 @@ overflow-y: hidden;
 }
 
 .modal_content {
-  padding:0.5rem 5rem 2rem 5rem;
+  padding: 0.5rem 5rem 2rem 5rem;
   color: white;
   text-align: left;
   max-height: calc(80vh - 123px);
   overflow-y: auto;
-
 }
 
 .modal_content::-webkit-scrollbar {
@@ -99,7 +94,7 @@ overflow-y: hidden;
 }
 
 .modal_content::-webkit-scrollbar-thumb {
-  background-color: #1D2939;
+  background-color: #1d2939;
   border-radius: 10px;
 }
 
@@ -114,9 +109,8 @@ overflow-y: hidden;
     padding: 2rem 3rem;
   }
   .modal_content {
-    padding:0.5rem 3rem 2rem 3rem;
+    padding: 0.5rem 3rem 2rem 3rem;
   }
-  
 }
 
 @media (max-width: 900px) {
@@ -127,7 +121,7 @@ overflow-y: hidden;
     }
   }
   .modal_content {
-    padding:0.5rem 2rem 2rem 2rem;
+    padding: 0.5rem 2rem 2rem 2rem;
   }
 }
 
@@ -139,6 +133,6 @@ overflow-y: hidden;
     }
   }
   .modal_content {
-    padding:0.5rem 1rem 2rem 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
   }
 }

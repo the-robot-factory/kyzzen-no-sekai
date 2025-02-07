@@ -55,7 +55,7 @@ function Header() {
               <div className={styles.header_nav}>
                 <ul>
                   <li className={styles.header_list} onClick={() => nav('/launch')}>
-                  <span className={pathname === '/launch' ? styles.active : ''}>Launch</span>
+                    <span className={pathname === '/launch' ? styles.active : ''}>Launch</span>
                   </li>
                   <li className={styles.header_list}>
                     <span className={pathname === '/whitelist' ? styles.active : ''}>

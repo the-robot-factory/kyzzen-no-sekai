@@ -75,7 +75,6 @@
 
 .info h3 {
   font-size: 1.2em;
-
 }
 
 .info ul {
@@ -88,7 +87,7 @@
 }
 
 .info ul li span {
-  background: -webkit-linear-gradient(90deg, #005EFF 0%, #246CC1 100%);
+  background: -webkit-linear-gradient(90deg, #005eff 0%, #246cc1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
@@ -111,7 +110,6 @@
   object-fit: cover;
   object-position: top;
   margin: 1em 0em;
-
 }
 
 @media (max-width: 1200px) {
