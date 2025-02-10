@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  padding: 40px;
+  padding: 8em 8em;
   text-align: left;
   height: 100vh;
   overflow-y: auto;
@@ -58,10 +58,20 @@
   border-radius: 50%;
   margin: 0 auto 10px;
 }
+@media (max-width: 1200px) {
+  .network_container {
+    padding: 8em 3em;
+  }
+}
 
+@media (max-width: 900px) {
+  .network_container {
+    padding: 8em 2em;
+  }
+}
 @media (max-width: 600px) {
   .network_container {
-    padding: 20px;
+    padding: 3em 2em;
     margin-top: 5em;
     height: calc(100vh - 5em);
   }

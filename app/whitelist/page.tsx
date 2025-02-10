@@ -15,7 +15,7 @@ export default function Whitelist() {
     {rank: 10, username: 'EyePhucked Kitty', points: 800},
   ];
   return (
-    <div>
+    <div className={styles.whitelist_con}>
       <main>
         <div className={styles.hero}>
           <div className={styles.panel_img}></div>

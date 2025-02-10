@@ -750,7 +750,7 @@
     z-index: 2;
     width: 80%;
     margin: auto;
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
     gap: 2em;
   }
@@ -883,9 +883,9 @@
   }
 
   .panel {
-    padding: 6em 1em;
+    padding: 3em  1em;
     gap: 3em;
-    min-height: 50vh;
+    min-height: 30vh;
   }
 
   .single {

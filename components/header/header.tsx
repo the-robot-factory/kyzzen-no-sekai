@@ -57,7 +57,7 @@ function Header() {
                   <li className={styles.header_list} onClick={() => nav('/launch')}>
                     <span className={pathname === '/launch' ? styles.active : ''}>Launch</span>
                   </li>
-                  <li className={styles.header_list}>
+                  <li className={styles.header_list + " " + styles.select_field}>
                     <span className={pathname === '/whitelist' ? styles.active : ''}>
                       <Select
                         name={'whitelist'}

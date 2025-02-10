@@ -93,9 +93,15 @@
   cursor: pointer;
 }
 
+.info_list {
+  max-width: 800px;
+  text-align: center;
+}
+
 .info_list ul {
   list-style: square;
   padding-left: 2em;
+  text-align: left;
 }
 
 .info_list ul li {
@@ -105,11 +111,11 @@
 }
 
 .info_list img {
-  width: 100%;
+  width: 60%;
   height: 100%;
   object-fit: cover;
   object-position: top;
-  margin: 1em 0em;
+  margin: 1em auto;
 }
 
 @media (max-width: 1200px) {
@@ -129,6 +135,10 @@
 }
 
 @media (max-width: 600px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
   .content {
     padding: 1.5em 1em;
   }
@@ -139,5 +149,9 @@
 
   .info_list ul {
     padding-left: 1em;
+  }
+
+  .details {
+    gap: 10px;
   }
 }
