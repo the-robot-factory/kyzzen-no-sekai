@@ -31,7 +31,7 @@ const anton = Anton({
 });
 const Network = () => {
   return (
-    <div className={styles.network_container + " con"}>
+    <div className={styles.network_container + ' con'}>
       {/* Header */}
       <section className={styles.header_section}>
         <h1 className={styles.title + ' ' + anton.className}>Kyzzen Network</h1>
