@@ -2,17 +2,40 @@ import styles from './page.module.css';
 import Image from 'next/image';
 
 export default function Whitelist() {
+
+  const networkMembers = [
+    { name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' ' },
+    { name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' ' },
+    { name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' ' },
+    { name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' ' },
+    { name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' ' },
+    { name: 'Voshy', role: 'GREED Academy Founder', avatar: ' ' },
+    { name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' ' },
+    { name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' ' },
+    { name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' ' },
+    { name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' ' },
+    { name: 'Nom', role: 'Bonk Co-Founder', avatar: ' ' },
+    { name: 'Kais', role: 'Okay Bears Founder', avatar: ' ' },
+    { name: 'Easy', role: 'BoDoggos Founder', avatar: ' ' },
+    { name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' ' },
+    { name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' ' },
+    { name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' ' },
+    { name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' ' },
+    { name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' ' },
+    { name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' ' },
+    { name: 'SOK', role: 'Raposa Founder', avatar: ' ' },
+  ];
   const leaderboardData = [
-    {rank: 1, username: 'TheAnimeSoL', points: 20420},
-    {rank: 2, username: 'OKAY BEARS ZOMBIE', points: 18900},
-    {rank: 3, username: 'The Sports Club - MVP', points: 18230},
-    {rank: 4, username: 'EyePhucked Kitty', points: 17420},
-    {rank: 5, username: 'Stranger Fins', points: 14200},
-    {rank: 6, username: 'Glorious Lions', points: 12320},
-    {rank: 7, username: 'Stranger Fins', points: 10870},
-    {rank: 8, username: 'Glorious Lions', points: 8390},
-    {rank: 9, username: 'Stranger Fins', points: 2390},
-    {rank: 10, username: 'EyePhucked Kitty', points: 800},
+    { rank: 1, username: 'TheAnimeSoL', points: 20420 },
+    { rank: 2, username: 'OKAY BEARS ZOMBIE', points: 18900 },
+    { rank: 3, username: 'The Sports Club - MVP', points: 18230 },
+    { rank: 4, username: 'EyePhucked Kitty', points: 17420 },
+    { rank: 5, username: 'Stranger Fins', points: 14200 },
+    { rank: 6, username: 'Glorious Lions', points: 12320 },
+    { rank: 7, username: 'Stranger Fins', points: 10870 },
+    { rank: 8, username: 'Glorious Lions', points: 8390 },
+    { rank: 9, username: 'Stranger Fins', points: 2390 },
+    { rank: 10, username: 'EyePhucked Kitty', points: 800 },
   ];
   return (
     <div className={styles.whitelist_con}>
@@ -81,6 +104,27 @@ export default function Whitelist() {
               <li>1 pt for each Kyzen Academy course completed.</li>
               <li>5 pts for each referral (must connect at least 1 social).</li>
             </ul>
+          </div>
+        </section>
+        <section className={styles.network_section}>
+          <div className={styles.network}>
+          <h2 className={styles.network_title}>Whitelist Communities</h2>
+
+            <div className={styles.grid_section}>
+              {networkMembers.map((member, index) => (
+                <div key={index} className={styles.member_card}>
+                  {member.avatar ? (
+                    <Image className={styles.avatar} src="/images/founder.png" alt="girl" width={65} height={65} priority />
+                  ) : (
+                    <div className={styles.avatar_placeholder}></div>
+                  )}
+                  <div className={styles.member_details}>
+                    <h3 className={styles.member_name}>{member.name}</h3>
+                    <p className={styles.member_role}>50 spots</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
