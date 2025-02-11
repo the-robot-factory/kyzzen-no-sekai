@@ -262,10 +262,16 @@
   .info_section {
     padding: 1em 3em;
   }
+  .network_section {
+    padding: 1em 3em;
+  }
 }
 
 @media (max-width: 900px) {
   .info_section {
+    padding: 1em 2em;
+  }
+  .network_section {
     padding: 1em 2em;
   }
 }
