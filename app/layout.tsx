@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import type {Metadata} from 'next';
+import {Open_Sans} from 'next/font/google';
 import './globals.css';
 import Header from '../components/header/header';
-import { ToastContainer, Slide } from 'react-toastify';
-import { Providers } from './providers';
+import {ToastContainer, Slide} from 'react-toastify';
+import {Providers} from './providers';
 
 const sans = Open_Sans({
   subsets: ['latin'],
@@ -19,7 +19,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body className={`${sans.className} con`}>

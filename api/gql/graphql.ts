@@ -1,20 +1,20 @@
 /* eslint-disable */
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
-export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type Exact<T extends {[key: string]: unknown}> = {[K in keyof T]: T[K]};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {[SubKey in K]?: Maybe<T[SubKey]>};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {[SubKey in K]: Maybe<T[SubKey]>};
+export type MakeEmpty<T extends {[key: string]: unknown}, K extends keyof T> = {[_ in K]?: never};
+export type Incremental<T> = T | {[P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
+  ID: {input: string; output: string};
+  String: {input: string; output: string};
+  Boolean: {input: boolean; output: boolean};
+  Int: {input: number; output: number};
+  Float: {input: number; output: number};
   /** The `DateTime` scalar type represents a DateTime. The DateTime is serialized as an RFC 3339 quoted string */
-  DateTime: { input: any; output: any; }
+  DateTime: {input: any; output: any};
 };
 
 export type AdvanceCollectionFilters = {
@@ -1280,7 +1280,6 @@ export type RootQuery = {
   walletStatsWeekly?: Maybe<WalletStatsWeeklyList>;
 };
 
-
 export type RootQueryAnswerArgs = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -1293,7 +1292,6 @@ export type RootQueryAnswerArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryCollectionFiltersArgs = {
   collection?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -1303,7 +1301,6 @@ export type RootQueryCollectionFiltersArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   traits?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryCollectionOffersArgs = {
   amountOffset?: InputMaybe<Scalars['Int']['input']>;
@@ -1326,7 +1323,6 @@ export type RootQueryCollectionOffersArgs = {
   price?: InputMaybe<Scalars['String']['input']>;
   status?: InputMaybe<Scalars['Int']['input']>;
 };
-
 
 export type RootQueryCollectionsArgs = {
   atlas3?: InputMaybe<Scalars['String']['input']>;
@@ -1454,7 +1450,6 @@ export type RootQueryCollectionsArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryCollectionsOfferArgs = {
   attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   bidId?: InputMaybe<Scalars['String']['input']>;
@@ -1474,7 +1469,6 @@ export type RootQueryCollectionsOfferArgs = {
   traits?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryCourseArgs = {
   bannerURL?: InputMaybe<Scalars['String']['input']>;
@@ -1506,7 +1500,6 @@ export type RootQueryCourseArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryCourseCategoryArgs = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -1518,7 +1511,6 @@ export type RootQueryCourseCategoryArgs = {
   position?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryCourseSubCategoryArgs = {
   categoryID?: InputMaybe<Scalars['String']['input']>;
@@ -1532,7 +1524,6 @@ export type RootQueryCourseSubCategoryArgs = {
   position?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryDeletedCollectionsArgs = {
   atlas3?: InputMaybe<Scalars['String']['input']>;
@@ -1591,7 +1582,6 @@ export type RootQueryDeletedCollectionsArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryDraftCollectionsArgs = {
   atlas3?: InputMaybe<Scalars['String']['input']>;
   averagePrice?: InputMaybe<Scalars['Float']['input']>;
@@ -1649,7 +1639,6 @@ export type RootQueryDraftCollectionsArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryDutchOffersArgs = {
   attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   bump?: InputMaybe<Scalars['Int']['input']>;
@@ -1693,7 +1682,6 @@ export type RootQueryDutchOffersArgs = {
   verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type RootQueryFeaturedProjectArgs = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
@@ -1708,7 +1696,6 @@ export type RootQueryFeaturedProjectArgs = {
   projectUrl?: InputMaybe<Scalars['String']['input']>;
   thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryInscriptionArgs = {
   active?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1729,7 +1716,6 @@ export type RootQueryInscriptionArgs = {
   owner?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryItemsArgs = {
   collectionId?: InputMaybe<Scalars['String']['input']>;
   keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -1738,7 +1724,6 @@ export type RootQueryItemsArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryLendingCollectionStatsArgs = {
   activeLoansTotal?: InputMaybe<Scalars['Int']['input']>;
@@ -1776,7 +1761,6 @@ export type RootQueryLendingCollectionStatsArgs = {
   uniqueLenders?: InputMaybe<Scalars['Int']['input']>;
 };
 
-
 export type RootQueryLendingPoolsArgs = {
   availableLiquidity?: InputMaybe<Scalars['Float']['input']>;
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -1802,7 +1786,6 @@ export type RootQueryLendingPoolsArgs = {
   totalLiquidity?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryLendingsArgs = {
   id?: InputMaybe<Scalars['String']['input']>;
   keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -1813,7 +1796,6 @@ export type RootQueryLendingsArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryLessonArgs = {
   courseID?: InputMaybe<Scalars['String']['input']>;
@@ -1830,7 +1812,6 @@ export type RootQueryLessonArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryMetricsArgs = {
   btcUSD?: InputMaybe<Scalars['Float']['input']>;
   collections?: InputMaybe<Scalars['Int']['input']>;
@@ -1845,7 +1826,6 @@ export type RootQueryMetricsArgs = {
   tps?: InputMaybe<Scalars['Int']['input']>;
   volumeTotal?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryMintCalendarArgs = {
   atlas3GiveawayUrl?: InputMaybe<Scalars['String']['input']>;
@@ -1882,7 +1862,6 @@ export type RootQueryMintCalendarArgs = {
   website?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryMintsArgs = {
   collection?: InputMaybe<Scalars['String']['input']>;
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -1896,7 +1875,6 @@ export type RootQueryMintsArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryNftNewsArgs = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1914,7 +1892,6 @@ export type RootQueryNftNewsArgs = {
   title?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryNftTokenArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
@@ -1944,7 +1921,6 @@ export type RootQueryNftTokenArgs = {
   v24hUsd?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryNftTokenHistoryArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -1960,7 +1936,6 @@ export type RootQueryNftTokenHistoryArgs = {
   symbol?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryOffersArgs = {
   attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -2000,7 +1975,6 @@ export type RootQueryOffersArgs = {
   uriMetadata?: InputMaybe<Scalars['String']['input']>;
   verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type RootQueryOrdinalsCollectionArgs = {
   averagePrice?: InputMaybe<Scalars['Int']['input']>;
@@ -2052,7 +2026,6 @@ export type RootQueryOrdinalsCollectionArgs = {
   whitepaper?: InputMaybe<Scalars['String']['input']>;
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryOrdinalsDeletedCollectionArgs = {
   averagePrice?: InputMaybe<Scalars['Int']['input']>;
@@ -2108,7 +2081,6 @@ export type RootQueryOrdinalsDeletedCollectionArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryOrdinalsDraftCollectionArgs = {
   averagePrice?: InputMaybe<Scalars['Int']['input']>;
   averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
@@ -2157,7 +2129,6 @@ export type RootQueryOrdinalsDraftCollectionArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryOrdinalsItemsArgs = {
   collectionId?: InputMaybe<Scalars['String']['input']>;
   keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -2166,7 +2137,6 @@ export type RootQueryOrdinalsItemsArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryOrdinalsUpdatedCollectionArgs = {
   averagePrice?: InputMaybe<Scalars['Int']['input']>;
@@ -2220,7 +2190,6 @@ export type RootQueryOrdinalsUpdatedCollectionArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryOwnershipArgs = {
   amount?: InputMaybe<Scalars['Int']['input']>;
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -2230,7 +2199,6 @@ export type RootQueryOwnershipArgs = {
   orderBy?: InputMaybe<Scalars['String']['input']>;
   wallet?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryProfileArgs = {
   bannerURL?: InputMaybe<Scalars['String']['input']>;
@@ -2270,7 +2238,6 @@ export type RootQueryProfileArgs = {
   youtubeVerified?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type RootQueryQuestionArgs = {
   courseID?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -2282,7 +2249,6 @@ export type RootQueryQuestionArgs = {
   text?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryRaffleArgs = {
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -2314,7 +2280,6 @@ export type RootQueryRaffleArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryRaffleCountAnalyticsArgs = {
   count?: InputMaybe<Scalars['Float']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
@@ -2327,7 +2292,6 @@ export type RootQueryRaffleCountAnalyticsArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryRaffleCreatorAnalyticsArgs = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   creatorCount?: InputMaybe<Scalars['Float']['input']>;
@@ -2339,7 +2303,6 @@ export type RootQueryRaffleCreatorAnalyticsArgs = {
   source?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryRaffleNoOfTicketsVsTicketsSoldAnalyticsArgs = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
@@ -2355,7 +2318,6 @@ export type RootQueryRaffleNoOfTicketsVsTicketsSoldAnalyticsArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryRaffleTtVsTicketsSoldAnalyticsArgs = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -2369,7 +2331,6 @@ export type RootQueryRaffleTtVsTicketsSoldAnalyticsArgs = {
   ttvOfFP?: InputMaybe<Scalars['Float']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryRaffleTableAnalyticsArgs = {
   PercentagePurchasedVolume?: InputMaybe<Scalars['Float']['input']>;
@@ -2390,7 +2351,6 @@ export type RootQueryRaffleTableAnalyticsArgs = {
   totalTicketsBought?: InputMaybe<Scalars['Int']['input']>;
 };
 
-
 export type RootQueryRaffleTicketBuyersAnalyticArgs = {
   count?: InputMaybe<Scalars['Float']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
@@ -2403,7 +2363,6 @@ export type RootQueryRaffleTicketBuyersAnalyticArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryRaffleVolumeAnalyticsArgs = {
   createdAt?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -2415,7 +2374,6 @@ export type RootQueryRaffleVolumeAnalyticsArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   volume?: InputMaybe<Scalars['Float']['input']>;
 };
-
 
 export type RootQuerySalesViewArgs = {
   blocktime?: InputMaybe<Scalars['Int']['input']>;
@@ -2446,7 +2404,6 @@ export type RootQuerySalesViewArgs = {
   type?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQuerySmartBidOffersArgs = {
   buyer?: InputMaybe<Scalars['String']['input']>;
   collection?: InputMaybe<Scalars['String']['input']>;
@@ -2470,7 +2427,6 @@ export type RootQuerySmartBidOffersArgs = {
   status?: InputMaybe<Scalars['Int']['input']>;
 };
 
-
 export type RootQueryStatSnapshotsArgs = {
   averagePrice?: InputMaybe<Scalars['Float']['input']>;
   collectionId?: InputMaybe<Scalars['String']['input']>;
@@ -2486,7 +2442,6 @@ export type RootQueryStatSnapshotsArgs = {
   volumePast24h?: InputMaybe<Scalars['Float']['input']>;
   volumeTotal?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryStatSnapshotsEcosystemArgs = {
   id?: InputMaybe<Scalars['String']['input']>;
@@ -2594,7 +2549,6 @@ export type RootQueryStatSnapshotsEcosystemArgs = {
   volumesUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryStatSnapshotsLendingArgs = {
   collectionId?: InputMaybe<Scalars['String']['input']>;
   completedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
@@ -2627,7 +2581,6 @@ export type RootQueryStatSnapshotsLendingArgs = {
   uniqueUsersLast1h?: InputMaybe<Scalars['Int']['input']>;
   uniqueUsersLast30d?: InputMaybe<Scalars['Int']['input']>;
 };
-
 
 export type RootQueryStatSnapshotsLendingEcosystemArgs = {
   activeLoansTotal?: InputMaybe<Scalars['Int']['input']>;
@@ -2870,7 +2823,6 @@ export type RootQueryStatSnapshotsLendingEcosystemArgs = {
   uniqueUsersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryStatSnapshotsMarketplaceArgs = {
   id?: InputMaybe<Scalars['String']['input']>;
   keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3018,7 +2970,6 @@ export type RootQueryStatSnapshotsMarketplaceArgs = {
   volumesUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryStatSnapshotsV2Args = {
   averagePrice?: InputMaybe<Scalars['Float']['input']>;
   averageSalePrice?: InputMaybe<Scalars['Float']['input']>;
@@ -3118,7 +3069,6 @@ export type RootQueryStatSnapshotsV2Args = {
   volumesUsdTotal?: InputMaybe<Scalars['Float']['input']>;
 };
 
-
 export type RootQueryTransactionsArgs = {
   blocktime?: InputMaybe<Scalars['Int']['input']>;
   buyer?: InputMaybe<Scalars['String']['input']>;
@@ -3148,7 +3098,6 @@ export type RootQueryTransactionsArgs = {
   type?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryTwitterSpaceArgs = {
   attendees?: InputMaybe<Scalars['Int']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
@@ -3165,7 +3114,6 @@ export type RootQueryTwitterSpaceArgs = {
   userhandle?: InputMaybe<Scalars['String']['input']>;
   username?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryTwitterTweetArgs = {
   attachments?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3188,7 +3136,6 @@ export type RootQueryTwitterTweetArgs = {
   userhandle?: InputMaybe<Scalars['String']['input']>;
   username?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryUpdatedCollectionsArgs = {
   atlas3?: InputMaybe<Scalars['String']['input']>;
@@ -3247,7 +3194,6 @@ export type RootQueryUpdatedCollectionsArgs = {
   youtube?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryUserArgs = {
   allTimeReward?: InputMaybe<Scalars['Int']['input']>;
   currentReward?: InputMaybe<Scalars['Int']['input']>;
@@ -3262,7 +3208,6 @@ export type RootQueryUserArgs = {
   walletID?: InputMaybe<Scalars['String']['input']>;
 };
 
-
 export type RootQueryUserQuizProgressArgs = {
   completed?: InputMaybe<Scalars['Boolean']['input']>;
   courseID?: InputMaybe<Scalars['String']['input']>;
@@ -3276,7 +3221,6 @@ export type RootQueryUserQuizProgressArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   userID?: InputMaybe<Scalars['String']['input']>;
 };
-
 
 export type RootQueryWalletStats24HourListArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
@@ -3300,7 +3244,6 @@ export type RootQueryWalletStats24HourListArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryWalletStatsAllTimeArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
   boughtCount?: InputMaybe<Scalars['Int']['input']>;
@@ -3323,7 +3266,6 @@ export type RootQueryWalletStatsAllTimeArgs = {
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-
 export type RootQueryWalletStatsMonthlyArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
   boughtCount?: InputMaybe<Scalars['Int']['input']>;
@@ -3345,7 +3287,6 @@ export type RootQueryWalletStatsMonthlyArgs = {
   totalReceived?: InputMaybe<Scalars['Int']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
-
 
 export type RootQueryWalletStatsWeeklyArgs = {
   address?: InputMaybe<Scalars['String']['input']>;
@@ -4306,13 +4247,13 @@ export type WalletStatsWeeklyList = {
   totalCount?: Maybe<Scalars['Int']['output']>;
 };
 
-export class TypedDocumentString<TResult, TVariables>
-  extends String
-  implements DocumentTypeDecoration<TResult, TVariables>
-{
+export class TypedDocumentString<TResult, TVariables> extends String implements DocumentTypeDecoration<TResult, TVariables> {
   __apiType?: DocumentTypeDecoration<TResult, TVariables>['__apiType'];
 
-  constructor(private value: string, public __meta__?: Record<string, any> | undefined) {
+  constructor(
+    private value: string,
+    public __meta__?: Record<string, any> | undefined,
+  ) {
     super(value);
   }
 

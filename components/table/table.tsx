@@ -1,9 +1,9 @@
-"use client";
+'use client';
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useState, useCallback, JSX } from "react";
+import React, {useEffect, useState, useCallback, JSX} from 'react';
 // import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa";
-import styles from "./table.module.css";
+import styles from './table.module.css';
 
 interface TableHeader {
   name?: React.ReactNode;
@@ -32,7 +32,7 @@ interface TableProps {
   parentHeight?: number | null;
 }
 
-type SortOrder = "asc" | "desc";
+type SortOrder = 'asc' | 'desc';
 
 const Table: React.FC<TableProps> = ({
   body,
@@ -56,15 +56,15 @@ const Table: React.FC<TableProps> = ({
     accessor: string;
     direction: SortOrder;
   }>({
-    accessor: "marketCap",
-    direction: "desc",
+    accessor: 'marketCap',
+    direction: 'desc',
   });
 
   useEffect(() => setSortedData(body), [body]);
 
   const handleScroll = useCallback(
     async (e: React.UIEvent<HTMLDivElement>) => {
-      const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+      const {scrollTop, clientHeight, scrollHeight} = e.currentTarget;
       const bottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) < 1;
 
       if (bottom && setOffset) {
@@ -74,39 +74,32 @@ const Table: React.FC<TableProps> = ({
         }
       }
 
-      if (bottom && !refetch) setLimit((prev) => prev + 30);
+      if (bottom && !refetch) setLimit(prev => prev + 30);
     },
-    [isEnd, refetch, setOffset, body.length, sortedData.length]
+    [isEnd, refetch, setOffset, body.length, sortedData.length],
   );
 
   const requestSort = useCallback(
     (accessor: string) => {
-      const direction: SortOrder =
-        sortConfig.accessor === accessor && sortConfig.direction === "desc"
-          ? "asc"
-          : "desc";
-      setSortConfig({ accessor, direction });
+      const direction: SortOrder = sortConfig.accessor === accessor && sortConfig.direction === 'desc' ? 'asc' : 'desc';
+      setSortConfig({accessor, direction});
 
       const sorted = [...body].sort((a, b) => {
-        const valA = typeof a[accessor] === "string" ? a[accessor].toLowerCase() : +a[accessor];
-        const valB = typeof b[accessor] === "string" ? b[accessor].toLowerCase() : +b[accessor];
-        return direction === "asc" ? String(valA).localeCompare(String(valB)) : String(valB).localeCompare(String(valA));
+        const valA = typeof a[accessor] === 'string' ? a[accessor].toLowerCase() : +a[accessor];
+        const valB = typeof b[accessor] === 'string' ? b[accessor].toLowerCase() : +b[accessor];
+        return direction === 'asc' ? String(valA).localeCompare(String(valB)) : String(valB).localeCompare(String(valA));
       });
 
       setSortedData(sorted);
     },
-    [body, sortConfig]
+    [body, sortConfig],
   );
 
   const tableHeight = `calc(100vh - ${parentHeight ? parentHeight + 175 : 175}px)`;
 
   return (
     <div className={`${styles.container} ${className}`} style={style}>
-      <div
-        className={styles.tableWrapper}
-        style={{ height: tableHeight, ...style }}
-        onScroll={!isEnd ? handleScroll : undefined}
-      >
+      <div className={styles.tableWrapper} style={{height: tableHeight, ...style}} onScroll={!isEnd ? handleScroll : undefined}>
         <table className={styles.table}>
           {header && (
             <thead className={styles.header}>
@@ -114,7 +107,7 @@ const Table: React.FC<TableProps> = ({
                 {header.map((item, idx) => (
                   <th
                     key={`head-${idx}`}
-                    className={`${styles.headerCell} ${item.className || ""}`}
+                    className={`${styles.headerCell} ${item.className || ''}`}
                     colSpan={item.colspan}
                     rowSpan={item.rowspan}
                     onClick={() => item.accessor && requestSort(item.accessor)}
@@ -141,11 +134,7 @@ const Table: React.FC<TableProps> = ({
               {subHeader && (
                 <tr className={styles.subHeader}>
                   {subHeader.map((item, idx) => (
-                    <th
-                      key={`subhead-${idx}`}
-                      className={styles.subHeaderCell}
-                      colSpan={item.colspan}
-                    >
+                    <th key={`subhead-${idx}`} className={styles.subHeaderCell} colSpan={item.colspan}>
                       {item.name}
                     </th>
                   ))}
@@ -176,9 +165,7 @@ const Table: React.FC<TableProps> = ({
             )}
           </tbody>
         </table>
-        {!isLoading && body.length === 0 && (
-          <div className={styles.emptyState}>No Data</div>
-        )}
+        {!isLoading && body.length === 0 && <div className={styles.emptyState}>No Data</div>}
       </div>
     </div>
   );

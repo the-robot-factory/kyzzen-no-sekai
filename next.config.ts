@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   images: {
@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'profile-record.s3.amazonaws.com',
       },
-    ], 
+    ],
   },
 };
 

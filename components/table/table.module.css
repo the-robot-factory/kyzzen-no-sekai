@@ -71,7 +71,6 @@
   border-bottom: 1px solid #122645;
 }
 
-
 .row {
   transition: background-color 0.2s;
 }
@@ -116,7 +115,7 @@
   .container {
     height: calc(100vh - 230px);
   }
-  
+
   .tableWrapper {
     height: calc(100vh - 230px);
   }

@@ -2,7 +2,7 @@
 import React from 'react';
 import useClose from '../../hooks/useClose';
 import styles from './modal.module.css';
-import { createPortal } from 'react-dom';
+import {createPortal} from 'react-dom';
 
 export interface ModalProps {
   className?: string;
@@ -19,7 +19,7 @@ export interface ModalProps {
 }
 
 function Modal(props: ModalProps) {
-  const { heading, children, show, size, hide, className } = props;
+  const {heading, children, show, size, hide, className} = props;
   const ref = useClose(hide);
 
   if (!show) return null;
@@ -29,11 +29,11 @@ function Modal(props: ModalProps) {
       <div className={styles.modal_container}>
         <div className={styles.modal_bg}></div>
         <div className={`${styles.modal} ${size ? styles[`modal_${size}`] : ''}`} ref={ref}>
-          {heading &&
+          {heading && (
             <div className={styles.modal_head}>
               <h1 className={styles.modal_heading}>{heading}</h1>
             </div>
-          }
+          )}
           <button className={styles.modal_close_btn} onClick={hide}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

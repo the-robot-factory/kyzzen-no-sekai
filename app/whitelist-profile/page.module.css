@@ -50,7 +50,6 @@
   margin: 2.5rem 0;
   max-width: 80%;
   font-weight: bold;
-
 }
 
 .not_registered {
@@ -58,7 +57,6 @@
 }
 
 .register_button {
-
   padding: 10px 30px;
   font-size: 16px;
   color: #0c0c24;
@@ -127,7 +125,6 @@
   background-clip: padding-box, border-box;
 }
 
-
 .wallet_list {
   border: 1px solid #122645;
   padding: 1rem;
@@ -139,7 +136,6 @@
   color: #00aaff;
   text-decoration: none;
 }
-
 
 .network_section {
   /* background-color: #0f0f1e; */
