@@ -4247,17 +4247,3 @@ export type WalletStatsWeeklyList = {
   totalCount?: Maybe<Scalars['Int']['output']>;
 };
 
-export class TypedDocumentString<TResult, TVariables> extends String implements DocumentTypeDecoration<TResult, TVariables> {
-  __apiType?: DocumentTypeDecoration<TResult, TVariables>['__apiType'];
-
-  constructor(
-    private value: string,
-    public __meta__?: Record<string, any> | undefined,
-  ) {
-    super(value);
-  }
-
-  toString(): string & DocumentTypeDecoration<TResult, TVariables> {
-    return this.value;
-  }
-}
