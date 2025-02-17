@@ -1,0 +1,4322 @@
+/* eslint-disable */
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+/** All built-in and custom scalars, mapped to their actual values */
+export type Scalars = {
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  /** The `DateTime` scalar type represents a DateTime. The DateTime is serialized as an RFC 3339 quoted string */
+  DateTime: { input: any; output: any; }
+};
+
+export type AdvanceCollectionFilters = {
+  __typename?: 'AdvanceCollectionFilters';
+  collection?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  traits?: Maybe<Scalars['String']['output']>;
+};
+
+export type AdvanceCollectionFiltersList = {
+  __typename?: 'AdvanceCollectionFiltersList';
+  nodes?: Maybe<Array<Maybe<AdvanceCollectionFilters>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Answer = {
+  __typename?: 'Answer';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  questionID?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type AnswerList = {
+  __typename?: 'AnswerList';
+  nodes?: Maybe<Array<Maybe<Answer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type AttributesFilter = {
+  and?: InputMaybe<Array<InputMaybe<AttributesFilter>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  or?: InputMaybe<Array<InputMaybe<AttributesFilter>>>;
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Collection = {
+  __typename?: 'Collection';
+  atlas3?: Maybe<Scalars['String']['output']>;
+  averagePrice?: Maybe<Scalars['Float']['output']>;
+  averagePriceDelta?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  candyMachineAddresses?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  collectionKey?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorEmail?: Maybe<Scalars['String']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  disputedMessage?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  endpoint?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Float']['output']>;
+  floorPrice1hAgo?: Maybe<Scalars['Float']['output']>;
+  floorPrice7dAgo?: Maybe<Scalars['Float']['output']>;
+  floorPrice24hAgo?: Maybe<Scalars['Float']['output']>;
+  floorPrice30dAgo?: Maybe<Scalars['Float']['output']>;
+  floorPriceDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceFees?: Maybe<Scalars['Float']['output']>;
+  floorPricePast1hDelta?: Maybe<Scalars['Float']['output']>;
+  floorPricePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  floorPricePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  floorPricePast30dDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceRoyalties?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsd1hAgo?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsd7dAgo?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsd24hAgo?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsd30dAgo?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsdPast1hDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsdPast7dDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsdPast24hDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsdPast30dDelta?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithFees?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyalties?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyaltiesAndFees?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isCurated?: Maybe<Scalars['Boolean']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  links?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  listedPercentage?: Maybe<Scalars['Float']['output']>;
+  listings1hDelta?: Maybe<Scalars['Float']['output']>;
+  listings7dDelta?: Maybe<Scalars['Float']['output']>;
+  listings24hDelta?: Maybe<Scalars['Float']['output']>;
+  listings30dDelta?: Maybe<Scalars['Float']['output']>;
+  meSlug?: Maybe<Scalars['String']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  mintListUrl?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  owners1hDelta?: Maybe<Scalars['Float']['output']>;
+  owners7dDelta?: Maybe<Scalars['Float']['output']>;
+  owners24hDelta?: Maybe<Scalars['Float']['output']>;
+  owners30dDelta?: Maybe<Scalars['Float']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  royalties?: Maybe<Scalars['Float']['output']>;
+  salesPast1h?: Maybe<Scalars['Int']['output']>;
+  salesPast1hDelta?: Maybe<Scalars['Float']['output']>;
+  salesPast7d?: Maybe<Scalars['Int']['output']>;
+  salesPast7dDelta?: Maybe<Scalars['Float']['output']>;
+  salesPast24h?: Maybe<Scalars['Int']['output']>;
+  salesPast24hDelta?: Maybe<Scalars['Float']['output']>;
+  salesPast30d?: Maybe<Scalars['Int']['output']>;
+  salesPast30dDelta?: Maybe<Scalars['Float']['output']>;
+  sellNowFees?: Maybe<Scalars['Float']['output']>;
+  sellNowPrice?: Maybe<Scalars['Float']['output']>;
+  sellNowRoyalties?: Maybe<Scalars['Float']['output']>;
+  sellNowWithFees?: Maybe<Scalars['Float']['output']>;
+  sellNowWithRoyalties?: Maybe<Scalars['Float']['output']>;
+  sellNowWithRoyaltiesAndFees?: Maybe<Scalars['Float']['output']>;
+  slug?: Maybe<Scalars['String']['output']>;
+  sniperSlug?: Maybe<Scalars['String']['output']>;
+  soloImageUrl?: Maybe<Scalars['String']['output']>;
+  soloUsername?: Maybe<Scalars['String']['output']>;
+  soloVerified?: Maybe<Scalars['Boolean']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  subber?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  tensorSlug?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  totalFloorPrice?: Maybe<Scalars['Float']['output']>;
+  totalOwners?: Maybe<Scalars['Int']['output']>;
+  twitch?: Maybe<Scalars['String']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  uniqueOwnersPercentage?: Maybe<Scalars['Float']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  verifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast1h?: Maybe<Scalars['Float']['output']>;
+  volumePast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast7d?: Maybe<Scalars['Float']['output']>;
+  volumePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Float']['output']>;
+  volumePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast30d?: Maybe<Scalars['Float']['output']>;
+  volumePast30dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePrevDay?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast1h?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast7d?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast24h?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast30d?: Maybe<Scalars['Float']['output']>;
+  volumeUsdPast30dDelta?: Maybe<Scalars['Float']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type CollectionFilter = {
+  floorPrice?: InputMaybe<GenericFilter>;
+  items?: InputMaybe<GenericFilter>;
+  listed?: InputMaybe<GenericFilter>;
+  listedPercentage?: InputMaybe<GenericFilter>;
+  salesPast1h?: InputMaybe<GenericFilter>;
+  salesPast7d?: InputMaybe<GenericFilter>;
+  salesPast24h?: InputMaybe<GenericFilter>;
+  salesPast30d?: InputMaybe<GenericFilter>;
+  totalFloorPrice?: InputMaybe<GenericFilter>;
+  uniqueOwnersPercentage?: InputMaybe<GenericFilter>;
+  verifiedAt?: InputMaybe<GenericFilter>;
+  volumePast1h?: InputMaybe<GenericFilter>;
+  volumePast7d?: InputMaybe<GenericFilter>;
+  volumePast24h?: InputMaybe<GenericFilter>;
+  volumePast30d?: InputMaybe<GenericFilter>;
+  volumePrevDay?: InputMaybe<GenericFilter>;
+  volumePrevWeek?: InputMaybe<GenericFilter>;
+};
+
+export type CollectionList = {
+  __typename?: 'CollectionList';
+  nodes?: Maybe<Array<Maybe<Collection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CollectionOffer = {
+  __typename?: 'CollectionOffer';
+  amountOffset?: Maybe<Scalars['Int']['output']>;
+  buyer?: Maybe<Scalars['String']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionKey?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  expiredAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isFunded?: Maybe<Scalars['Boolean']['output']>;
+  isHighest?: Maybe<Scalars['Boolean']['output']>;
+  itemCount?: Maybe<Scalars['Int']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  payRoyalties?: Maybe<Scalars['Boolean']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  status?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CollectionOfferList = {
+  __typename?: 'CollectionOfferList';
+  nodes?: Maybe<Array<Maybe<CollectionOffer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CollectionsOffer = {
+  __typename?: 'CollectionsOffer';
+  attributes?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  bidId?: Maybe<Scalars['String']['output']>;
+  bidPrice?: Maybe<Scalars['Float']['output']>;
+  bidder?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  offerUpdatedAt?: Maybe<Scalars['DateTime']['output']>;
+  quantity?: Maybe<Scalars['Int']['output']>;
+  sellerReceive?: Maybe<Scalars['Float']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  traits?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type CollectionsOfferList = {
+  __typename?: 'CollectionsOfferList';
+  nodes?: Maybe<Array<Maybe<CollectionsOffer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Course = {
+  __typename?: 'Course';
+  bannerURL?: Maybe<Scalars['String']['output']>;
+  categoryId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  endDate?: Maybe<Scalars['DateTime']['output']>;
+  featuredPosition?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isFeatured?: Maybe<Scalars['Boolean']['output']>;
+  logoURL?: Maybe<Scalars['String']['output']>;
+  maxAttendees?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  noExpiry?: Maybe<Scalars['Boolean']['output']>;
+  noMaxAttendees?: Maybe<Scalars['Boolean']['output']>;
+  noOfAttempted?: Maybe<Scalars['Int']['output']>;
+  noOfCompleted?: Maybe<Scalars['Int']['output']>;
+  numberOfTicketAward?: Maybe<Scalars['Int']['output']>;
+  position?: Maybe<Scalars['Int']['output']>;
+  projectName?: Maybe<Scalars['String']['output']>;
+  projectWebsite?: Maybe<Scalars['String']['output']>;
+  startDate?: Maybe<Scalars['DateTime']['output']>;
+  subCategoryId?: Maybe<Scalars['String']['output']>;
+  timeRequired?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type CourseCategory = {
+  __typename?: 'CourseCategory';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  position?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type CourseCategoryList = {
+  __typename?: 'CourseCategoryList';
+  nodes?: Maybe<Array<Maybe<CourseCategory>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CourseList = {
+  __typename?: 'CourseList';
+  nodes?: Maybe<Array<Maybe<Course>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type CourseSubCategory = {
+  __typename?: 'CourseSubCategory';
+  categoryID?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  position?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type CourseSubCategoryList = {
+  __typename?: 'CourseSubCategoryList';
+  nodes?: Maybe<Array<Maybe<CourseSubCategory>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type DeletedCollection = {
+  __typename?: 'DeletedCollection';
+  atlas3?: Maybe<Scalars['String']['output']>;
+  averagePrice?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  candyMachineAddresses?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorEmail?: Maybe<Scalars['String']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  deletedBy?: Maybe<Scalars['String']['output']>;
+  deletionNotes?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  disputedMessage?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  endpoint?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isCurated?: Maybe<Scalars['Boolean']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  links?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  mintListUrl?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  soloImageUrl?: Maybe<Scalars['String']['output']>;
+  soloUsername?: Maybe<Scalars['String']['output']>;
+  soloVerified?: Maybe<Scalars['Boolean']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  subber?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  twitch?: Maybe<Scalars['String']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Float']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type DeletedCollectionList = {
+  __typename?: 'DeletedCollectionList';
+  nodes?: Maybe<Array<Maybe<DeletedCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type DraftCollectionList = {
+  __typename?: 'DraftCollectionList';
+  nodes?: Maybe<Array<Maybe<Collection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type DutchOffer = {
+  __typename?: 'DutchOffer';
+  attributes?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  bump?: Maybe<Scalars['Int']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creators?: Maybe<Scalars['String']['output']>;
+  dasMetadata?: Maybe<Scalars['String']['output']>;
+  downVoteCount?: Maybe<Scalars['Int']['output']>;
+  howrareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  interval?: Maybe<Scalars['Int']['output']>;
+  isNft?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  isSolo?: Maybe<Scalars['Boolean']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  moonRank?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  nextTickAt?: Maybe<Scalars['DateTime']['output']>;
+  onchainMetadata?: Maybe<Scalars['String']['output']>;
+  owner?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  priceStep?: Maybe<Scalars['Float']['output']>;
+  priceToken?: Maybe<Scalars['Float']['output']>;
+  priceUsd?: Maybe<Scalars['Float']['output']>;
+  reservedPrice?: Maybe<Scalars['Float']['output']>;
+  startedAt?: Maybe<Scalars['DateTime']['output']>;
+  startingPrice?: Maybe<Scalars['Float']['output']>;
+  tallyVoteCount?: Maybe<Scalars['Int']['output']>;
+  token?: Maybe<Scalars['String']['output']>;
+  upVoteCount?: Maybe<Scalars['Int']['output']>;
+  uriMetadata?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type DutchOfferList = {
+  __typename?: 'DutchOfferList';
+  nodes?: Maybe<Array<Maybe<DutchOffer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type FeaturedProject = {
+  __typename?: 'FeaturedProject';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  position?: Maybe<Scalars['Int']['output']>;
+  projectUrl?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type FeaturedProjectList = {
+  __typename?: 'FeaturedProjectList';
+  nodes?: Maybe<Array<Maybe<FeaturedProject>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type GenericFilter = {
+  and?: InputMaybe<Array<InputMaybe<GenericFilter>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  or?: InputMaybe<Array<InputMaybe<GenericFilter>>>;
+  value?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Inscription = {
+  __typename?: 'Inscription';
+  active?: Maybe<Scalars['Boolean']['output']>;
+  attributes?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  location?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  number?: Maybe<Scalars['Int']['output']>;
+  onchainMetadata?: Maybe<Scalars['String']['output']>;
+  owner?: Maybe<Scalars['String']['output']>;
+};
+
+export type InscriptionList = {
+  __typename?: 'InscriptionList';
+  nodes?: Maybe<Array<Maybe<Inscription>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Items = {
+  __typename?: 'Items';
+  collectionId?: Maybe<Scalars['String']['output']>;
+  mints?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+};
+
+export type ItemsList = {
+  __typename?: 'ItemsList';
+  nodes?: Maybe<Array<Maybe<Items>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Lending = {
+  __typename?: 'Lending';
+  id?: Maybe<Scalars['String']['output']>;
+  loans?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['String']['output']>;
+  offers?: Maybe<Scalars['String']['output']>;
+};
+
+export type LendingCollectionStats = {
+  __typename?: 'LendingCollectionStats';
+  activeLoansTotal?: Maybe<Scalars['Int']['output']>;
+  availableLiquidity?: Maybe<Scalars['Float']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  collectionName?: Maybe<Scalars['String']['output']>;
+  collectionThumbnailUrl?: Maybe<Scalars['String']['output']>;
+  completedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  completedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast30d?: Maybe<Scalars['Float']['output']>;
+  modifiedAt?: Maybe<Scalars['String']['output']>;
+  totalLiquidity?: Maybe<Scalars['Float']['output']>;
+  tvlTotal?: Maybe<Scalars['Float']['output']>;
+  tvlTotalUsd?: Maybe<Scalars['Float']['output']>;
+  underwaterLoan?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanPercentage?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValue?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsd?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowers?: Maybe<Scalars['Int']['output']>;
+  uniqueLenders?: Maybe<Scalars['Int']['output']>;
+};
+
+export type LendingCollectionStatsList = {
+  __typename?: 'LendingCollectionStatsList';
+  nodes?: Maybe<Array<Maybe<LendingCollectionStats>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type LendingList = {
+  __typename?: 'LendingList';
+  nodes?: Maybe<Array<Maybe<Lending>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type LendingPool = {
+  __typename?: 'LendingPool';
+  availableLiquidity?: Maybe<Scalars['Float']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  collectionKey?: Maybe<Scalars['String']['output']>;
+  collectionName?: Maybe<Scalars['String']['output']>;
+  collectionThumbnailUrl?: Maybe<Scalars['String']['output']>;
+  depositYieldApy?: Maybe<Scalars['Float']['output']>;
+  duration?: Maybe<Scalars['Float']['output']>;
+  highestOffer?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  interestRate?: Maybe<Scalars['Float']['output']>;
+  lastLoan?: Maybe<Scalars['Float']['output']>;
+  lowestOffer?: Maybe<Scalars['Float']['output']>;
+  ltv?: Maybe<Scalars['Float']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  minInterestRate?: Maybe<Scalars['Float']['output']>;
+  minYieldApy?: Maybe<Scalars['Float']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  totalLiquidity?: Maybe<Scalars['Float']['output']>;
+};
+
+export type LendingPoolList = {
+  __typename?: 'LendingPoolList';
+  nodes?: Maybe<Array<Maybe<LendingPool>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Lesson = {
+  __typename?: 'Lesson';
+  courseID?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  mediaURL?: Maybe<Scalars['String']['output']>;
+  position?: Maybe<Scalars['Int']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type LessonList = {
+  __typename?: 'LessonList';
+  nodes?: Maybe<Array<Maybe<Lesson>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Metrics = {
+  __typename?: 'Metrics';
+  btcUSD?: Maybe<Scalars['Float']['output']>;
+  collections?: Maybe<Scalars['Int']['output']>;
+  community?: Maybe<Scalars['Int']['output']>;
+  ethUSD?: Maybe<Scalars['Float']['output']>;
+  offers?: Maybe<Scalars['Int']['output']>;
+  solUSD?: Maybe<Scalars['Float']['output']>;
+  tps?: Maybe<Scalars['Int']['output']>;
+  volumeTotal?: Maybe<Scalars['Float']['output']>;
+};
+
+export type MetricsList = {
+  __typename?: 'MetricsList';
+  nodes?: Maybe<Array<Maybe<Metrics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type MintCalendarCollection = {
+  __typename?: 'MintCalendarCollection';
+  atlas3GiveawayUrl?: Maybe<Scalars['String']['output']>;
+  blockchain?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorEmail?: Maybe<Scalars['String']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isApproved?: Maybe<Scalars['Boolean']['output']>;
+  isOwn?: Maybe<Scalars['Boolean']['output']>;
+  isRejected?: Maybe<Scalars['Boolean']['output']>;
+  launchDate?: Maybe<Scalars['DateTime']['output']>;
+  launchpadUrl?: Maybe<Scalars['String']['output']>;
+  logoUrl?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  subberGiveawayUrl?: Maybe<Scalars['String']['output']>;
+  subberPresaleUrl?: Maybe<Scalars['String']['output']>;
+  supply?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  twitterFollowers?: Maybe<Scalars['Int']['output']>;
+  twitterImageProfileUrl?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  upvoteCount?: Maybe<Scalars['String']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+};
+
+export type MintCalendarCollectionList = {
+  __typename?: 'MintCalendarCollectionList';
+  nodes?: Maybe<Array<Maybe<MintCalendarCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type MintList = {
+  __typename?: 'MintList';
+  nodes?: Maybe<Array<Maybe<MintMetadata>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type MintMetadata = {
+  __typename?: 'MintMetadata';
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  howrareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  lastSeenSignature?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  moonRank?: Maybe<Scalars['Int']['output']>;
+};
+
+export type NftNews = {
+  __typename?: 'NFTNews';
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  imageUrl?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  preview?: Maybe<Scalars['String']['output']>;
+  publishDate?: Maybe<Scalars['DateTime']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  sourceTitle?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type NftNewsList = {
+  __typename?: 'NFTNewsList';
+  nodes?: Maybe<Array<Maybe<NftNews>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type NftToken = {
+  __typename?: 'NFTToken';
+  address?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  collectionName?: Maybe<Scalars['String']['output']>;
+  collectionThumbnailUrl?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  decimal?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isActive?: Maybe<Scalars['Boolean']['output']>;
+  logoUrl?: Maybe<Scalars['String']['output']>;
+  marketCap?: Maybe<Scalars['Float']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  p1hChangePercent?: Maybe<Scalars['Float']['output']>;
+  p7dChangePercent?: Maybe<Scalars['Float']['output']>;
+  p24hChangePercent?: Maybe<Scalars['Float']['output']>;
+  p30dChangePercent?: Maybe<Scalars['Float']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  priceUpdatedAt?: Maybe<Scalars['DateTime']['output']>;
+  symbol?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  v24hChangePercent?: Maybe<Scalars['Float']['output']>;
+  v24hUsd?: Maybe<Scalars['Float']['output']>;
+};
+
+export type NftTokenHistory = {
+  __typename?: 'NFTTokenHistory';
+  address?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  from?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  priceUpdatedAt?: Maybe<Scalars['DateTime']['output']>;
+  symbol?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type NftTokenHistoryList = {
+  __typename?: 'NFTTokenHistoryList';
+  nodes?: Maybe<Array<Maybe<NftTokenHistory>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type NftTokenList = {
+  __typename?: 'NFTTokenList';
+  nodes?: Maybe<Array<Maybe<NftToken>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Offer = {
+  __typename?: 'Offer';
+  attributes?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  bump?: Maybe<Scalars['Int']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creators?: Maybe<Scalars['String']['output']>;
+  dasMetadata?: Maybe<Scalars['String']['output']>;
+  downVoteCount?: Maybe<Scalars['Int']['output']>;
+  howrareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isNft?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  isSolo?: Maybe<Scalars['Boolean']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  moonRank?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  onchainMetadata?: Maybe<Scalars['String']['output']>;
+  owner?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  priceToken?: Maybe<Scalars['Float']['output']>;
+  priceUsd?: Maybe<Scalars['Float']['output']>;
+  tallyVoteCount?: Maybe<Scalars['Int']['output']>;
+  token?: Maybe<Scalars['String']['output']>;
+  upVoteCount?: Maybe<Scalars['Int']['output']>;
+  uriMetadata?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type OfferFilter = {
+  attributes?: InputMaybe<AttributesFilter>;
+};
+
+export type OfferList = {
+  __typename?: 'OfferList';
+  nodes?: Maybe<Array<Maybe<Offer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type OrdinalsCollection = {
+  __typename?: 'OrdinalsCollection';
+  averagePrice?: Maybe<Scalars['Int']['output']>;
+  averagePriceDelta?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Int']['output']>;
+  floorPriceDelta?: Maybe<Scalars['Float']['output']>;
+  highestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isFeatured?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  lowestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  me_slug?: Maybe<Scalars['String']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  okx_slug?: Maybe<Scalars['String']['output']>;
+  ordinalswallet_slug?: Maybe<Scalars['String']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  totalFloorPrice?: Maybe<Scalars['Int']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Int']['output']>;
+  volumePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Int']['output']>;
+  volumePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Int']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type OrdinalsCollectionList = {
+  __typename?: 'OrdinalsCollectionList';
+  nodes?: Maybe<Array<Maybe<OrdinalsCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type OrdinalsDeletedCollection = {
+  __typename?: 'OrdinalsDeletedCollection';
+  averagePrice?: Maybe<Scalars['Int']['output']>;
+  averagePriceDelta?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  deletedBy?: Maybe<Scalars['String']['output']>;
+  deletionNotes?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Int']['output']>;
+  floorPriceDelta?: Maybe<Scalars['Float']['output']>;
+  highestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isFeatured?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  lowestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  me_slug?: Maybe<Scalars['String']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  okx_slug?: Maybe<Scalars['String']['output']>;
+  ordinalswallet_slug?: Maybe<Scalars['String']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  totalFloorPrice?: Maybe<Scalars['Int']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Int']['output']>;
+  volumePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Int']['output']>;
+  volumePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Int']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type OrdinalsDeletedCollectionList = {
+  __typename?: 'OrdinalsDeletedCollectionList';
+  nodes?: Maybe<Array<Maybe<OrdinalsDeletedCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type OrdinalsDraftCollection = {
+  __typename?: 'OrdinalsDraftCollection';
+  averagePrice?: Maybe<Scalars['Int']['output']>;
+  averagePriceDelta?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Int']['output']>;
+  floorPriceDelta?: Maybe<Scalars['Float']['output']>;
+  highestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isFeatured?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  lowestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  totalFloorPrice?: Maybe<Scalars['Int']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Int']['output']>;
+  volumePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Int']['output']>;
+  volumePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Int']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type OrdinalsDraftCollectionList = {
+  __typename?: 'OrdinalsDraftCollectionList';
+  nodes?: Maybe<Array<Maybe<OrdinalsDraftCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type OrdinalsItems = {
+  __typename?: 'OrdinalsItems';
+  collectionId?: Maybe<Scalars['String']['output']>;
+  mints?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+};
+
+export type OrdinalsItemsList = {
+  __typename?: 'OrdinalsItemsList';
+  nodes?: Maybe<Array<Maybe<OrdinalsItems>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type OrdinalsUpdatedCollection = {
+  __typename?: 'OrdinalsUpdatedCollection';
+  averagePrice?: Maybe<Scalars['Int']['output']>;
+  averagePriceDelta?: Maybe<Scalars['Float']['output']>;
+  bannerUrl?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creatorId?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discord?: Maybe<Scalars['String']['output']>;
+  documentation?: Maybe<Scalars['String']['output']>;
+  facebook?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Int']['output']>;
+  floorPriceDelta?: Maybe<Scalars['Float']['output']>;
+  highestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagram?: Maybe<Scalars['String']['output']>;
+  isDerivative?: Maybe<Scalars['Boolean']['output']>;
+  isFeatured?: Maybe<Scalars['Boolean']['output']>;
+  isNsfw?: Maybe<Scalars['Boolean']['output']>;
+  items?: Maybe<Scalars['Int']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  lowestInscriptionNum?: Maybe<Scalars['Int']['output']>;
+  me_slug?: Maybe<Scalars['String']['output']>;
+  medium?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  okx_slug?: Maybe<Scalars['String']['output']>;
+  ordinalswallet_slug?: Maybe<Scalars['String']['output']>;
+  roadmap?: Maybe<Scalars['String']['output']>;
+  state?: Maybe<Scalars['Int']['output']>;
+  team?: Maybe<Scalars['String']['output']>;
+  telegram?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  tiktok?: Maybe<Scalars['String']['output']>;
+  totalFloorPrice?: Maybe<Scalars['Int']['output']>;
+  twitter?: Maybe<Scalars['String']['output']>;
+  verifeyed?: Maybe<Scalars['Boolean']['output']>;
+  volumeModifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Int']['output']>;
+  volumePast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Int']['output']>;
+  volumePast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Int']['output']>;
+  website?: Maybe<Scalars['String']['output']>;
+  whitepaper?: Maybe<Scalars['String']['output']>;
+  youtube?: Maybe<Scalars['String']['output']>;
+};
+
+export type OrdinalsUpdatedCollectionList = {
+  __typename?: 'OrdinalsUpdatedCollectionList';
+  nodes?: Maybe<Array<Maybe<OrdinalsUpdatedCollection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Ownership = {
+  __typename?: 'Ownership';
+  amount?: Maybe<Scalars['Int']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  wallet?: Maybe<Scalars['String']['output']>;
+};
+
+export type OwnershipList = {
+  __typename?: 'OwnershipList';
+  nodes?: Maybe<Array<Maybe<Ownership>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Profile = {
+  __typename?: 'Profile';
+  bannerURL?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  discordImageURL?: Maybe<Scalars['String']['output']>;
+  discordUsername?: Maybe<Scalars['String']['output']>;
+  discordVerified?: Maybe<Scalars['Boolean']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  emailVerified?: Maybe<Scalars['Boolean']['output']>;
+  googleImageURL?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  instagramImageURL?: Maybe<Scalars['String']['output']>;
+  instagramUsername?: Maybe<Scalars['String']['output']>;
+  instagramVerified?: Maybe<Scalars['Boolean']['output']>;
+  referralCode?: Maybe<Scalars['String']['output']>;
+  referredBy?: Maybe<Scalars['String']['output']>;
+  referrerCount?: Maybe<Scalars['Int']['output']>;
+  telegramID?: Maybe<Scalars['String']['output']>;
+  telegramImageURL?: Maybe<Scalars['String']['output']>;
+  telegramUsername?: Maybe<Scalars['String']['output']>;
+  telegramVerified?: Maybe<Scalars['Boolean']['output']>;
+  thumbnailURL?: Maybe<Scalars['String']['output']>;
+  twitterID?: Maybe<Scalars['String']['output']>;
+  twitterImageURL?: Maybe<Scalars['String']['output']>;
+  twitterUsername?: Maybe<Scalars['String']['output']>;
+  twitterVerified?: Maybe<Scalars['Boolean']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  username?: Maybe<Scalars['String']['output']>;
+  wallets?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  youtubeImageURL?: Maybe<Scalars['String']['output']>;
+  youtubeUsername?: Maybe<Scalars['String']['output']>;
+  youtubeVerified?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type ProfileList = {
+  __typename?: 'ProfileList';
+  nodes?: Maybe<Array<Maybe<Profile>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Question = {
+  __typename?: 'Question';
+  answers?: Maybe<Array<Maybe<Answer>>>;
+  courseID?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type QuestionList = {
+  __typename?: 'QuestionList';
+  nodes?: Maybe<Array<Maybe<Question>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Raffle = {
+  __typename?: 'Raffle';
+  collectionId?: Maybe<Scalars['String']['output']>;
+  collectionName?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  creator?: Maybe<Scalars['String']['output']>;
+  creators?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  endDate?: Maybe<Scalars['DateTime']['output']>;
+  floorPrice?: Maybe<Scalars['Float']['output']>;
+  howRareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  mintName?: Maybe<Scalars['String']['output']>;
+  moonrankRank?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  prize?: Maybe<Scalars['String']['output']>;
+  sold?: Maybe<Scalars['Int']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  startDate?: Maybe<Scalars['DateTime']['output']>;
+  supply?: Maybe<Scalars['Int']['output']>;
+  updateAuthority?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleCountAnalytics = {
+  __typename?: 'RaffleCountAnalytics';
+  count?: Maybe<Scalars['Float']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleCountAnalyticsList = {
+  __typename?: 'RaffleCountAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleCountAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleCreatorAnalytics = {
+  __typename?: 'RaffleCreatorAnalytics';
+  createdAt?: Maybe<Scalars['String']['output']>;
+  creatorCount?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleCreatorAnalyticsList = {
+  __typename?: 'RaffleCreatorAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleCreatorAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleList = {
+  __typename?: 'RaffleList';
+  nodes?: Maybe<Array<Maybe<Raffle>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleNoOfTicketsVsTicketsSoldAnalytics = {
+  __typename?: 'RaffleNoOfTicketsVsTicketsSoldAnalytics';
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  noOfTickets?: Maybe<Scalars['Float']['output']>;
+  percentageOfTickets?: Maybe<Scalars['Float']['output']>;
+  raffleId?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleNoOfTicketsVsTicketsSoldAnalyticsList = {
+  __typename?: 'RaffleNoOfTicketsVsTicketsSoldAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleNoOfTicketsVsTicketsSoldAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleTtVsTicketsSoldAnalytics = {
+  __typename?: 'RaffleTTVsTicketsSoldAnalytics';
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  percentageOfTickets?: Maybe<Scalars['Float']['output']>;
+  raffleId?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  ttvOfFP?: Maybe<Scalars['Float']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleTtVsTicketsSoldAnalyticsList = {
+  __typename?: 'RaffleTTVsTicketsSoldAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleTtVsTicketsSoldAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleTableAnalytics = {
+  __typename?: 'RaffleTableAnalytics';
+  PercentagePurchasedVolume?: Maybe<Scalars['Float']['output']>;
+  avgPricePerTicket?: Maybe<Scalars['Float']['output']>;
+  avgTicketsPerPurchase?: Maybe<Scalars['Float']['output']>;
+  avgTicketsPerRaffle?: Maybe<Scalars['Float']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  totalOngoing?: Maybe<Scalars['Float']['output']>;
+  totalOngoingVolume?: Maybe<Scalars['Float']['output']>;
+  totalOngoingVolumeUSD?: Maybe<Scalars['Float']['output']>;
+  totalPurchasedVolume?: Maybe<Scalars['Float']['output']>;
+  totalPurchasedVolumeUSD?: Maybe<Scalars['Float']['output']>;
+  totalTickets?: Maybe<Scalars['Int']['output']>;
+  totalTicketsBought?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleTableAnalyticsList = {
+  __typename?: 'RaffleTableAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleTableAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleTicketBuyersAnalytics = {
+  __typename?: 'RaffleTicketBuyersAnalytics';
+  count?: Maybe<Scalars['Float']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type RaffleTicketBuyersAnalyticsList = {
+  __typename?: 'RaffleTicketBuyersAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleTicketBuyersAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RaffleVolumeAnalytics = {
+  __typename?: 'RaffleVolumeAnalytics';
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  source?: Maybe<Scalars['String']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  volume?: Maybe<Scalars['Float']['output']>;
+};
+
+export type RaffleVolumeAnalyticsList = {
+  __typename?: 'RaffleVolumeAnalyticsList';
+  nodes?: Maybe<Array<Maybe<RaffleVolumeAnalytics>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type RootQuery = {
+  __typename?: 'RootQuery';
+  answer?: Maybe<AnswerList>;
+  collectionFilters?: Maybe<AdvanceCollectionFiltersList>;
+  collectionOffers?: Maybe<CollectionOfferList>;
+  collections?: Maybe<CollectionList>;
+  collectionsOffer?: Maybe<CollectionsOfferList>;
+  course?: Maybe<CourseList>;
+  courseCategory?: Maybe<CourseCategoryList>;
+  courseSubCategory?: Maybe<CourseSubCategoryList>;
+  deletedCollections?: Maybe<DeletedCollectionList>;
+  draftCollections?: Maybe<DraftCollectionList>;
+  dutchOffers?: Maybe<DutchOfferList>;
+  featuredProject?: Maybe<FeaturedProjectList>;
+  inscription?: Maybe<InscriptionList>;
+  items?: Maybe<ItemsList>;
+  lendingCollectionStats?: Maybe<LendingCollectionStatsList>;
+  lendingPools?: Maybe<LendingPoolList>;
+  lendings?: Maybe<LendingList>;
+  lesson?: Maybe<LessonList>;
+  metrics?: Maybe<MetricsList>;
+  mintCalendar?: Maybe<MintCalendarCollectionList>;
+  mints?: Maybe<MintList>;
+  nftNews?: Maybe<NftNewsList>;
+  nftToken?: Maybe<NftTokenList>;
+  nftTokenHistory?: Maybe<NftTokenHistoryList>;
+  offers?: Maybe<OfferList>;
+  ordinalsCollection?: Maybe<OrdinalsCollectionList>;
+  ordinalsDeletedCollection?: Maybe<OrdinalsDeletedCollectionList>;
+  ordinalsDraftCollection?: Maybe<OrdinalsDraftCollectionList>;
+  ordinalsItems?: Maybe<OrdinalsItemsList>;
+  ordinalsUpdatedCollection?: Maybe<OrdinalsUpdatedCollectionList>;
+  ownership?: Maybe<OwnershipList>;
+  profile?: Maybe<ProfileList>;
+  question?: Maybe<QuestionList>;
+  raffle?: Maybe<RaffleList>;
+  raffleCountAnalytics?: Maybe<RaffleCountAnalyticsList>;
+  raffleCreatorAnalytics?: Maybe<RaffleCreatorAnalyticsList>;
+  raffleNoOfTicketsVsTicketsSoldAnalytics?: Maybe<RaffleNoOfTicketsVsTicketsSoldAnalyticsList>;
+  raffleTTVsTicketsSoldAnalytics?: Maybe<RaffleTtVsTicketsSoldAnalyticsList>;
+  raffleTableAnalytics?: Maybe<RaffleTableAnalyticsList>;
+  raffleTicketBuyersAnalytic?: Maybe<RaffleTicketBuyersAnalyticsList>;
+  raffleVolumeAnalytics?: Maybe<RaffleVolumeAnalyticsList>;
+  salesView?: Maybe<SalesViewList>;
+  smartBidOffers?: Maybe<SmartBidOfferList>;
+  statSnapshots?: Maybe<StatSnapshotList>;
+  statSnapshotsEcosystem?: Maybe<StatSnapshotEcosystemList>;
+  statSnapshotsLending?: Maybe<StatSnapshotLendingList>;
+  statSnapshotsLendingEcosystem?: Maybe<StatSnapshotLendingEcosystemList>;
+  statSnapshotsMarketplace?: Maybe<StatSnapshotMarketplaceList>;
+  statSnapshotsV2?: Maybe<StatSnapshotV2List>;
+  transactions?: Maybe<TransactionList>;
+  twitterSpace?: Maybe<TwitterSpaceList>;
+  twitterTweet?: Maybe<TwitterTweetList>;
+  updatedCollections?: Maybe<UpdatedCollectionList>;
+  user?: Maybe<UserList>;
+  userQuizProgress?: Maybe<UserQuizProgressList>;
+  walletStats24HourList?: Maybe<WalletStats24HourList>;
+  walletStatsAllTime?: Maybe<WalletStatsAllTimeList>;
+  walletStatsMonthly?: Maybe<WalletStatsMonthlyList>;
+  walletStatsWeekly?: Maybe<WalletStatsWeeklyList>;
+};
+
+
+export type RootQueryAnswerArgs = {
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  questionID?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryCollectionFiltersArgs = {
+  collection?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  traits?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryCollectionOffersArgs = {
+  amountOffset?: InputMaybe<Scalars['Int']['input']>;
+  buyer?: InputMaybe<Scalars['String']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionKey?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  expiredAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isFunded?: InputMaybe<Scalars['Boolean']['input']>;
+  isHighest?: InputMaybe<Scalars['Boolean']['input']>;
+  itemCount?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  payRoyalties?: InputMaybe<Scalars['Boolean']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type RootQueryCollectionsArgs = {
+  atlas3?: InputMaybe<Scalars['String']['input']>;
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  candyMachineAddresses?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  collectionKey?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorEmail?: InputMaybe<Scalars['String']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  disputedMessage?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  endpoint?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<CollectionFilter>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPrice1hAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPrice7dAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPrice24hAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPrice30dAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceFees?: InputMaybe<Scalars['Float']['input']>;
+  floorPricePast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPricePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPricePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPricePast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsd1hAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsd7dAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsd24hAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsd30dAgo?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsdPast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsdPast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsdPast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsdPast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithFees?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyaltiesAndFees?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isCurated?: InputMaybe<Scalars['Boolean']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Scalars['String']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  listedPercentage?: InputMaybe<Scalars['Float']['input']>;
+  listings1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  meSlug?: InputMaybe<Scalars['String']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  mintListUrl?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owners1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  owners7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  owners24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  owners30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  royalties?: InputMaybe<Scalars['Float']['input']>;
+  salesPast1h?: InputMaybe<Scalars['Int']['input']>;
+  salesPast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesPast7d?: InputMaybe<Scalars['Int']['input']>;
+  salesPast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesPast24h?: InputMaybe<Scalars['Int']['input']>;
+  salesPast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesPast30d?: InputMaybe<Scalars['Int']['input']>;
+  salesPast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  sellNowFees?: InputMaybe<Scalars['Float']['input']>;
+  sellNowPrice?: InputMaybe<Scalars['Float']['input']>;
+  sellNowRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  sellNowWithFees?: InputMaybe<Scalars['Float']['input']>;
+  sellNowWithRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  sellNowWithRoyaltiesAndFees?: InputMaybe<Scalars['Float']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  sniperSlug?: InputMaybe<Scalars['String']['input']>;
+  soloImageUrl?: InputMaybe<Scalars['String']['input']>;
+  soloUsername?: InputMaybe<Scalars['String']['input']>;
+  soloVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  subber?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  tensorSlug?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  totalFloorPrice?: InputMaybe<Scalars['Float']['input']>;
+  totalOwners?: InputMaybe<Scalars['Int']['input']>;
+  twitch?: InputMaybe<Scalars['String']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  uniqueOwnersPercentage?: InputMaybe<Scalars['Float']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  verifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumePast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePrevDay?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  volumeUsdPast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumeUsdPast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryCollectionsOfferArgs = {
+  attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bidId?: InputMaybe<Scalars['String']['input']>;
+  bidPrice?: InputMaybe<Scalars['Float']['input']>;
+  bidder?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offerUpdatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  quantity?: InputMaybe<Scalars['Int']['input']>;
+  sellerReceive?: InputMaybe<Scalars['Float']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  traits?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryCourseArgs = {
+  bannerURL?: InputMaybe<Scalars['String']['input']>;
+  categoryId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  featuredPosition?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  logoURL?: InputMaybe<Scalars['String']['input']>;
+  maxAttendees?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  noExpiry?: InputMaybe<Scalars['Boolean']['input']>;
+  noMaxAttendees?: InputMaybe<Scalars['Boolean']['input']>;
+  noOfAttempted?: InputMaybe<Scalars['Int']['input']>;
+  noOfCompleted?: InputMaybe<Scalars['Int']['input']>;
+  numberOfTicketAward?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  position?: InputMaybe<Scalars['Int']['input']>;
+  projectName?: InputMaybe<Scalars['String']['input']>;
+  projectWebsite?: InputMaybe<Scalars['String']['input']>;
+  startDate?: InputMaybe<Scalars['DateTime']['input']>;
+  subCategoryId?: InputMaybe<Scalars['String']['input']>;
+  timeRequired?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryCourseCategoryArgs = {
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  position?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryCourseSubCategoryArgs = {
+  categoryID?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  position?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryDeletedCollectionsArgs = {
+  atlas3?: InputMaybe<Scalars['String']['input']>;
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  candyMachineAddresses?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorEmail?: InputMaybe<Scalars['String']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  deletedBy?: InputMaybe<Scalars['String']['input']>;
+  deletionNotes?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  disputedMessage?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  endpoint?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isCurated?: InputMaybe<Scalars['Boolean']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Scalars['String']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  mintListUrl?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  soloImageUrl?: InputMaybe<Scalars['String']['input']>;
+  soloUsername?: InputMaybe<Scalars['String']['input']>;
+  soloVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  subber?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  twitch?: InputMaybe<Scalars['String']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryDraftCollectionsArgs = {
+  atlas3?: InputMaybe<Scalars['String']['input']>;
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  candyMachineAddresses?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorEmail?: InputMaybe<Scalars['String']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  deletedBy?: InputMaybe<Scalars['String']['input']>;
+  deletionNotes?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  disputedMessage?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  endpoint?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isCurated?: InputMaybe<Scalars['Boolean']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Scalars['String']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  mintListUrl?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  soloImageUrl?: InputMaybe<Scalars['String']['input']>;
+  soloUsername?: InputMaybe<Scalars['String']['input']>;
+  soloVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  subber?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  twitch?: InputMaybe<Scalars['String']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryDutchOffersArgs = {
+  attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bump?: InputMaybe<Scalars['Int']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creators?: InputMaybe<Scalars['String']['input']>;
+  dasMetadata?: InputMaybe<Scalars['String']['input']>;
+  downVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  howrareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  interval?: InputMaybe<Scalars['Int']['input']>;
+  isNft?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  isSolo?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  moonRank?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  nextTickAt?: InputMaybe<Scalars['DateTime']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  onchainMetadata?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  priceStep?: InputMaybe<Scalars['Float']['input']>;
+  priceToken?: InputMaybe<Scalars['Float']['input']>;
+  priceUsd?: InputMaybe<Scalars['Float']['input']>;
+  reservedPrice?: InputMaybe<Scalars['Float']['input']>;
+  startedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  startingPrice?: InputMaybe<Scalars['Float']['input']>;
+  tallyVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  token?: InputMaybe<Scalars['String']['input']>;
+  upVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  uriMetadata?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type RootQueryFeaturedProjectArgs = {
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  position?: InputMaybe<Scalars['Int']['input']>;
+  projectUrl?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryInscriptionArgs = {
+  active?: InputMaybe<Scalars['Boolean']['input']>;
+  attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  location?: InputMaybe<Scalars['String']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  number?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  onchainMetadata?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryItemsArgs = {
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  mints?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryLendingCollectionStatsArgs = {
+  activeLoansTotal?: InputMaybe<Scalars['Int']['input']>;
+  availableLiquidity?: InputMaybe<Scalars['Float']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  collectionName?: InputMaybe<Scalars['String']['input']>;
+  collectionThumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  completedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast30d?: InputMaybe<Scalars['Float']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  modifiedAt?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  totalLiquidity?: InputMaybe<Scalars['Float']['input']>;
+  tvlTotal?: InputMaybe<Scalars['Float']['input']>;
+  tvlTotalUsd?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoan?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanPercentage?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValue?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsd?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowers?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLenders?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type RootQueryLendingPoolsArgs = {
+  availableLiquidity?: InputMaybe<Scalars['Float']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  collectionKey?: InputMaybe<Scalars['String']['input']>;
+  collectionName?: InputMaybe<Scalars['String']['input']>;
+  collectionThumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  depositYieldApy?: InputMaybe<Scalars['Float']['input']>;
+  duration?: InputMaybe<Scalars['Float']['input']>;
+  highestOffer?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  interestRate?: InputMaybe<Scalars['Float']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastLoan?: InputMaybe<Scalars['Float']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  lowestOffer?: InputMaybe<Scalars['Float']['input']>;
+  ltv?: InputMaybe<Scalars['Float']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  minInterestRate?: InputMaybe<Scalars['Float']['input']>;
+  minYieldApy?: InputMaybe<Scalars['Float']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  totalLiquidity?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryLendingsArgs = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  loans?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['String']['input']>;
+  offers?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryLessonArgs = {
+  courseID?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  mediaURL?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  position?: InputMaybe<Scalars['Int']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryMetricsArgs = {
+  btcUSD?: InputMaybe<Scalars['Float']['input']>;
+  collections?: InputMaybe<Scalars['Int']['input']>;
+  community?: InputMaybe<Scalars['Int']['input']>;
+  ethUSD?: InputMaybe<Scalars['Float']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offers?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  solUSD?: InputMaybe<Scalars['Float']['input']>;
+  tps?: InputMaybe<Scalars['Int']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryMintCalendarArgs = {
+  atlas3GiveawayUrl?: InputMaybe<Scalars['String']['input']>;
+  blockchain?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorEmail?: InputMaybe<Scalars['String']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isApproved?: InputMaybe<Scalars['Boolean']['input']>;
+  isOwn?: InputMaybe<Scalars['Boolean']['input']>;
+  isRejected?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  launchDate?: InputMaybe<Scalars['String']['input']>;
+  launchpadUrl?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  logoUrl?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  subberGiveawayUrl?: InputMaybe<Scalars['String']['input']>;
+  subberPresaleUrl?: InputMaybe<Scalars['String']['input']>;
+  supply?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  twitterFollowers?: InputMaybe<Scalars['Int']['input']>;
+  twitterImageProfileUrl?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  upvoteCount?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryMintsArgs = {
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  howrareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastSeenSignature?: InputMaybe<Scalars['String']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  moonRank?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryNftNewsArgs = {
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  imageUrl?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['String']['input']>;
+  publishDate?: InputMaybe<Scalars['DateTime']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  sourceTitle?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryNftTokenArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  collectionName?: InputMaybe<Scalars['String']['input']>;
+  collectionThumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  decimal?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isActive?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  logoUrl?: InputMaybe<Scalars['String']['input']>;
+  marketCap?: InputMaybe<Scalars['Float']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  p1hChangePercent?: InputMaybe<Scalars['Float']['input']>;
+  p7dChangePercent?: InputMaybe<Scalars['Float']['input']>;
+  p24hChangePercent?: InputMaybe<Scalars['Float']['input']>;
+  p30dChangePercent?: InputMaybe<Scalars['Float']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  priceUpdatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  symbol?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  v24hChangePercent?: InputMaybe<Scalars['Float']['input']>;
+  v24hUsd?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryNftTokenHistoryArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  from?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  priceUpdatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  symbol?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryOffersArgs = {
+  attributes?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bump?: InputMaybe<Scalars['Int']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creators?: InputMaybe<Scalars['String']['input']>;
+  dasMetadata?: InputMaybe<Scalars['String']['input']>;
+  downVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  filter?: InputMaybe<OfferFilter>;
+  howrareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  includeDutch?: InputMaybe<Scalars['Boolean']['input']>;
+  isNft?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  isSolo?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  moonRank?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  onchainMetadata?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  priceToken?: InputMaybe<Scalars['Float']['input']>;
+  priceUsd?: InputMaybe<Scalars['Float']['input']>;
+  tallyVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  token?: InputMaybe<Scalars['String']['input']>;
+  upVoteCount?: InputMaybe<Scalars['Int']['input']>;
+  uriMetadata?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type RootQueryOrdinalsCollectionArgs = {
+  averagePrice?: InputMaybe<Scalars['Int']['input']>;
+  averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  highestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  lowestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  me_slug?: InputMaybe<Scalars['String']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  okx_slug?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  ordinalswallet_slug?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  totalFloorPrice?: InputMaybe<Scalars['Int']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Int']['input']>;
+  volumePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Int']['input']>;
+  volumePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryOrdinalsDeletedCollectionArgs = {
+  averagePrice?: InputMaybe<Scalars['Int']['input']>;
+  averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  deletedBy?: InputMaybe<Scalars['String']['input']>;
+  deletionNotes?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  highestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  lowestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  me_slug?: InputMaybe<Scalars['String']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  okx_slug?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  ordinalswallet_slug?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  totalFloorPrice?: InputMaybe<Scalars['Int']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Int']['input']>;
+  volumePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Int']['input']>;
+  volumePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryOrdinalsDraftCollectionArgs = {
+  averagePrice?: InputMaybe<Scalars['Int']['input']>;
+  averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  highestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  lowestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  totalFloorPrice?: InputMaybe<Scalars['Int']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Int']['input']>;
+  volumePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Int']['input']>;
+  volumePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryOrdinalsItemsArgs = {
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  mints?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryOrdinalsUpdatedCollectionArgs = {
+  averagePrice?: InputMaybe<Scalars['Int']['input']>;
+  averagePriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPriceDelta?: InputMaybe<Scalars['Float']['input']>;
+  highestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isFeatured?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  lowestInscriptionNum?: InputMaybe<Scalars['Int']['input']>;
+  me_slug?: InputMaybe<Scalars['String']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  okx_slug?: InputMaybe<Scalars['String']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  ordinalswallet_slug?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  totalFloorPrice?: InputMaybe<Scalars['Int']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Int']['input']>;
+  volumePast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Int']['input']>;
+  volumePast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryOwnershipArgs = {
+  amount?: InputMaybe<Scalars['Int']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  wallet?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryProfileArgs = {
+  bannerURL?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discordImageURL?: InputMaybe<Scalars['String']['input']>;
+  discordUsername?: InputMaybe<Scalars['String']['input']>;
+  discordVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  emailVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  googleImageURL?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagramImageURL?: InputMaybe<Scalars['String']['input']>;
+  instagramUsername?: InputMaybe<Scalars['String']['input']>;
+  instagramVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  referralCode?: InputMaybe<Scalars['String']['input']>;
+  referredBy?: InputMaybe<Scalars['String']['input']>;
+  referrerCount?: InputMaybe<Scalars['Int']['input']>;
+  telegramID?: InputMaybe<Scalars['String']['input']>;
+  telegramImageURL?: InputMaybe<Scalars['String']['input']>;
+  telegramUsername?: InputMaybe<Scalars['String']['input']>;
+  telegramVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  thumbnailURL?: InputMaybe<Scalars['String']['input']>;
+  twitterID?: InputMaybe<Scalars['String']['input']>;
+  twitterImageURL?: InputMaybe<Scalars['String']['input']>;
+  twitterUsername?: InputMaybe<Scalars['String']['input']>;
+  twitterVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  username?: InputMaybe<Scalars['String']['input']>;
+  wallets?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  youtubeImageURL?: InputMaybe<Scalars['String']['input']>;
+  youtubeUsername?: InputMaybe<Scalars['String']['input']>;
+  youtubeVerified?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type RootQueryQuestionArgs = {
+  courseID?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleArgs = {
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  collectionName?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creator?: InputMaybe<Scalars['String']['input']>;
+  creators?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  endDate?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  howRareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  mintName?: InputMaybe<Scalars['String']['input']>;
+  moonrankRank?: InputMaybe<Scalars['Int']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  prize?: InputMaybe<Scalars['String']['input']>;
+  sold?: InputMaybe<Scalars['Int']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  startDate?: InputMaybe<Scalars['DateTime']['input']>;
+  supply?: InputMaybe<Scalars['Int']['input']>;
+  updateAuthority?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleCountAnalyticsArgs = {
+  count?: InputMaybe<Scalars['Float']['input']>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleCreatorAnalyticsArgs = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  creatorCount?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleNoOfTicketsVsTicketsSoldAnalyticsArgs = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  noOfTickets?: InputMaybe<Scalars['Float']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  percentageOfTickets?: InputMaybe<Scalars['Float']['input']>;
+  raffleId?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleTtVsTicketsSoldAnalyticsArgs = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  percentageOfTickets?: InputMaybe<Scalars['Float']['input']>;
+  raffleId?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  ttvOfFP?: InputMaybe<Scalars['Float']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleTableAnalyticsArgs = {
+  PercentagePurchasedVolume?: InputMaybe<Scalars['Float']['input']>;
+  avgPricePerTicket?: InputMaybe<Scalars['Float']['input']>;
+  avgTicketsPerPurchase?: InputMaybe<Scalars['Float']['input']>;
+  avgTicketsPerRaffle?: InputMaybe<Scalars['Float']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  totalOngoing?: InputMaybe<Scalars['Float']['input']>;
+  totalOngoingVolume?: InputMaybe<Scalars['Float']['input']>;
+  totalOngoingVolumeUSD?: InputMaybe<Scalars['Float']['input']>;
+  totalPurchasedVolume?: InputMaybe<Scalars['Float']['input']>;
+  totalPurchasedVolumeUSD?: InputMaybe<Scalars['Float']['input']>;
+  totalTickets?: InputMaybe<Scalars['Int']['input']>;
+  totalTicketsBought?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type RootQueryRaffleTicketBuyersAnalyticArgs = {
+  count?: InputMaybe<Scalars['Float']['input']>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryRaffleVolumeAnalyticsArgs = {
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  source?: InputMaybe<Scalars['String']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volume?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQuerySalesViewArgs = {
+  blocktime?: InputMaybe<Scalars['Int']['input']>;
+  buyer?: InputMaybe<Scalars['String']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  dasMetadata?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<TransactionFilter>;
+  howrareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  moonRank?: InputMaybe<Scalars['Int']['input']>;
+  offer?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+  pool?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  royalties?: InputMaybe<Scalars['Float']['input']>;
+  salesTaxRecepient?: InputMaybe<Scalars['String']['input']>;
+  seller?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  type?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQuerySmartBidOffersArgs = {
+  buyer?: InputMaybe<Scalars['String']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  expiredAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  isFunded?: InputMaybe<Scalars['Boolean']['input']>;
+  isHighest?: InputMaybe<Scalars['Boolean']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  mints?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  nonce?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  payRoyalties?: InputMaybe<Scalars['Boolean']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsArgs = {
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsEcosystemArgs = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  listings1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast1h?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast7d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast24h?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast30d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast90d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  salesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast90d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  solToUsd?: InputMaybe<Scalars['Float']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  uniqueBuyersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast90d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsLendingArgs = {
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  completedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast30d?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  solToUsd?: InputMaybe<Scalars['Float']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  uniqueBorrowersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast30d?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsLendingEcosystemArgs = {
+  activeLoansTotal?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanLast7d?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanLast24h?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanLast90d?: InputMaybe<Scalars['Int']['input']>;
+  completedLoanLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  completedLoanValueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast7d?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast24h?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanLast90d?: InputMaybe<Scalars['Int']['input']>;
+  defaultedLoanLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedLoanValueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast1h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast7d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast24h?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast30d?: InputMaybe<Scalars['Float']['input']>;
+  defaultedPercentageLast90d?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  healthyLoanLast7d?: InputMaybe<Scalars['Int']['input']>;
+  healthyLoanLast24h?: InputMaybe<Scalars['Int']['input']>;
+  healthyLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  healthyLoanLast90d?: InputMaybe<Scalars['Int']['input']>;
+  healthyLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  healthyLoanValueTotal?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  newActiveLoansLast1h?: InputMaybe<Scalars['Int']['input']>;
+  newActiveLoansLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newActiveLoansLast7d?: InputMaybe<Scalars['Int']['input']>;
+  newActiveLoansLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newActiveLoansLast24h?: InputMaybe<Scalars['Int']['input']>;
+  newActiveLoansLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newActiveLoansLast30d?: InputMaybe<Scalars['Int']['input']>;
+  newActiveLoansLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newActiveLoansLast90d?: InputMaybe<Scalars['Int']['input']>;
+  newActiveLoansLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLast1h?: InputMaybe<Scalars['Int']['input']>;
+  newOfferLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLast7d?: InputMaybe<Scalars['Int']['input']>;
+  newOfferLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLast24h?: InputMaybe<Scalars['Int']['input']>;
+  newOfferLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLast30d?: InputMaybe<Scalars['Int']['input']>;
+  newOfferLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLast90d?: InputMaybe<Scalars['Int']['input']>;
+  newOfferLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast1h?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast7d?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast24h?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast30d?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast90d?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  newOfferLiquidityUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast1h?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast7d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast24h?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast30d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast90d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newTvlUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  newTvlUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  newTvlUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  newTvlUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  offerLiquidityTotal?: InputMaybe<Scalars['Float']['input']>;
+  offerLiquidityUsdTotal?: InputMaybe<Scalars['Float']['input']>;
+  offersTotal?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  repaidInterestValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  repaidInterestValueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  repaidLoanLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanLast7d?: InputMaybe<Scalars['Int']['input']>;
+  repaidLoanLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanLast24h?: InputMaybe<Scalars['Int']['input']>;
+  repaidLoanLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  repaidLoanLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanLast90d?: InputMaybe<Scalars['Int']['input']>;
+  repaidLoanLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  repaidLoanValueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  solToUsd?: InputMaybe<Scalars['Float']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  tvlTotal?: InputMaybe<Scalars['Float']['input']>;
+  tvlTotalUsd?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanLast1h?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanLast7d?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanLast24h?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanLast30d?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanLast90d?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanTotal?: InputMaybe<Scalars['Int']['input']>;
+  underwaterLoanValueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueTotal?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  underwaterLoanValueUsdTotal?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowersLast7d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowersLast24h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowersLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBorrowersLast90d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBorrowersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLbLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLbLast7d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLbLast24h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLbLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLbLast90d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLbLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLendersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLendersLast7d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLendersLast24h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLendersLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueLendersLast90d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueLendersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueUsersLast1h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueUsersLast7d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueUsersLast24h?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueUsersLast30d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueUsersLast90d?: InputMaybe<Scalars['Int']['input']>;
+  uniqueUsersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsMarketplaceArgs = {
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  listings1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  listings90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  newListingLast1h?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast7d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast24h?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast30d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  newListingLast90d?: InputMaybe<Scalars['Int']['input']>;
+  newListingLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  revenueLast1h?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast7d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast24h?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast30d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast90d?: InputMaybe<Scalars['Float']['input']>;
+  revenueLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  revenueUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast90d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  royaltiesUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  salesLast90d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  solToUsd?: InputMaybe<Scalars['Float']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  uniqueBuyersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast90d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast90d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast1hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast7dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast24hDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast30dDelta?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast90d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast90dDelta?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryStatSnapshotsV2Args = {
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePrice?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceLast1h?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceLast7d?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceLast24h?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceLast30d?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  averageSalePriceUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  cancellation?: InputMaybe<Scalars['Int']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  floorPriceFees?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceFeesUsd?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceRoyaltiesUsd?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceUsd?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithFees?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithFeesUsd?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyalties?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyaltiesAndFees?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyaltiesAndFeesUsd?: InputMaybe<Scalars['Float']['input']>;
+  floorPriceWithRoyaltiesUsd?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePrice?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceLast1h?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceLast7d?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceLast24h?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceLast30d?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  highestSalePriceUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  lowestSalePrice?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceLast1h?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceLast7d?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceLast24h?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceLast30d?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  lowestSalePriceUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  marketCap?: InputMaybe<Scalars['Float']['input']>;
+  newListing?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  salesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  salesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  salesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  salesTotal?: InputMaybe<Scalars['Float']['input']>;
+  sellNowPrice?: InputMaybe<Scalars['Float']['input']>;
+  sellNowPriceUsd?: InputMaybe<Scalars['Float']['input']>;
+  solToUsd?: InputMaybe<Scalars['Float']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  totalOwners?: InputMaybe<Scalars['Int']['input']>;
+  uniqueBuyersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueBuyersTotal?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueFlippersTotal?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueListersTotal?: InputMaybe<Scalars['Float']['input']>;
+  uniqueOwnersPercentage?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueSellersTotal?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast1h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast7d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast24h?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersLast30d?: InputMaybe<Scalars['Float']['input']>;
+  uniqueTradersTotal?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesTotal?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast1h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdLast30d?: InputMaybe<Scalars['Float']['input']>;
+  volumesUsdTotal?: InputMaybe<Scalars['Float']['input']>;
+};
+
+
+export type RootQueryTransactionsArgs = {
+  blocktime?: InputMaybe<Scalars['Int']['input']>;
+  buyer?: InputMaybe<Scalars['String']['input']>;
+  collection?: InputMaybe<Scalars['String']['input']>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  contract?: InputMaybe<Scalars['String']['input']>;
+  dasMetadata?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<TransactionFilter>;
+  howrareRank?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  marketplace?: InputMaybe<Scalars['String']['input']>;
+  metadata?: InputMaybe<Scalars['String']['input']>;
+  mint?: InputMaybe<Scalars['String']['input']>;
+  moonRank?: InputMaybe<Scalars['Int']['input']>;
+  offer?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  owner?: InputMaybe<Scalars['String']['input']>;
+  pool?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<Scalars['String']['input']>;
+  royalties?: InputMaybe<Scalars['Float']['input']>;
+  salesTaxRecepient?: InputMaybe<Scalars['String']['input']>;
+  seller?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  type?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryTwitterSpaceArgs = {
+  attendees?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  scheduled?: InputMaybe<Scalars['DateTime']['input']>;
+  spaceUrl?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['String']['input']>;
+  thumbnnailUrl?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  userId?: InputMaybe<Scalars['String']['input']>;
+  userhandle?: InputMaybe<Scalars['String']['input']>;
+  username?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryTwitterTweetArgs = {
+  attachments?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bookmarkCount?: InputMaybe<Scalars['Int']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  editHistories?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  impressionCount?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  likeCount?: InputMaybe<Scalars['Int']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  quoteCount?: InputMaybe<Scalars['Int']['input']>;
+  replyCount?: InputMaybe<Scalars['Int']['input']>;
+  retweetCount?: InputMaybe<Scalars['Int']['input']>;
+  text?: InputMaybe<Scalars['String']['input']>;
+  thumbnnailUrl?: InputMaybe<Scalars['String']['input']>;
+  userId?: InputMaybe<Scalars['String']['input']>;
+  userhandle?: InputMaybe<Scalars['String']['input']>;
+  username?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryUpdatedCollectionsArgs = {
+  atlas3?: InputMaybe<Scalars['String']['input']>;
+  averagePrice?: InputMaybe<Scalars['Float']['input']>;
+  bannerUrl?: InputMaybe<Scalars['String']['input']>;
+  candyMachineAddresses?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  collectionId?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  creatorEmail?: InputMaybe<Scalars['String']['input']>;
+  creatorId?: InputMaybe<Scalars['String']['input']>;
+  deletedBy?: InputMaybe<Scalars['String']['input']>;
+  deletionNotes?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  discord?: InputMaybe<Scalars['String']['input']>;
+  disputedMessage?: InputMaybe<Scalars['String']['input']>;
+  documentation?: InputMaybe<Scalars['String']['input']>;
+  endpoint?: InputMaybe<Scalars['String']['input']>;
+  facebook?: InputMaybe<Scalars['String']['input']>;
+  floorPrice?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  instagram?: InputMaybe<Scalars['String']['input']>;
+  isCurated?: InputMaybe<Scalars['Boolean']['input']>;
+  isDerivative?: InputMaybe<Scalars['Boolean']['input']>;
+  isNsfw?: InputMaybe<Scalars['Boolean']['input']>;
+  items?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  links?: InputMaybe<Scalars['String']['input']>;
+  listed?: InputMaybe<Scalars['Int']['input']>;
+  medium?: InputMaybe<Scalars['String']['input']>;
+  mintListUrl?: InputMaybe<Scalars['String']['input']>;
+  modifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  roadmap?: InputMaybe<Scalars['String']['input']>;
+  soloImageUrl?: InputMaybe<Scalars['String']['input']>;
+  soloUsername?: InputMaybe<Scalars['String']['input']>;
+  soloVerified?: InputMaybe<Scalars['Boolean']['input']>;
+  state?: InputMaybe<Scalars['Int']['input']>;
+  subber?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  team?: InputMaybe<Scalars['String']['input']>;
+  telegram?: InputMaybe<Scalars['String']['input']>;
+  thumbnailUrl?: InputMaybe<Scalars['String']['input']>;
+  tiktok?: InputMaybe<Scalars['String']['input']>;
+  twitch?: InputMaybe<Scalars['String']['input']>;
+  twitter?: InputMaybe<Scalars['String']['input']>;
+  verifeyed?: InputMaybe<Scalars['Boolean']['input']>;
+  volumeModifiedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  volumePast7d?: InputMaybe<Scalars['Float']['input']>;
+  volumePast24h?: InputMaybe<Scalars['Float']['input']>;
+  volumeTotal?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  whitepaper?: InputMaybe<Scalars['String']['input']>;
+  youtube?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryUserArgs = {
+  allTimeReward?: InputMaybe<Scalars['Int']['input']>;
+  currentReward?: InputMaybe<Scalars['Int']['input']>;
+  dailyLoginCount?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastLoginTime?: InputMaybe<Scalars['DateTime']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  spentReward?: InputMaybe<Scalars['Int']['input']>;
+  walletID?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryUserQuizProgressArgs = {
+  completed?: InputMaybe<Scalars['Boolean']['input']>;
+  courseID?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  questionIDs?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+  userID?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type RootQueryWalletStats24HourListArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  boughtCount?: InputMaybe<Scalars['Int']['input']>;
+  boughtVol?: InputMaybe<Scalars['Int']['input']>;
+  cancelCount?: InputMaybe<Scalars['Int']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  highestPurchaseCollection?: InputMaybe<Scalars['String']['input']>;
+  highestSaleCollection?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listCount?: InputMaybe<Scalars['Int']['input']>;
+  netVol?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  soldCount?: InputMaybe<Scalars['Int']['input']>;
+  soldVol?: InputMaybe<Scalars['Int']['input']>;
+  totalProfitOrLoss?: InputMaybe<Scalars['Int']['input']>;
+  totalReceived?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryWalletStatsAllTimeArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  boughtCount?: InputMaybe<Scalars['Int']['input']>;
+  boughtVol?: InputMaybe<Scalars['Int']['input']>;
+  cancelCount?: InputMaybe<Scalars['Int']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  highestPurchaseCollection?: InputMaybe<Scalars['String']['input']>;
+  highestSaleCollection?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listCount?: InputMaybe<Scalars['Int']['input']>;
+  netVol?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  soldCount?: InputMaybe<Scalars['Int']['input']>;
+  soldVol?: InputMaybe<Scalars['Int']['input']>;
+  totalProfitOrLoss?: InputMaybe<Scalars['Int']['input']>;
+  totalReceived?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryWalletStatsMonthlyArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  boughtCount?: InputMaybe<Scalars['Int']['input']>;
+  boughtVol?: InputMaybe<Scalars['Int']['input']>;
+  cancelCount?: InputMaybe<Scalars['Int']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  highestPurchaseCollection?: InputMaybe<Scalars['String']['input']>;
+  highestSaleCollection?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listCount?: InputMaybe<Scalars['Int']['input']>;
+  netVol?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  soldCount?: InputMaybe<Scalars['Int']['input']>;
+  soldVol?: InputMaybe<Scalars['Int']['input']>;
+  totalProfitOrLoss?: InputMaybe<Scalars['Int']['input']>;
+  totalReceived?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+
+export type RootQueryWalletStatsWeeklyArgs = {
+  address?: InputMaybe<Scalars['String']['input']>;
+  boughtCount?: InputMaybe<Scalars['Int']['input']>;
+  boughtVol?: InputMaybe<Scalars['Int']['input']>;
+  cancelCount?: InputMaybe<Scalars['Int']['input']>;
+  createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  highestPurchaseCollection?: InputMaybe<Scalars['String']['input']>;
+  highestSaleCollection?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['Int']['input']>;
+  keys?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  listCount?: InputMaybe<Scalars['Int']['input']>;
+  netVol?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<Scalars['String']['input']>;
+  soldCount?: InputMaybe<Scalars['Int']['input']>;
+  soldVol?: InputMaybe<Scalars['Int']['input']>;
+  totalProfitOrLoss?: InputMaybe<Scalars['Int']['input']>;
+  totalReceived?: InputMaybe<Scalars['Int']['input']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type SalesView = {
+  __typename?: 'SalesView';
+  blocktime?: Maybe<Scalars['Int']['output']>;
+  buyer?: Maybe<Scalars['String']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  howrareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  moonRank?: Maybe<Scalars['Int']['output']>;
+  offer?: Maybe<Scalars['String']['output']>;
+  owner?: Maybe<Scalars['String']['output']>;
+  pool?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  royalties?: Maybe<Scalars['Float']['output']>;
+  salesTaxRecepient?: Maybe<Scalars['String']['output']>;
+  seller?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<Scalars['String']['output']>;
+};
+
+export type SalesViewList = {
+  __typename?: 'SalesViewList';
+  nodes?: Maybe<Array<Maybe<SalesView>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type SmartBidOffer = {
+  __typename?: 'SmartBidOffer';
+  buyer?: Maybe<Scalars['String']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  expiredAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  isFunded?: Maybe<Scalars['Boolean']['output']>;
+  isHighest?: Maybe<Scalars['Boolean']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  modifiedAt?: Maybe<Scalars['DateTime']['output']>;
+  nonce?: Maybe<Scalars['String']['output']>;
+  payRoyalties?: Maybe<Scalars['Boolean']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  status?: Maybe<Scalars['Int']['output']>;
+};
+
+export type SmartBidOfferList = {
+  __typename?: 'SmartBidOfferList';
+  nodes?: Maybe<Array<Maybe<SmartBidOffer>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshot = {
+  __typename?: 'StatSnapshot';
+  averagePrice?: Maybe<Scalars['Float']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  volumePast7d?: Maybe<Scalars['Float']['output']>;
+  volumePast24h?: Maybe<Scalars['Float']['output']>;
+  volumeTotal?: Maybe<Scalars['Float']['output']>;
+};
+
+export type StatSnapshotEcosystem = {
+  __typename?: 'StatSnapshotEcosystem';
+  id?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  listings1hDelta?: Maybe<Scalars['Float']['output']>;
+  listings7dDelta?: Maybe<Scalars['Float']['output']>;
+  listings24hDelta?: Maybe<Scalars['Float']['output']>;
+  listings30dDelta?: Maybe<Scalars['Float']['output']>;
+  listings90dDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast1h?: Maybe<Scalars['Int']['output']>;
+  newListingLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast7d?: Maybe<Scalars['Int']['output']>;
+  newListingLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast24h?: Maybe<Scalars['Int']['output']>;
+  newListingLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast30d?: Maybe<Scalars['Int']['output']>;
+  newListingLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast90d?: Maybe<Scalars['Int']['output']>;
+  newListingLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast1h?: Maybe<Scalars['Float']['output']>;
+  salesLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast7d?: Maybe<Scalars['Float']['output']>;
+  salesLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast24h?: Maybe<Scalars['Float']['output']>;
+  salesLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast30d?: Maybe<Scalars['Float']['output']>;
+  salesLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast90d?: Maybe<Scalars['Float']['output']>;
+  salesLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  solToUsd?: Maybe<Scalars['Float']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  uniqueBuyersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast90d?: Maybe<Scalars['Float']['output']>;
+  volumesLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast90dDelta?: Maybe<Scalars['Float']['output']>;
+};
+
+export type StatSnapshotEcosystemList = {
+  __typename?: 'StatSnapshotEcosystemList';
+  nodes?: Maybe<Array<Maybe<StatSnapshotEcosystem>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotLending = {
+  __typename?: 'StatSnapshotLending';
+  collectionId?: Maybe<Scalars['String']['output']>;
+  completedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  completedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast30d?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  solToUsd?: Maybe<Scalars['Float']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  uniqueBorrowersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast30d?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotLendingEcosystem = {
+  __typename?: 'StatSnapshotLendingEcosystem';
+  activeLoansTotal?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanLast7d?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanLast24h?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanLast90d?: Maybe<Scalars['Int']['output']>;
+  completedLoanLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast7d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast24h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast90d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  completedLoanValueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast7d?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast24h?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanLast90d?: Maybe<Scalars['Int']['output']>;
+  defaultedLoanLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast7d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast24h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast90d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedLoanValueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast1h?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast7d?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast24h?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast30d?: Maybe<Scalars['Float']['output']>;
+  defaultedPercentageLast90d?: Maybe<Scalars['Float']['output']>;
+  healthyLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  healthyLoanLast7d?: Maybe<Scalars['Int']['output']>;
+  healthyLoanLast24h?: Maybe<Scalars['Int']['output']>;
+  healthyLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  healthyLoanLast90d?: Maybe<Scalars['Int']['output']>;
+  healthyLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  healthyLoanValueLast7d?: Maybe<Scalars['Float']['output']>;
+  healthyLoanValueLast24h?: Maybe<Scalars['Float']['output']>;
+  healthyLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  healthyLoanValueLast90d?: Maybe<Scalars['Float']['output']>;
+  healthyLoanValueTotal?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  newActiveLoansLast1h?: Maybe<Scalars['Int']['output']>;
+  newActiveLoansLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newActiveLoansLast7d?: Maybe<Scalars['Int']['output']>;
+  newActiveLoansLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newActiveLoansLast24h?: Maybe<Scalars['Int']['output']>;
+  newActiveLoansLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newActiveLoansLast30d?: Maybe<Scalars['Int']['output']>;
+  newActiveLoansLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newActiveLoansLast90d?: Maybe<Scalars['Int']['output']>;
+  newActiveLoansLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLast1h?: Maybe<Scalars['Int']['output']>;
+  newOfferLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLast7d?: Maybe<Scalars['Int']['output']>;
+  newOfferLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLast24h?: Maybe<Scalars['Int']['output']>;
+  newOfferLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLast30d?: Maybe<Scalars['Int']['output']>;
+  newOfferLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLast90d?: Maybe<Scalars['Int']['output']>;
+  newOfferLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast1h?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast7d?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast24h?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast30d?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast90d?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  newOfferLiquidityUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  newTvlLast1h?: Maybe<Scalars['Float']['output']>;
+  newTvlLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newTvlLast7d?: Maybe<Scalars['Float']['output']>;
+  newTvlLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newTvlLast24h?: Maybe<Scalars['Float']['output']>;
+  newTvlLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newTvlLast30d?: Maybe<Scalars['Float']['output']>;
+  newTvlLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newTvlLast90d?: Maybe<Scalars['Float']['output']>;
+  newTvlLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  newTvlUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  newTvlUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  newTvlUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  newTvlUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  newTvlUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  offerLiquidityTotal?: Maybe<Scalars['Float']['output']>;
+  offerLiquidityUsdTotal?: Maybe<Scalars['Float']['output']>;
+  offersTotal?: Maybe<Scalars['Int']['output']>;
+  repaidInterestValueLast1h?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast7d?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast24h?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast30d?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast90d?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  repaidInterestValueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  repaidLoanLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  repaidLoanLast7d?: Maybe<Scalars['Int']['output']>;
+  repaidLoanLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidLoanLast24h?: Maybe<Scalars['Int']['output']>;
+  repaidLoanLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  repaidLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  repaidLoanLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidLoanLast90d?: Maybe<Scalars['Int']['output']>;
+  repaidLoanLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueLast7d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueLast24h?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueLast90d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  repaidLoanValueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  revenueLast1h?: Maybe<Scalars['Float']['output']>;
+  revenueLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast7d?: Maybe<Scalars['Float']['output']>;
+  revenueLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast24h?: Maybe<Scalars['Float']['output']>;
+  revenueLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast30d?: Maybe<Scalars['Float']['output']>;
+  revenueLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast90d?: Maybe<Scalars['Float']['output']>;
+  revenueLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  solToUsd?: Maybe<Scalars['Float']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  tvlTotal?: Maybe<Scalars['Float']['output']>;
+  tvlTotalUsd?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanLast1h?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanLast7d?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanLast24h?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanLast30d?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanLast90d?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanTotal?: Maybe<Scalars['Int']['output']>;
+  underwaterLoanValueLast1h?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueLast7d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueLast24h?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueLast30d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueLast90d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueTotal?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  underwaterLoanValueUsdTotal?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowersLast7d?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowersLast24h?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowersLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBorrowersLast90d?: Maybe<Scalars['Int']['output']>;
+  uniqueBorrowersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLbLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLbLast7d?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLbLast24h?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLbLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLbLast90d?: Maybe<Scalars['Int']['output']>;
+  uniqueLbLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLendersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLendersLast7d?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLendersLast24h?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLendersLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueLendersLast90d?: Maybe<Scalars['Int']['output']>;
+  uniqueLendersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueUsersLast1h?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueUsersLast7d?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueUsersLast24h?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueUsersLast30d?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueUsersLast90d?: Maybe<Scalars['Int']['output']>;
+  uniqueUsersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+};
+
+export type StatSnapshotLendingEcosystemList = {
+  __typename?: 'StatSnapshotLendingEcosystemList';
+  nodes?: Maybe<Array<Maybe<StatSnapshotLendingEcosystem>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotLendingList = {
+  __typename?: 'StatSnapshotLendingList';
+  nodes?: Maybe<Array<Maybe<StatSnapshotLending>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotList = {
+  __typename?: 'StatSnapshotList';
+  nodes?: Maybe<Array<Maybe<StatSnapshot>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotMarketplace = {
+  __typename?: 'StatSnapshotMarketplace';
+  id?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  listings1hDelta?: Maybe<Scalars['Float']['output']>;
+  listings7dDelta?: Maybe<Scalars['Float']['output']>;
+  listings24hDelta?: Maybe<Scalars['Float']['output']>;
+  listings30dDelta?: Maybe<Scalars['Float']['output']>;
+  listings90dDelta?: Maybe<Scalars['Float']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  newListingLast1h?: Maybe<Scalars['Int']['output']>;
+  newListingLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast7d?: Maybe<Scalars['Int']['output']>;
+  newListingLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast24h?: Maybe<Scalars['Int']['output']>;
+  newListingLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast30d?: Maybe<Scalars['Int']['output']>;
+  newListingLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  newListingLast90d?: Maybe<Scalars['Int']['output']>;
+  newListingLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast1h?: Maybe<Scalars['Float']['output']>;
+  revenueLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast7d?: Maybe<Scalars['Float']['output']>;
+  revenueLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast24h?: Maybe<Scalars['Float']['output']>;
+  revenueLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast30d?: Maybe<Scalars['Float']['output']>;
+  revenueLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueLast90d?: Maybe<Scalars['Float']['output']>;
+  revenueLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  revenueUsdLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast1h?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast7d?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast24h?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast30d?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast90d?: Maybe<Scalars['Float']['output']>;
+  royaltiesLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  royaltiesUsdLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast1h?: Maybe<Scalars['Float']['output']>;
+  salesLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast7d?: Maybe<Scalars['Float']['output']>;
+  salesLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast24h?: Maybe<Scalars['Float']['output']>;
+  salesLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast30d?: Maybe<Scalars['Float']['output']>;
+  salesLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  salesLast90d?: Maybe<Scalars['Float']['output']>;
+  salesLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  solToUsd?: Maybe<Scalars['Float']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  uniqueBuyersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast90d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesLast90d?: Maybe<Scalars['Float']['output']>;
+  volumesLast90dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast1hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast7dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast24hDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast30dDelta?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast90d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast90dDelta?: Maybe<Scalars['Float']['output']>;
+};
+
+export type StatSnapshotMarketplaceList = {
+  __typename?: 'StatSnapshotMarketplaceList';
+  nodes?: Maybe<Array<Maybe<StatSnapshotMarketplace>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type StatSnapshotV2 = {
+  __typename?: 'StatSnapshotV2';
+  averagePrice?: Maybe<Scalars['Float']['output']>;
+  averageSalePrice?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceLast1h?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceLast7d?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceLast24h?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceLast30d?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  averageSalePriceUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  cancellation?: Maybe<Scalars['Int']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  floorPrice?: Maybe<Scalars['Float']['output']>;
+  floorPriceFees?: Maybe<Scalars['Float']['output']>;
+  floorPriceFeesUsd?: Maybe<Scalars['Float']['output']>;
+  floorPriceRoyalties?: Maybe<Scalars['Float']['output']>;
+  floorPriceRoyaltiesUsd?: Maybe<Scalars['Float']['output']>;
+  floorPriceUsd?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithFees?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithFeesUsd?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyalties?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyaltiesAndFees?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyaltiesAndFeesUsd?: Maybe<Scalars['Float']['output']>;
+  floorPriceWithRoyaltiesUsd?: Maybe<Scalars['Float']['output']>;
+  highestSalePrice?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceLast1h?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceLast7d?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceLast24h?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceLast30d?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  highestSalePriceUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  listed?: Maybe<Scalars['Int']['output']>;
+  lowestSalePrice?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceLast1h?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceLast7d?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceLast24h?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceLast30d?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  lowestSalePriceUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  marketCap?: Maybe<Scalars['Float']['output']>;
+  newListing?: Maybe<Scalars['Int']['output']>;
+  salesLast1h?: Maybe<Scalars['Float']['output']>;
+  salesLast7d?: Maybe<Scalars['Float']['output']>;
+  salesLast24h?: Maybe<Scalars['Float']['output']>;
+  salesLast30d?: Maybe<Scalars['Float']['output']>;
+  salesTotal?: Maybe<Scalars['Float']['output']>;
+  sellNowPrice?: Maybe<Scalars['Float']['output']>;
+  sellNowPriceUsd?: Maybe<Scalars['Float']['output']>;
+  solToUsd?: Maybe<Scalars['Float']['output']>;
+  time?: Maybe<Scalars['DateTime']['output']>;
+  totalOwners?: Maybe<Scalars['Int']['output']>;
+  uniqueBuyersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueBuyersTotal?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueFlippersTotal?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueListersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueListersTotal?: Maybe<Scalars['Float']['output']>;
+  uniqueOwnersPercentage?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueSellersTotal?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast1h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast7d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast24h?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersLast30d?: Maybe<Scalars['Float']['output']>;
+  uniqueTradersTotal?: Maybe<Scalars['Float']['output']>;
+  volumesLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesTotal?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast1h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast7d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast24h?: Maybe<Scalars['Float']['output']>;
+  volumesUsdLast30d?: Maybe<Scalars['Float']['output']>;
+  volumesUsdTotal?: Maybe<Scalars['Float']['output']>;
+};
+
+export type StatSnapshotV2List = {
+  __typename?: 'StatSnapshotV2List';
+  nodes?: Maybe<Array<Maybe<StatSnapshotV2>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type Transaction = {
+  __typename?: 'Transaction';
+  blocktime?: Maybe<Scalars['Int']['output']>;
+  buyer?: Maybe<Scalars['String']['output']>;
+  collection?: Maybe<Scalars['String']['output']>;
+  collectionId?: Maybe<Scalars['String']['output']>;
+  contract?: Maybe<Scalars['String']['output']>;
+  dasMetadata?: Maybe<Scalars['String']['output']>;
+  howrareRank?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  marketplace?: Maybe<Scalars['String']['output']>;
+  metadata?: Maybe<Scalars['String']['output']>;
+  mint?: Maybe<Scalars['String']['output']>;
+  moonRank?: Maybe<Scalars['Int']['output']>;
+  offer?: Maybe<Scalars['String']['output']>;
+  owner?: Maybe<Scalars['String']['output']>;
+  pool?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Float']['output']>;
+  royalties?: Maybe<Scalars['Float']['output']>;
+  salesTaxRecepient?: Maybe<Scalars['String']['output']>;
+  seller?: Maybe<Scalars['String']['output']>;
+  thumbnailUrl?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<Scalars['String']['output']>;
+};
+
+export type TransactionFilter = {
+  blocktime?: InputMaybe<GenericFilter>;
+  collection?: InputMaybe<GenericFilter>;
+  type?: InputMaybe<GenericFilter>;
+};
+
+export type TransactionList = {
+  __typename?: 'TransactionList';
+  nodes?: Maybe<Array<Maybe<Transaction>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type TwitterSpace = {
+  __typename?: 'TwitterSpace';
+  attendees?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  scheduled?: Maybe<Scalars['DateTime']['output']>;
+  spaceUrl?: Maybe<Scalars['String']['output']>;
+  state?: Maybe<Scalars['String']['output']>;
+  thumbnnailUrl?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  userId?: Maybe<Scalars['String']['output']>;
+  userhandle?: Maybe<Scalars['String']['output']>;
+  username?: Maybe<Scalars['String']['output']>;
+};
+
+export type TwitterSpaceList = {
+  __typename?: 'TwitterSpaceList';
+  nodes?: Maybe<Array<Maybe<TwitterSpace>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type TwitterTweet = {
+  __typename?: 'TwitterTweet';
+  attachments?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  bookmarkCount?: Maybe<Scalars['Int']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  editHistories?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  id?: Maybe<Scalars['String']['output']>;
+  impressionCount?: Maybe<Scalars['Int']['output']>;
+  likeCount?: Maybe<Scalars['Int']['output']>;
+  quoteCount?: Maybe<Scalars['Int']['output']>;
+  replyCount?: Maybe<Scalars['Int']['output']>;
+  retweetCount?: Maybe<Scalars['Int']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  thumbnnailUrl?: Maybe<Scalars['String']['output']>;
+  userId?: Maybe<Scalars['String']['output']>;
+  userhandle?: Maybe<Scalars['String']['output']>;
+  username?: Maybe<Scalars['String']['output']>;
+};
+
+export type TwitterTweetList = {
+  __typename?: 'TwitterTweetList';
+  nodes?: Maybe<Array<Maybe<TwitterTweet>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type UpdatedCollectionList = {
+  __typename?: 'UpdatedCollectionList';
+  nodes?: Maybe<Array<Maybe<Collection>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type User = {
+  __typename?: 'User';
+  allTimeReward?: Maybe<Scalars['Int']['output']>;
+  currentReward?: Maybe<Scalars['Int']['output']>;
+  dailyLoginCount?: Maybe<Scalars['Int']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  lastLoginTime?: Maybe<Scalars['DateTime']['output']>;
+  spentReward?: Maybe<Scalars['Int']['output']>;
+  walletID?: Maybe<Scalars['String']['output']>;
+};
+
+export type UserList = {
+  __typename?: 'UserList';
+  nodes?: Maybe<Array<Maybe<User>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type UserQuizProgress = {
+  __typename?: 'UserQuizProgress';
+  completed?: Maybe<Scalars['Boolean']['output']>;
+  courseID?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  questionIDs?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+  userID?: Maybe<Scalars['String']['output']>;
+};
+
+export type UserQuizProgressList = {
+  __typename?: 'UserQuizProgressList';
+  nodes?: Maybe<Array<Maybe<UserQuizProgress>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type WalletStats24Hour = {
+  __typename?: 'WalletStats24Hour';
+  address?: Maybe<Scalars['String']['output']>;
+  boughtCount?: Maybe<Scalars['Int']['output']>;
+  boughtVol?: Maybe<Scalars['Int']['output']>;
+  cancelCount?: Maybe<Scalars['Int']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  highestPurchaseCollection?: Maybe<Scalars['String']['output']>;
+  highestSaleCollection?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  listCount?: Maybe<Scalars['Int']['output']>;
+  netVol?: Maybe<Scalars['Int']['output']>;
+  soldCount?: Maybe<Scalars['Int']['output']>;
+  soldVol?: Maybe<Scalars['Int']['output']>;
+  totalProfitOrLoss?: Maybe<Scalars['Int']['output']>;
+  totalReceived?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type WalletStats24HourList = {
+  __typename?: 'WalletStats24HourList';
+  nodes?: Maybe<Array<Maybe<WalletStats24Hour>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type WalletStatsAllTime = {
+  __typename?: 'WalletStatsAllTime';
+  address?: Maybe<Scalars['String']['output']>;
+  boughtCount?: Maybe<Scalars['Int']['output']>;
+  boughtVol?: Maybe<Scalars['Int']['output']>;
+  cancelCount?: Maybe<Scalars['Int']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  highestPurchaseCollection?: Maybe<Scalars['String']['output']>;
+  highestSaleCollection?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  listCount?: Maybe<Scalars['Int']['output']>;
+  netVol?: Maybe<Scalars['Int']['output']>;
+  soldCount?: Maybe<Scalars['Int']['output']>;
+  soldVol?: Maybe<Scalars['Int']['output']>;
+  totalProfitOrLoss?: Maybe<Scalars['Int']['output']>;
+  totalReceived?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type WalletStatsAllTimeList = {
+  __typename?: 'WalletStatsAllTimeList';
+  nodes?: Maybe<Array<Maybe<WalletStatsAllTime>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type WalletStatsMonthly = {
+  __typename?: 'WalletStatsMonthly';
+  address?: Maybe<Scalars['String']['output']>;
+  boughtCount?: Maybe<Scalars['Int']['output']>;
+  boughtVol?: Maybe<Scalars['Int']['output']>;
+  cancelCount?: Maybe<Scalars['Int']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  highestPurchaseCollection?: Maybe<Scalars['String']['output']>;
+  highestSaleCollection?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  listCount?: Maybe<Scalars['Int']['output']>;
+  netVol?: Maybe<Scalars['Int']['output']>;
+  soldCount?: Maybe<Scalars['Int']['output']>;
+  soldVol?: Maybe<Scalars['Int']['output']>;
+  totalProfitOrLoss?: Maybe<Scalars['Int']['output']>;
+  totalReceived?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type WalletStatsMonthlyList = {
+  __typename?: 'WalletStatsMonthlyList';
+  nodes?: Maybe<Array<Maybe<WalletStatsMonthly>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export type WalletStatsWeekly = {
+  __typename?: 'WalletStatsWeekly';
+  address?: Maybe<Scalars['String']['output']>;
+  boughtCount?: Maybe<Scalars['Int']['output']>;
+  boughtVol?: Maybe<Scalars['Int']['output']>;
+  cancelCount?: Maybe<Scalars['Int']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  highestPurchaseCollection?: Maybe<Scalars['String']['output']>;
+  highestSaleCollection?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['Int']['output']>;
+  listCount?: Maybe<Scalars['Int']['output']>;
+  netVol?: Maybe<Scalars['Int']['output']>;
+  soldCount?: Maybe<Scalars['Int']['output']>;
+  soldVol?: Maybe<Scalars['Int']['output']>;
+  totalProfitOrLoss?: Maybe<Scalars['Int']['output']>;
+  totalReceived?: Maybe<Scalars['Int']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type WalletStatsWeeklyList = {
+  __typename?: 'WalletStatsWeeklyList';
+  nodes?: Maybe<Array<Maybe<WalletStatsWeekly>>>;
+  totalCount?: Maybe<Scalars['Int']['output']>;
+};
+
+export class TypedDocumentString<TResult, TVariables>
+  extends String
+  implements DocumentTypeDecoration<TResult, TVariables>
+{
+  __apiType?: DocumentTypeDecoration<TResult, TVariables>['__apiType'];
+
+  constructor(private value: string, public __meta__?: Record<string, any> | undefined) {
+    super(value);
+  }
+
+  toString(): string & DocumentTypeDecoration<TResult, TVariables> {
+    return this.value;
+  }
+}

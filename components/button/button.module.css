@@ -1,0 +1,17 @@
+.btn_gradient{
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    background: #0c0c24;
+    /* Button background color */
+    position: relative;
+    cursor: pointer;
+  
+    border: 1px solid transparent;
+    background-image: linear-gradient(#0c0c24, #0c0c24), linear-gradient(90deg, #c1ff04, #0fd5ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}

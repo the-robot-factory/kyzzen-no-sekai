@@ -11,9 +11,22 @@
     "test": "jest"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@parcel/watcher": "^2.5.1",
+    "@project-serum/sol-wallet-adapter": "^0.2.6",
+    "@solana/spl-token-registry": "^0.2.4574",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/web3.js": "^1.98.0",
+    "@solflare-wallet/sdk": "^1.4.2",
+    "@tanstack/react-query": "^5.66.0",
+    "axios": "^1.7.9",
+    "bs58": "^6.0.0",
+    "graphql": "^16.10.0",
     "next": "15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.3",
+    "toastify": "^2.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -24,6 +37,6 @@
     "eslint-config-next": "15.1.0",
     "husky": "^9.1.7",
     "prettier": "3.4.2",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }

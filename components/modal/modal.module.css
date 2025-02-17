@@ -48,14 +48,18 @@
 .modal_close_btn {
   position: absolute;
   right: 3%;
-  top: 50%;
+  top: 8%;
   transform: translate(3%, -50%);
   border: none;
   background-color: transparent;
   color: #0c0c24;
   border: none;
 }
+.modal_close_btn:hover {
 
+  color: #0c0c24;
+  border: none;
+}
 .modal_head {
   padding: 2rem 5rem;
   margin-bottom: 2rem;
@@ -73,7 +77,6 @@
     font-weight: bold;
   }
 }
-
 .modal_sub {
   display: block;
   color: var(--color-text-mid);
@@ -86,7 +89,7 @@
   padding: 0.5rem 5rem 2rem 5rem;
   color: white;
   text-align: left;
-  max-height: calc(80vh - 123px);
+  max-height: 80vh;
   overflow-y: auto;
 }
 

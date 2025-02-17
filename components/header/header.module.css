@@ -85,6 +85,10 @@
 .header_action svg:hover {
   color: gray;
 }
+.select_field ul {
+  border: 2px solid #122645;
+}
+
 
 @media (max-width: 1200px) {
   .header {

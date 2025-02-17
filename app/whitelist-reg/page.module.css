@@ -5,6 +5,7 @@
   background-color: #0c0c24;
   color: white;
 }
+
 .content {
   margin: auto;
   display: flex;
@@ -103,4 +104,78 @@
 
 .iconText {
   font-size: 1.2rem;
+}
+
+
+.modal_title {
+  width: 400px;
+  text-align: center;
+  margin: 2rem auto 0.5rem auto;
+  font-size: 1.3rem;
+}
+
+.modal_subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #bbb;
+}
+
+.wallet_buttons,
+.sign_in_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet_button div,
+.sign_in_button div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+.wallet_icon,
+.sign_in_icon {
+  font-size: 1.2rem;
+}
+
+.divider {
+  margin:2.5em 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 2px;
+  background: #ffffff;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+.divider_text {
+  text-align: center;
+  margin: 1rem auto 1.5rem auto;
+  font-size: 1.3rem;
+}
+
+
+.modal_content {
+  max-height: 100vh;
 }
