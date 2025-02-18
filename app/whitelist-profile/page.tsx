@@ -54,7 +54,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not subscribed to Kyzzen Newsletter yet.{' '}
-          <a href="" className={styles.link_action}>
+          <a href="https://nft-today.ghost.io/" className={styles.link_action}>
             Subscribe here
           </a>
         </>
@@ -69,7 +69,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not following Kyzzen yet.{' '}
-          <a href="" className={styles.link_action}>
+          <a href="https://x.com/Kyzzen_io" className={styles.link_action}>
             Follow Here
           </a>
         </>
@@ -84,7 +84,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Haven&apos;t joined discord server yet.{' '}
-          <a href="" className={styles.link_action}>
+          <a href="https://discord.gg/kyzzen" className={styles.link_action}>
             Join here
           </a>
         </>
@@ -99,7 +99,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not using Kyzzen’s Telegram Bot yet.{' '}
-          <a href="" className={styles.link_action}>
+          <a href="https://t.me/kyzzen_bot" className={styles.link_action}>
             Try it out here.
           </a>
         </>
@@ -114,7 +114,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not following Kyzzen yet.{' '}
-          <a href="" className={styles.link_action}>
+          <a href="https://www.youtube.com/@kyzzenio" className={styles.link_action}>
             Follow here
           </a>
         </>
