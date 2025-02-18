@@ -53,7 +53,7 @@ export function useFetchProfile(id: string) {
       const data = await graphQLClient.request(userProfileDocument, {id});
       return data;
     },
-    enabled: false,
+    enabled: !!id,
     retry: false,
   });
 }
