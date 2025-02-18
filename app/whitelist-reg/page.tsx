@@ -26,7 +26,7 @@ const WhitelistRegistration: React.FC = () => {
   };
 
   useEffect(() => {
-  const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams(location.search);
 
     const provider = localStorage.getItem('provider');
     const code = searchParams.get('code'),
