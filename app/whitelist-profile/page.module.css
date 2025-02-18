@@ -257,3 +257,12 @@ div.row {
 .not_linked {
   color: rgba(250, 112, 102, 0.86);
 }
+
+.joined{
+  color: rgb(11, 194, 11);
+}
+
+
+.link_action{
+  color: #40C9FF;
+}
