@@ -1,29 +1,32 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Modal from '@/components/modal/modal';
 import GradientButton from '@/components/button/button';
 import Image from 'next/image';
-import {socialProvider, walletProvider} from '@/constants/provider';
-import {useConnectAndSignMessage} from '@/api/wallet';
-import {SOCIAL_PROVIDERS_TYPE, WALLET_PROVIDERS_TYPE} from '@/types/types';
-import {useUser} from '@/context/user';
-import {useAuth} from '@/context/auth';
-import {useVerifyAuth} from '@/api/social';
+import { socialProvider, walletProvider } from '@/constants/provider';
+import { useConnectAndSignMessage } from '@/api/wallet';
+import { SOCIAL_PROVIDERS_TYPE, WALLET_PROVIDERS_TYPE } from '@/types/types';
+import { useUser } from '@/context/user';
+import { useAuth } from '@/context/auth';
+import { useVerifyAuth } from '@/api/social';
+import { KYZZEN_BASE } from '@/constants/url';
 
 const WhitelistRegistration: React.FC = () => {
   const [signInModal, setSignInModal] = useState(false);
-  const {mutateAsync: connectAndSignMessage} = useConnectAndSignMessage();
-  const {mutateAsync: verifyAuthCode} = useVerifyAuth();
-  const {linkAuth} = useAuth();
-  const {createSession} = useUser();
+  const { mutateAsync: connectAndSignMessage } = useConnectAndSignMessage();
+  const { mutateAsync: verifyAuthCode } = useVerifyAuth();
+  const { linkAuth } = useAuth();
+  const { userSession, createSession } = useUser();
 
   const router = useRouter();
 
   const nav = (route: string) => {
     router.push(route);
   };
+
+  console.log(location)
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -39,12 +42,14 @@ const WhitelistRegistration: React.FC = () => {
   }, []);
 
   const handleCode = async (code: string, provider: SOCIAL_PROVIDERS_TYPE) => {
-    const response = await verifyAuthCode({provider, code, redirect_url: location.href, login: true});
+    const response = await verifyAuthCode({ provider, code, redirect_url: location.origin + location.pathname, login: true });
 
     if (!response?.success) return;
     if (response.account_exist && response.token && response.account?.id) {
       createSession(response.token, response.account?.id);
       nav('/whitelist-profile');
+    } else {
+      location.replace(KYZZEN_BASE + '/login?fromKns=true')
     }
   };
 
@@ -56,12 +61,18 @@ const WhitelistRegistration: React.FC = () => {
     if (data.account_exist && data.token && data.profile?.id) {
       createSession(data.token, data.profile.id);
       nav('/whitelist-profile');
+    } else {
+      location.replace(KYZZEN_BASE + '/login?fromKns=true')
     }
-    // toast.success("Wallet linked successfully")
-    // const addr = data.address || ""
-    // setWallets([...wallets, addr])
-    // setShowWalletModal(current => !current)
   };
+
+  const goToProfile = () => {
+    if (userSession?.id) {
+      nav('/whitelist-profile')
+    } else {
+      setSignInModal(true)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -71,7 +82,7 @@ const WhitelistRegistration: React.FC = () => {
           Sign in / setup your Kyzzen profile to register for the whitelist or to view qualification status.
         </p>
         <div className={styles.buttons}>
-          <button className={styles.setupButton} onClick={() => nav('/whitelist-profile')}>
+          <button className={styles.setupButton} onClick={goToProfile}>
             Set Up Kyzzen Profile
           </button>
           <button className={styles.signInButton} onClick={() => setSignInModal(true)}>

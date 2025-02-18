@@ -26,6 +26,7 @@ const userProfileDocument = gql`
         referredBy
         referrerCount
         telegramID
+        points
         telegramImageURL
         telegramUsername
         telegramVerified
@@ -52,7 +53,7 @@ export function useFetchProfile(id: string) {
       const data = await graphQLClient.request(userProfileDocument, {id});
       return data;
     },
-    enabled: !!id,
+    enabled: false,
     retry: false,
   });
 }
