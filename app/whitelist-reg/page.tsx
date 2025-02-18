@@ -25,7 +25,7 @@ const WhitelistRegistration: React.FC = () => {
   const nav = (route: string) => {
     router.push(route);
   };
-  
+
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
 
