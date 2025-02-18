@@ -18,7 +18,6 @@ const WhitelistRegistration: React.FC = () => {
   const {mutateAsync: verifyAuthCode} = useVerifyAuth();
   const {linkAuth} = useAuth();
   const {createSession} = useUser();
-  const searchParams = new URLSearchParams(window.location.search);
 
   const router = useRouter();
 
@@ -27,6 +26,8 @@ const WhitelistRegistration: React.FC = () => {
   };
 
   useEffect(() => {
+  const searchParams = new URLSearchParams(location.search);
+
     const provider = localStorage.getItem('provider');
     const code = searchParams.get('code'),
       state = searchParams.get('state');
@@ -35,7 +36,7 @@ const WhitelistRegistration: React.FC = () => {
     }
     handleCode(code, provider as SOCIAL_PROVIDERS_TYPE);
     nav(location.pathname);
-  }, [searchParams]);
+  }, []);
 
   const handleCode = async (code: string, provider: SOCIAL_PROVIDERS_TYPE) => {
     const response = await verifyAuthCode({provider, code, redirect_url: location.href, login: true});
