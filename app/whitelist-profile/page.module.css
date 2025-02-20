@@ -266,16 +266,16 @@ div.row {
   color: #40c9ff;
 }
 
-.reg_modal{
+.reg_modal {
   max-width: 500px;
 }
-.reg_modal ul{
+.reg_modal ul {
   padding-left: 2em;
 }
-.reg_modal li{
+.reg_modal li {
   margin: 1em 0;
 }
-.reg_modal p{
+.reg_modal p {
   line-height: 2.2;
   margin: 1em 0;
 }
