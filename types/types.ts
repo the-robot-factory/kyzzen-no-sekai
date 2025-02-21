@@ -11,7 +11,7 @@ export type UserProfileType = {
   id: string;
   username: string;
   description?: string;
-  points?:number
+  points?: number;
   email?: string | null;
   google_image_url?: string;
   google_refresh_token?: string;
@@ -51,10 +51,10 @@ export type SOCIALS = {
 };
 
 export type WhitelistSpot = {
-  amount: number
-  collectionId:string
-  thumbnail:string
-  name:string
-  wallet:string
-}
+  amount: number;
+  collectionId: string;
+  thumbnail: string;
+  name: string;
+  wallet: string;
+};
 export type CookieKeys = (typeof COOKIES_KEYS)[keyof typeof COOKIES_KEYS];

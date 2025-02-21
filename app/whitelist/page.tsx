@@ -1,22 +1,22 @@
 'use client';
-import { useFetchWhitelistSpots } from '@/api/hooks/whitelist';
+import {useFetchWhitelistSpots} from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { WhitelistSpot } from '@/types/types';
+import {WhitelistSpot} from '@/types/types';
 
 export default function Whitelist() {
-  const { data: spots } = useFetchWhitelistSpots()
+  const {data: spots} = useFetchWhitelistSpots();
   const leaderboardData = [
-    { rank: 1, username: 'TheAnimeSoL', points: 20420 },
-    { rank: 2, username: 'OKAY BEARS ZOMBIE', points: 18900 },
-    { rank: 3, username: 'The Sports Club - MVP', points: 18230 },
-    { rank: 4, username: 'EyePhucked Kitty', points: 17420 },
-    { rank: 5, username: 'Stranger Fins', points: 14200 },
-    { rank: 6, username: 'Glorious Lions', points: 12320 },
-    { rank: 7, username: 'Stranger Fins', points: 10870 },
-    { rank: 8, username: 'Glorious Lions', points: 8390 },
-    { rank: 9, username: 'Stranger Fins', points: 2390 },
-    { rank: 10, username: 'EyePhucked Kitty', points: 800 },
+    {rank: 1, username: 'TheAnimeSoL', points: 20420},
+    {rank: 2, username: 'OKAY BEARS ZOMBIE', points: 18900},
+    {rank: 3, username: 'The Sports Club - MVP', points: 18230},
+    {rank: 4, username: 'EyePhucked Kitty', points: 17420},
+    {rank: 5, username: 'Stranger Fins', points: 14200},
+    {rank: 6, username: 'Glorious Lions', points: 12320},
+    {rank: 7, username: 'Stranger Fins', points: 10870},
+    {rank: 8, username: 'Glorious Lions', points: 8390},
+    {rank: 9, username: 'Stranger Fins', points: 2390},
+    {rank: 10, username: 'EyePhucked Kitty', points: 800},
   ];
   return (
     <div className={styles.whitelist_con}>
