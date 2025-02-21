@@ -1,5 +1,5 @@
 'use client';
-import {useAuthUrl} from '@/api/social';
+import {useAuthUrl} from '@/api/hooks/social';
 import {SOCIAL_PROVIDERS_TYPE} from '@/types/types';
 import React, {ReactNode, useContext} from 'react';
 

@@ -1,11 +1,6 @@
-import {GQL_BASE} from '@/constants/url';
-import {useQuery} from '@tanstack/react-query';
-// import { graphql } from './gql';
-import {GraphQLClient, gql} from 'graphql-request';
+import { gql} from 'graphql-request';
 
-const graphQLClient = new GraphQLClient(GQL_BASE);
-
-const userProfileDocument = gql`
+export const userProfileDocument = gql`
   query UserProfile($id: String) {
     profile(id: $id) {
       nodes {
@@ -45,15 +40,3 @@ const userProfileDocument = gql`
     }
   }
 `;
-
-export function useFetchProfile(id: string) {
-  return useQuery({
-    queryKey: ['profile', id],
-    queryFn: async () => {
-      const data = await graphQLClient.request(userProfileDocument, {id});
-      return data;
-    },
-    enabled: !!id,
-    retry: false,
-  });
-}

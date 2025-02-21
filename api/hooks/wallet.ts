@@ -2,9 +2,9 @@ import base58 from 'bs58';
 import {PROFILE_BASEURL} from '@/constants/url';
 import {SignInResponse, WALLET_PROVIDERS_TYPE} from '@/types/types';
 import {useMutation} from '@tanstack/react-query';
-import {handleError, handleSuccess} from './utill';
 import {WALLET_PROVIDERS} from '@/context/wallet';
 import {WalletAdapterNetwork} from '@solana/wallet-adapter-base';
+import { handleError, handleSuccess } from '../utill';
 
 export function useConnectAndSignMessage() {
   return useMutation({

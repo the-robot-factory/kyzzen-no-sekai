@@ -6,11 +6,11 @@ import Modal from '@/components/modal/modal';
 import GradientButton from '@/components/button/button';
 import Image from 'next/image';
 import {socialProvider, walletProvider} from '@/constants/provider';
-import {useConnectAndSignMessage} from '@/api/wallet';
+import {useConnectAndSignMessage} from '@/api/hooks/wallet';
 import {SOCIAL_PROVIDERS_TYPE, WALLET_PROVIDERS_TYPE} from '@/types/types';
 import {useUser} from '@/context/user';
 import {useAuth} from '@/context/auth';
-import {useVerifyAuth} from '@/api/social';
+import {useVerifyAuth} from '@/api/hooks/social';
 import {KYZZEN_BASE} from '@/constants/url';
 
 const WhitelistRegistration: React.FC = () => {

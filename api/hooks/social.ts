@@ -1,7 +1,7 @@
 import {PROFILE_BASEURL} from '@/constants/url';
 import {SOCIAL_PROVIDERS_TYPE} from '@/types/types';
 import {useMutation} from '@tanstack/react-query';
-import {handleError, handleSuccess} from './utill';
+import {handleError, handleSuccess} from '../utill';
 
 type Auth = {
   provider: SOCIAL_PROVIDERS_TYPE;
