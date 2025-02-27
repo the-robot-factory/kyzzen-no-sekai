@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useMutation, useQuery } from '@tanstack/react-query';
-import { graphQLClient } from '../client';
-import { whitelistSpotsDocument } from '../queries/whitelist';
-import { handleError } from '../utill';
-import { PROFILE_BASEURL } from '@/constants/url';
+import {useMutation, useQuery} from '@tanstack/react-query';
+import {graphQLClient} from '../client';
+import {whitelistSpotsDocument} from '../queries/whitelist';
+import {handleError} from '../utill';
+import {PROFILE_BASEURL} from '@/constants/url';
 
 export function useFetchWhitelistSpots(id?: string) {
   return useQuery({
     queryKey: ['whitelist', id],
     queryFn: async () => {
-      const data = await graphQLClient.request<any>(whitelistSpotsDocument, { collectionId: id });
+      const data = await graphQLClient.request<any>(whitelistSpotsDocument, {collectionId: id});
       return data?.whitelistSpotByCollection?.nodes;
     },
     // enabled: !!id,
@@ -49,7 +49,7 @@ export function useRegisterWhitelist() {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
         });
         if (!response.ok) throw new Error('Failed to get url');
@@ -59,6 +59,6 @@ export function useRegisterWhitelist() {
         handleError(error, 'Failed to get url');
         throw error;
       }
-    }
-  })
+    },
+  });
 }
