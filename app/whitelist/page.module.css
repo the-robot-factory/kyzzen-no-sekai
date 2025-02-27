@@ -142,6 +142,10 @@
   /* padding: 20px; */
 }
 
+.leaderboard_table table{
+  min-width: 100% !important;
+}
+
 .leaderboard_table th,
 .leaderboard_table td {
   padding: 12px;

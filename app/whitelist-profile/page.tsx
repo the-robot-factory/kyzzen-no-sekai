@@ -3,46 +3,50 @@
 import Table from '@/components/table/table';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {SOCIAL_PROVIDERS} from '@/types/enums';
-import {useState} from 'react';
-import {SOCIALS} from '@/types/types';
-import {screens} from '@/constants/screen';
+import { SOCIAL_PROVIDERS } from '@/types/enums';
+import { useState } from 'react';
+import { SOCIALS } from '@/types/types';
+import { screens } from '@/constants/screen';
 import Tooltip from '@/components/tooltip/tooltip';
 import Link from 'next/link';
-import {useUser} from '@/context/user';
-import {useFetchProfile} from '@/api/hooks/profile';
+import { useUser } from '@/context/user';
+import { useFetchProfile } from '@/api/hooks/profile';
 import Modal from '@/components/modal/modal';
+import { useRegisterWhitelist } from '@/api/hooks/whitelist';
+import GradientButton from '@/components/button/button';
 
 const WhitelistProfile = () => {
-  const {userSession} = useUser();
+  const { userSession } = useUser();
 
-  const {data: profile, isFetching}: any = useFetchProfile(userSession?.id ?? '');
+  const { data: profile, isFetching }: any = useFetchProfile(userSession?.id ?? '');
+  const { mutateAsync: register, isPending } = useRegisterWhitelist()
   const [registrationModal, setRegistrationModal] = useState(false);
-  // const profile = useMemo(() => {
-  //   return data?.profile?.nodes[0];
-  // }, [data]);
 
+
+  const handleRegistration = async () => {
+    await register(userSession?.token ?? '')
+  }
   const networkMembers = [
-    {name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' '},
-    {name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' '},
-    {name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' '},
-    {name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' '},
-    {name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' '},
-    {name: 'Voshy', role: 'GREED Academy Founder', avatar: ' '},
-    {name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' '},
-    {name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' '},
-    {name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' '},
-    {name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' '},
-    {name: 'Nom', role: 'Bonk Co-Founder', avatar: ' '},
-    {name: 'Kais', role: 'Okay Bears Founder', avatar: ' '},
-    {name: 'Easy', role: 'BoDoggos Founder', avatar: ' '},
-    {name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' '},
-    {name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' '},
-    {name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' '},
-    {name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' '},
-    {name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' '},
-    {name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' '},
-    {name: 'SOK', role: 'Raposa Founder', avatar: ' '},
+    { name: 'JemmyJemm', role: 'MonkeDAO Co-Founder', avatar: ' ' },
+    { name: 'CryptoApe', role: 'MultiChain Advisors, Founder', avatar: ' ' },
+    { name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO', avatar: ' ' },
+    { name: 'Zeneca', role: 'Zen Academy Founder', avatar: ' ' },
+    { name: 'Genuine Articles', role: 'GeckoDAO Founder', avatar: ' ' },
+    { name: 'Voshy', role: 'GREED Academy Founder', avatar: ' ' },
+    { name: 'unjustmouse', role: 'GREED Academy Head of Education', avatar: ' ' },
+    { name: 'Turnt Up Dylan', role: 'Dead King Society Founder', avatar: ' ' },
+    { name: 'draxx.ts.sol', role: 'Famous Fox Federation Co-Founder', avatar: ' ' },
+    { name: 'HoTsAuCe', role: 'NFT Radar Community Manager', avatar: ' ' },
+    { name: 'Nom', role: 'Bonk Co-Founder', avatar: ' ' },
+    { name: 'Kais', role: 'Okay Bears Founder', avatar: ' ' },
+    { name: 'Easy', role: 'BoDoggos Founder', avatar: ' ' },
+    { name: 'Solarians', role: 'RoboDAO Council Member', avatar: ' ' },
+    { name: 'NFP', role: 'Pesky Penguins Co-Founder', avatar: ' ' },
+    { name: 'Solana Sensei', role: 'Sensei / Namaste Founder', avatar: ' ' },
+    { name: 'Timon', role: 'Meerkat Millionaires Founder', avatar: ' ' },
+    { name: 'DogeFather', role: 'Doge Capital Founder', avatar: ' ' },
+    { name: 'DJ Trix', role: 'Fearless Bulls Club Founder', avatar: ' ' },
+    { name: 'SOK', role: 'Raposa Founder', avatar: ' ' },
   ];
 
   const socials: SOCIALS[] = [
@@ -111,7 +115,7 @@ const WhitelistProfile = () => {
       account: 'YouTube',
       icon: '/svg/youtube.svg',
       linkedAccount: profile?.youtubeUsername,
-      status: profile?.youtubeVerified,
+      status: profile?.youtubeVerified || profile?.emailVerified,
       action: (
         <>
           Not following Kyzzen yet.{' '}
@@ -146,11 +150,20 @@ const WhitelistProfile = () => {
         {/* Registration Status */}
         <div className={styles.registration_status}>
           <span>
-            Registration Status: <span className={styles.not_registered}> Not Registered</span>
+            Registration Status:
+            {
+              !profile?.registeredWhitelist ?
+                <span className={styles.not_registered}> Not Registered</span> :
+                <span className={styles.registered}> Registered</span>
+            }
           </span>
-          <button onClick={() => setRegistrationModal(true)} className={styles.register_button}>
-            Register for Whitelist
-          </button>
+          {
+            !profile?.registeredWhitelist &&
+            <button onClick={() => setRegistrationModal(true)} className={styles.register_button}>
+              Register for Whitelist
+            </button>
+          }
+
           <Modal show={registrationModal} hide={() => setRegistrationModal(false)} heading="Prerequisite">
             <div className={styles.reg_modal}>
               <p>Please ensure that you complete the following in order to register for our Whitelist:</p>
@@ -163,7 +176,11 @@ const WhitelistProfile = () => {
               <p>
                 We require the above in order to assign you the “Whitelisted” role in our Discord and notify you of your Whitelist
                 status via our Telegram bot.
-              </p>
+              </p> <br />
+              <GradientButton onClick={handleRegistration}>
+                {isPending ? 'Registering...' : 'Proceed'}
+              </GradientButton>
+              <br />
             </div>
           </Modal>
         </div>
@@ -180,11 +197,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Link / Unlink Connections</button>
           </div>
           <Table
-            header={[{name: 'Account'}, {name: 'Linked Account'}, {name: 'Status'}]}
+            header={[{ name: 'Account' }, { name: 'Linked Account' }, { name: 'Status' }]}
             body={socials}
             isRow
             Row={SocialRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
@@ -201,11 +218,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Add / Unlink Wallets</button>
           </div>
           <Table
-            header={[{name: 'Network'}, {name: 'Address'}, {name: ''}]}
+            header={[{ name: 'Network' }, { name: 'Address' }, { name: '' }]}
             body={profile?.wallets}
             isRow
             Row={WalletRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
@@ -226,8 +243,8 @@ const WhitelistProfile = () => {
               <Link href="/whitelist">View point system</Link>
             </div>
             <div className={styles.network}>
-              <p className={styles.network_text}>Rank = {profile?.points}</p>
-              <p className={styles.network_text}>Points = 0</p>
+              <p className={styles.network_text}>Rank = 0</p>
+              <p className={styles.network_text}>Points = {profile?.points}</p>
             </div>
           </section>
         </div>
@@ -274,7 +291,7 @@ const WhitelistProfile = () => {
 
 export default WhitelistProfile;
 
-const SocialRow = ({data}: {data: SOCIALS}) => {
+const SocialRow = ({ data }: { data: SOCIALS }) => {
   return (
     <tr className={styles.row}>
       <td>
@@ -289,7 +306,7 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
   );
 };
 
-const WalletRow = ({data}: {data: string}) => {
+const WalletRow = ({ data }: { data: string }) => {
   const isPrimary = (addr: string) => {
     return addr.includes('primary:');
   };

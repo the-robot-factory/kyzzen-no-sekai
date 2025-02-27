@@ -1,23 +1,14 @@
 'use client';
-import {useFetchWhitelistSpots} from '@/api/hooks/whitelist';
+import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {WhitelistSpot} from '@/types/types';
+import { WhitelistSpot } from '@/types/types';
+import Table from '@/components/table/table';
 
 export default function Whitelist() {
-  const {data: spots} = useFetchWhitelistSpots();
-  const leaderboardData = [
-    {rank: 1, username: 'TheAnimeSoL', points: 20420},
-    {rank: 2, username: 'OKAY BEARS ZOMBIE', points: 18900},
-    {rank: 3, username: 'The Sports Club - MVP', points: 18230},
-    {rank: 4, username: 'EyePhucked Kitty', points: 17420},
-    {rank: 5, username: 'Stranger Fins', points: 14200},
-    {rank: 6, username: 'Glorious Lions', points: 12320},
-    {rank: 7, username: 'Stranger Fins', points: 10870},
-    {rank: 8, username: 'Glorious Lions', points: 8390},
-    {rank: 9, username: 'Stranger Fins', points: 2390},
-    {rank: 10, username: 'EyePhucked Kitty', points: 800},
-  ];
+  const { data: spots } = useFetchWhitelistSpots();
+  const { data: leaders, } = useFetchLeaderboard();
+
   return (
     <div className={styles.whitelist_con}>
       <main>
@@ -40,27 +31,13 @@ export default function Whitelist() {
           <div className={styles.leaderboard}>
             <h2 className={styles.section_title}>Leaderboard</h2>
             <input type="text" placeholder="Search username" className={styles.search_bar} />
-            <table className={styles.leaderboard_table}>
-              <thead>
-                <tr>
-                  <th>Rank</th>
-                  <th>Username</th>
-                  <th>Points</th>
-                </tr>
-              </thead>
-              <tbody>
-                {leaderboardData.map(item => (
-                  <tr key={item.rank}>
-                    <td>{item.rank}</td>
-                    <td>
-                      <Image src="/images/founder.png" alt="girl" width={40} height={40} priority />
-                      {item.username}
-                    </td>
-                    <td>{item.points}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <Table
+              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
+              body={leaders ?? []}
+              style={{ margin: '0 auto', height: 'fit-content' }}
+              className={styles.leaderboard_table}
+            />
+        
           </div>
           <div className={styles.point_system}>
             <h2 className={styles.section_title}>Point System</h2>

@@ -55,6 +55,9 @@
 .not_registered {
   color: red;
 }
+.registered {
+  color: #c1ff04;
+}
 
 .register_button {
   padding: 10px 30px;
