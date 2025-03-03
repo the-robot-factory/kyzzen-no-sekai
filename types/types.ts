@@ -52,7 +52,7 @@ export type SOCIALS = {
 
 export type WhitelistSpot = {
   position: number;
-  numberOfSpots:number;
+  numberOfSpots: number;
   collectionId: string;
   image: string;
   collectionName: string;
