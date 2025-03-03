@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {useMutation, useQuery} from '@tanstack/react-query';
-import {graphQLClient} from '../client';
-import {whitelistSpotsDocument} from '../queries/whitelist';
-import {handleError} from '../utill';
-import {PROFILE_BASEURL} from '@/constants/url';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { graphQLClient } from '../client';
+import { whitelistSpotsDocument } from '../queries/whitelist';
+import { handleError } from '../utill';
+import { PROFILE_BASEURL } from '@/constants/url';
 
 export function useFetchWhitelistSpots(id?: string) {
   return useQuery({
     queryKey: ['whitelist', id],
     queryFn: async () => {
-      const data = await graphQLClient.request<any>(whitelistSpotsDocument, {collectionId: id});
+      const data = await graphQLClient.request<any>(whitelistSpotsDocument, { collectionId: id });
       return data?.whitelistPartner?.nodes;
     },
     // enabled: !!id,
@@ -52,11 +52,13 @@ export function useRegisterWhitelist() {
             Authorization: `Bearer ${token}`,
           },
         });
-        if (!response.ok) throw new Error('Failed to get url');
+
         const data = await response.json();
+        if (!response.ok) throw new Error(data.message);
         return data;
-      } catch (error) {
-        handleError(error, 'Failed to get url');
+      } catch (error: unknown) {
+
+        handleError(error, (error as Error)?.message ?? 'Failed to register');
         throw error;
       }
     },

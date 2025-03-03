@@ -270,7 +270,8 @@ div.row {
 }
 
 .reg_modal {
-  max-width: 500px;
+  max-width: 600px;
+  /* margin-bottom: 8em; */
 }
 .reg_modal ul {
   padding-left: 2em;
@@ -279,8 +280,8 @@ div.row {
   margin: 1em 0;
 }
 .reg_modal p {
-  line-height: 2.2;
-  margin: 1em 0;
+  line-height: 1.7;
+  margin:-1em 0 1em 0;
 }
 
 /* skeleton */

@@ -31,8 +31,8 @@ const WhitelistProfile = () => {
   const socials: SOCIALS[] = [
     {
       id: SOCIAL_PROVIDERS.Mail,
-      icon: '/svg/mail.svg',
-      account: 'Email',
+      icon: '/svg/google.svg',
+      account: 'Gmail',
       linkedAccount: profile?.email,
       status: profile?.emailVerified,
       action: (
@@ -116,7 +116,7 @@ const WhitelistProfile = () => {
           <div className={styles.profile_info}>
             <Image
               className={styles.profile_image}
-              src={profile?.bannerURL ?? '/images/founder.png'}
+              src={profile?.thumbnailURL ?? '/images/founder.png'}
               alt="girl"
               width={65}
               height={65}
@@ -142,7 +142,7 @@ const WhitelistProfile = () => {
             </button>
           )}
 
-          <Modal show={registrationModal} hide={() => setRegistrationModal(false)} heading="Prerequisite">
+          <Modal show={registrationModal} hide={() => setRegistrationModal(false)} heading="Register for Whitelist">
             <div className={styles.reg_modal}>
               <p>Please ensure that you complete the following in order to register for our Whitelist:</p>
               <ul>
@@ -155,6 +155,7 @@ const WhitelistProfile = () => {
                 We require the above in order to assign you the “Whitelisted” role in our Discord and notify you of your Whitelist
                 status via our Telegram bot.
               </p>{' '}
+              <p>Please note that if you reverse any of the above required actions, you will be unregistered from the whitelist accordingly</p>
               <br />
               <GradientButton onClick={handleRegistration}>{isPending ? 'Registering...' : 'Proceed'}</GradientButton>
               <br />
