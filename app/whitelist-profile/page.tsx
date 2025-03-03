@@ -106,9 +106,6 @@ const WhitelistProfile = () => {
     },
   ];
 
-
-  <WhitelistSkeleton />
-
   if (!isFetching && profile) {
     return (
       <div className={styles.container}>
@@ -170,7 +167,10 @@ const WhitelistProfile = () => {
           <div className={styles.section_header}>
             <h2>
               Connections
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="You are awarded 10 points for each account that is connected to your Kyzzen Profile, as well as each successful verification that you are following/subscribed to Kyzzen’s accounts. ">
+              <Tooltip
+                placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'}
+                text="You are awarded 10 points for each account that is connected to your Kyzzen Profile, as well as each successful verification that you are following/subscribed to Kyzzen’s accounts. "
+              >
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </h2>
@@ -191,7 +191,10 @@ const WhitelistProfile = () => {
           <div className={styles.section_header}>
             <h2>
               Your Linked Wallets
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Linking your wallet allows us to assess which whitelist partner community you are a part of. Please note that your Primary Wallet will be your whitelisted wallet address.">
+              <Tooltip
+                placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'}
+                text="Linking your wallet allows us to assess which whitelist partner community you are a part of. Please note that your Primary Wallet will be your whitelisted wallet address."
+              >
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </h2>
@@ -216,7 +219,10 @@ const WhitelistProfile = () => {
             <div className={styles.network_header}>
               <div className={styles.network_tooltip}>
                 Whitelist Leaderboard
-                <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Top 500 users on the Whitelist Leaderboard at the end of the whitelist period will be awarded 1 whitelist spot.">
+                <Tooltip
+                  placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'}
+                  text="Top 500 users on the Whitelist Leaderboard at the end of the whitelist period will be awarded 1 whitelist spot."
+                >
                   <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
                 </Tooltip>
               </div>
@@ -233,7 +239,10 @@ const WhitelistProfile = () => {
           <div className={styles.network_header}>
             <div className={styles.network_tooltip}>
               Whitelist Partner Communities
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Please note that you can only obtain 1 whitelist spot in this category - however, the more Whitelist Partner Communities you are a part of (based on your ownership of their NFTs), the more chances you get for a whitelist spot. ">
+              <Tooltip
+                placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'}
+                text="Please note that you can only obtain 1 whitelist spot in this category - however, the more Whitelist Partner Communities you are a part of (based on your ownership of their NFTs), the more chances you get for a whitelist spot. "
+              >
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </div>
@@ -261,9 +270,7 @@ const WhitelistProfile = () => {
       </div>
     );
   } else {
-    return (
-      <WhitelistSkeleton />
-    );
+    return <WhitelistSkeleton />;
   }
 };
 
