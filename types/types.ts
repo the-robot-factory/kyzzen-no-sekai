@@ -51,10 +51,11 @@ export type SOCIALS = {
 };
 
 export type WhitelistSpot = {
-  amount: number;
+  position: number;
+  numberOfSpots:number;
   collectionId: string;
-  thumbnail: string;
-  name: string;
+  image: string;
+  collectionName: string;
   wallet: string;
 };
 export type CookieKeys = (typeof COOKIES_KEYS)[keyof typeof COOKIES_KEYS];

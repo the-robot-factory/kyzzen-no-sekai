@@ -70,18 +70,19 @@ export default function Whitelist() {
             <div className={styles.grid_section}>
               {spots?.map((spot: WhitelistSpot, index: number) => (
                 <div key={index} className={styles.member_card}>
-                  {spot.thumbnail ? (
-                    <Image className={styles.avatar} src="/images/founder.png" alt="girl" width={65} height={65} priority />
+                  {spot.image ? (
+                    <Image className={styles.avatar} src={spot.image} alt="girl" width={65} height={65} priority />
                   ) : (
                     <div className={styles.avatar_placeholder}></div>
                   )}
                   <div className={styles.member_details}>
-                    <h3 className={styles.member_name}>{spot.name}</h3>
-                    <p className={styles.member_role}>{spot.amount} spots</p>
+                    <h3 className={styles.member_name}>{spot.collectionName}</h3>
+                    <p className={styles.member_role}>{spot.numberOfSpots} spots</p>
                   </div>
                 </div>
               ))}
-            </div>
+
+            </div><br/><br/><br/>
           </div>
         </section>
       </main>

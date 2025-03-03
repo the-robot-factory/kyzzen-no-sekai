@@ -10,7 +10,7 @@ export function useFetchWhitelistSpots(id?: string) {
     queryKey: ['whitelist', id],
     queryFn: async () => {
       const data = await graphQLClient.request<any>(whitelistSpotsDocument, {collectionId: id});
-      return data?.whitelistSpotByCollection?.nodes;
+      return data?.whitelistPartner?.nodes;
     },
     // enabled: !!id,
     retry: false,

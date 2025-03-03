@@ -2,12 +2,17 @@ import {gql} from 'graphql-request';
 
 export const whitelistSpotsDocument = gql`
   query WhitelistSpots($collectionId: String) {
-    whitelistSpotByCollection(collectionId: $collectionId) {
-      nodes {
-        amount
-        collectionId
-        wallet
-      }
+    whitelistPartner(collectionId: $collectionId) {
+    nodes {
+      updatedAt
+      position
+      numberOfSpots
+      image
+      id
+      createdAt
+      collectionName
+      collectionId
+    }
     }
   }
 `;
