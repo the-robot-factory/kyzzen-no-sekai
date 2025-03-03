@@ -3,25 +3,26 @@
 import Table from '@/components/table/table';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {SOCIAL_PROVIDERS} from '@/types/enums';
-import {useState} from 'react';
-import {SOCIALS, WhitelistSpot} from '@/types/types';
-import {screens} from '@/constants/screen';
+import { SOCIAL_PROVIDERS } from '@/types/enums';
+import { useState } from 'react';
+import { SOCIALS, WhitelistSpot } from '@/types/types';
+import { screens } from '@/constants/screen';
 import Tooltip from '@/components/tooltip/tooltip';
 import Link from 'next/link';
-import {useUser} from '@/context/user';
-import {useFetchProfile} from '@/api/hooks/profile';
+import { useUser } from '@/context/user';
+import { useFetchProfile } from '@/api/hooks/profile';
 import Modal from '@/components/modal/modal';
-import {useFetchWhitelistSpots, useRegisterWhitelist} from '@/api/hooks/whitelist';
+import { useFetchWhitelistSpots, useRegisterWhitelist } from '@/api/hooks/whitelist';
 import GradientButton from '@/components/button/button';
+import WhitelistSkeleton from './skeleton';
 
 const WhitelistProfile = () => {
-  const {userSession} = useUser();
+  const { userSession } = useUser();
 
-  const {data: profile, isFetching}: any = useFetchProfile(userSession?.id ?? '');
-  const {mutateAsync: register, isPending} = useRegisterWhitelist();
+  const { data: profile, isFetching }: any = useFetchProfile(userSession?.id ?? '');
+  const { mutateAsync: register, isPending } = useRegisterWhitelist();
   const [registrationModal, setRegistrationModal] = useState(false);
-  const {data: spots} = useFetchWhitelistSpots();
+  const { data: spots } = useFetchWhitelistSpots();
 
   const handleRegistration = async () => {
     await register(userSession?.token ?? '');
@@ -93,7 +94,7 @@ const WhitelistProfile = () => {
       account: 'YouTube',
       icon: '/svg/youtube.svg',
       linkedAccount: profile?.youtubeUsername,
-      status: profile?.youtubeVerified || profile?.emailVerified,
+      status: profile?.youtubeVerified,
       action: (
         <>
           Not following Kyzzen yet.{' '}
@@ -104,6 +105,9 @@ const WhitelistProfile = () => {
       ),
     },
   ];
+
+
+  <WhitelistSkeleton />
 
   if (!isFetching && profile) {
     return (
@@ -166,18 +170,18 @@ const WhitelistProfile = () => {
           <div className={styles.section_header}>
             <h2>
               Connections
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="hello world">
+              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="You are awarded 10 points for each account that is connected to your Kyzzen Profile, as well as each successful verification that you are following/subscribed to Kyzzen’s accounts. ">
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </h2>
             <button className={styles.wallet_button}>Link / Unlink Connections</button>
           </div>
           <Table
-            header={[{name: 'Account'}, {name: 'Linked Account'}, {name: 'Status'}]}
+            header={[{ name: 'Account' }, { name: 'Linked Account' }, { name: 'Status' }]}
             body={socials}
             isRow
             Row={SocialRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
@@ -187,18 +191,18 @@ const WhitelistProfile = () => {
           <div className={styles.section_header}>
             <h2>
               Your Linked Wallets
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="hello world">
+              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Linking your wallet allows us to assess which whitelist partner community you are a part of. Please note that your Primary Wallet will be your whitelisted wallet address.">
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </h2>
             <button className={styles.wallet_button}>Add / Unlink Wallets</button>
           </div>
           <Table
-            header={[{name: 'Network'}, {name: 'Address'}, {name: ''}]}
+            header={[{ name: 'Network' }, { name: 'Address' }, { name: '' }]}
             body={profile?.wallets}
             isRow
             Row={WalletRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
@@ -212,7 +216,7 @@ const WhitelistProfile = () => {
             <div className={styles.network_header}>
               <div className={styles.network_tooltip}>
                 Whitelist Leaderboard
-                <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="hello world">
+                <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Top 500 users on the Whitelist Leaderboard at the end of the whitelist period will be awarded 1 whitelist spot.">
                   <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
                 </Tooltip>
               </div>
@@ -229,7 +233,7 @@ const WhitelistProfile = () => {
           <div className={styles.network_header}>
             <div className={styles.network_tooltip}>
               Whitelist Partner Communities
-              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="hello world">
+              <Tooltip placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'} text="Please note that you can only obtain 1 whitelist spot in this category - however, the more Whitelist Partner Communities you are a part of (based on your ownership of their NFTs), the more chances you get for a whitelist spot. ">
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </div>
@@ -258,16 +262,14 @@ const WhitelistProfile = () => {
     );
   } else {
     return (
-      <div>
-        <h2>Loading Profile</h2>
-      </div>
+      <WhitelistSkeleton />
     );
   }
 };
 
 export default WhitelistProfile;
 
-const SocialRow = ({data}: {data: SOCIALS}) => {
+const SocialRow = ({ data }: { data: SOCIALS }) => {
   return (
     <tr className={styles.row}>
       <td>
@@ -282,7 +284,7 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
   );
 };
 
-const WalletRow = ({data}: {data: string}) => {
+const WalletRow = ({ data }: { data: string }) => {
   const isPrimary = (addr: string) => {
     return addr.includes('primary:');
   };

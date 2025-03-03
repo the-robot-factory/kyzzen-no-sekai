@@ -282,3 +282,95 @@ div.row {
   line-height: 2.2;
   margin: 1em 0;
 }
+
+
+/* skeleton */
+
+.whitelist_container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #0d0d1a;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.profile_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile_loader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar_loader {
+  width: 60px;
+  height: 60px;
+  background: #1a1a33;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.text_loader {
+  width: 150px;
+  height: 20px;
+  background: #1a1a33;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite;
+}
+
+.status_section {
+  padding: 15px;
+}
+
+.connections_section {
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.connection_row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #222;
+}
+
+.icon_loader {
+  width: 24px;
+  height: 24px;
+  background: #1a1a33;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #1a1a33;
+  }
+  50% {
+    background-color: #292952;
+  }
+  100% {
+    background-color: #1a1a33;
+  }
+}
