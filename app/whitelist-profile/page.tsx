@@ -155,7 +155,10 @@ const WhitelistProfile = () => {
                 We require the above in order to assign you the “Whitelisted” role in our Discord and notify you of your Whitelist
                 status via our Telegram bot.
               </p>{' '}
-              <p>Please note that if you reverse any of the above required actions, you will be unregistered from the whitelist accordingly</p>
+              <p>
+                Please note that if you reverse any of the above required actions, you will be unregistered from the whitelist
+                accordingly
+              </p>
               <br />
               <GradientButton onClick={handleRegistration}>{isPending ? 'Registering...' : 'Proceed'}</GradientButton>
               <br />
