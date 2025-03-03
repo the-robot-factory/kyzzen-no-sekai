@@ -3,26 +3,26 @@
 import Table from '@/components/table/table';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { SOCIAL_PROVIDERS } from '@/types/enums';
-import { useState } from 'react';
-import { SOCIALS, WhitelistSpot } from '@/types/types';
-import { screens } from '@/constants/screen';
+import {SOCIAL_PROVIDERS} from '@/types/enums';
+import {useState} from 'react';
+import {SOCIALS, WhitelistSpot} from '@/types/types';
+import {screens} from '@/constants/screen';
 import Tooltip from '@/components/tooltip/tooltip';
 import Link from 'next/link';
-import { useUser } from '@/context/user';
-import { useFetchProfile } from '@/api/hooks/profile';
+import {useUser} from '@/context/user';
+import {useFetchProfile} from '@/api/hooks/profile';
 import Modal from '@/components/modal/modal';
-import { useFetchWhitelistSpots, useRegisterWhitelist } from '@/api/hooks/whitelist';
+import {useFetchWhitelistSpots, useRegisterWhitelist} from '@/api/hooks/whitelist';
 import GradientButton from '@/components/button/button';
 import WhitelistSkeleton from './skeleton';
 
 const WhitelistProfile = () => {
-  const { userSession } = useUser();
+  const {userSession} = useUser();
 
-  const { data: profile, isFetching }: any = useFetchProfile(userSession?.id ?? '');
-  const { mutateAsync: register, isPending } = useRegisterWhitelist();
+  const {data: profile, isFetching}: any = useFetchProfile(userSession?.id ?? '');
+  const {mutateAsync: register, isPending} = useRegisterWhitelist();
   const [registrationModal, setRegistrationModal] = useState(false);
-  const { data: spots } = useFetchWhitelistSpots();
+  const {data: spots} = useFetchWhitelistSpots();
 
   const handleRegistration = async () => {
     await register(userSession?.token ?? '');
@@ -177,11 +177,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Link / Unlink Connections</button>
           </div>
           <Table
-            header={[{ name: 'Account' }, { name: 'Linked Account' }, { name: 'Status' }]}
+            header={[{name: 'Account'}, {name: 'Linked Account'}, {name: 'Status'}]}
             body={socials}
             isRow
             Row={SocialRow}
-            style={{ margin: '0 auto', height: 'fit-content' }}
+            style={{margin: '0 auto', height: 'fit-content'}}
             className={styles.connection_table}
           />
         </div>
@@ -201,11 +201,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Add / Unlink Wallets</button>
           </div>
           <Table
-            header={[{ name: 'Network' }, { name: 'Address' }, { name: '' }]}
+            header={[{name: 'Network'}, {name: 'Address'}, {name: ''}]}
             body={profile?.wallets}
             isRow
             Row={WalletRow}
-            style={{ margin: '0 auto', height: 'fit-content' }}
+            style={{margin: '0 auto', height: 'fit-content'}}
             className={styles.connection_table}
           />
         </div>
@@ -276,7 +276,7 @@ const WhitelistProfile = () => {
 
 export default WhitelistProfile;
 
-const SocialRow = ({ data }: { data: SOCIALS }) => {
+const SocialRow = ({data}: {data: SOCIALS}) => {
   return (
     <tr className={styles.row}>
       <td>
@@ -291,7 +291,7 @@ const SocialRow = ({ data }: { data: SOCIALS }) => {
   );
 };
 
-const WalletRow = ({ data }: { data: string }) => {
+const WalletRow = ({data}: {data: string}) => {
   const isPrimary = (addr: string) => {
     return addr.includes('primary:');
   };
