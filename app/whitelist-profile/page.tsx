@@ -31,7 +31,7 @@ const WhitelistProfile = () => {
   const socials: SOCIALS[] = [
     {
       id: SOCIAL_PROVIDERS.Mail,
-      icon: '/svg/.svg',
+      icon: '/svg/mail.svg',
       account: 'Email',
       linkedAccount: profile?.email,
       status: profile?.emailVerified,
