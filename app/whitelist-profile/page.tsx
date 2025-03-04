@@ -93,7 +93,7 @@ const WhitelistProfile = () => {
       id: SOCIAL_PROVIDERS.YouTube,
       account: 'YouTube',
       icon: '/svg/youtube.svg',
-      linkedAccount: profile?.youtubeUsername,
+      linkedAccount: profile?.email,
       status: profile?.youtubeVerified,
       action: (
         <>
@@ -151,10 +151,12 @@ const WhitelistProfile = () => {
                 <li>Link your Telegram Profile</li>
                 <li>Activate our Telegram Bot</li>
               </ul>
+              <br />
               <p>
                 We require the above in order to assign you the “Whitelisted” role in our Discord and notify you of your Whitelist
                 status via our Telegram bot.
               </p>{' '}
+              <br />
               <p>
                 Please note that if you reverse any of the above required actions, you will be unregistered from the whitelist
                 accordingly
@@ -194,7 +196,7 @@ const WhitelistProfile = () => {
         <div className={styles.section}>
           <div className={styles.section_header}>
             <h2>
-              Your Linked Wallets
+              Linked Wallets
               <Tooltip
                 placement={window.innerWidth < screens.mobile.max ? 'bottom-start' : 'right'}
                 text="Linking your wallet allows us to assess which whitelist partner community you are a part of. Please note that your Primary Wallet will be your whitelisted wallet address."
