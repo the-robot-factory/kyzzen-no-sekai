@@ -3,25 +3,25 @@
 import Table from '@/components/table/table';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { SOCIAL_PROVIDERS } from '@/types/enums';
-import { useState } from 'react';
-import { SOCIALS } from '@/types/types';
-import { screens } from '@/constants/screen';
+import {SOCIAL_PROVIDERS} from '@/types/enums';
+import {useState} from 'react';
+import {SOCIALS} from '@/types/types';
+import {screens} from '@/constants/screen';
 import Tooltip from '@/components/tooltip/tooltip';
 import Link from 'next/link';
-import { useUser } from '@/context/user';
-import { useFetchEligibleCommunities, useFetchProfile } from '@/api/hooks/profile';
+import {useUser} from '@/context/user';
+import {useFetchEligibleCommunities, useFetchProfile} from '@/api/hooks/profile';
 import Modal from '@/components/modal/modal';
-import { useRegisterWhitelist } from '@/api/hooks/whitelist';
+import {useRegisterWhitelist} from '@/api/hooks/whitelist';
 import GradientButton from '@/components/button/button';
-import WhitelistSkeleton, { PartnerSkeleton } from './skeleton';
+import WhitelistSkeleton, {PartnerSkeleton} from './skeleton';
 
 const WhitelistProfile = () => {
-  const { userSession } = useUser();
+  const {userSession} = useUser();
 
-  const { data: profile, isFetching }: any = useFetchProfile(userSession?.id ?? '');
-  const { data: spots, isFetching: fetchingEligible }: any = useFetchEligibleCommunities(userSession?.token ?? '');
-  const { mutateAsync: register, isPending } = useRegisterWhitelist();
+  const {data: profile, isFetching}: any = useFetchProfile(userSession?.id ?? '');
+  const {data: spots, isFetching: fetchingEligible}: any = useFetchEligibleCommunities(userSession?.token ?? '');
+  const {mutateAsync: register, isPending} = useRegisterWhitelist();
   const [registrationModal, setRegistrationModal] = useState(false);
 
   const handleRegistration = async () => {
@@ -106,7 +106,7 @@ const WhitelistProfile = () => {
     },
   ];
 
-  const spotsQualified = spots?.filter((spot: any) => spot?.eligible)
+  const spotsQualified = spots?.filter((spot: any) => spot?.eligible);
   if (!isFetching && profile) {
     return (
       <div className={styles.container}>
@@ -184,11 +184,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Link / Unlink Connections</button>
           </div>
           <Table
-            header={[{ name: 'Account' }, { name: 'Linked Account' }, { name: 'Status' }]}
+            header={[{name: 'Account'}, {name: 'Linked Account'}, {name: 'Status'}]}
             body={socials}
             isRow
             Row={SocialRow}
-            style={{ margin: '0 auto', height: 'fit-content' }}
+            style={{margin: '0 auto', height: 'fit-content'}}
             className={styles.connection_table}
           />
         </div>
@@ -208,11 +208,11 @@ const WhitelistProfile = () => {
             <button className={styles.wallet_button}>Add / Unlink Wallets</button>
           </div>
           <Table
-            header={[{ name: 'Network' }, { name: 'Address' }, { name: '' }]}
+            header={[{name: 'Network'}, {name: 'Address'}, {name: ''}]}
             body={profile?.wallets}
             isRow
             Row={WalletRow}
-            style={{ margin: '0 auto', height: 'fit-content' }}
+            style={{margin: '0 auto', height: 'fit-content'}}
             className={styles.connection_table}
           />
         </div>
@@ -256,24 +256,27 @@ const WhitelistProfile = () => {
             <Link href="/whitelist">View whitelist partner communities</Link>
           </div>
           <div className={styles.network}>
-            <p className={styles.network_text}>You qualify under {spotsQualified?.length} out of {spots.length} whitelist partner community allocations.</p>
-            {
-              fetchingEligible && <PartnerSkeleton />
-            }
+            <p className={styles.network_text}>
+              You qualify under {spotsQualified?.length} out of {spots.length} whitelist partner community allocations.
+            </p>
+            {fetchingEligible && <PartnerSkeleton />}
             <div className={styles.grid_section}>
-              {!fetchingEligible && [...spots]?.sort((a, b) => b.eligible - a.eligible)?.map((spot: any, index: number) => (
-                <div key={index} className={`${styles.member_card} ${!spot.eligible && styles.member_card_faded}`}>
-                  {spot.Image ? (
-                    <Image className={styles.avatar} src={spot.Image} alt="girl" width={65} height={65} priority />
-                  ) : (
-                    <div className={styles.avatar_placeholder}></div>
-                  )}
-                  <div className={styles.member_details}>
-                    <h3 className={styles.member_name}>{spot.CollectionName}</h3>
-                    <p className={styles.member_role}>{spot.NumberOfSpots} spots</p>
-                  </div>
-                </div>
-              ))}
+              {!fetchingEligible &&
+                [...spots]
+                  ?.sort((a, b) => b.eligible - a.eligible)
+                  ?.map((spot: any, index: number) => (
+                    <div key={index} className={`${styles.member_card} ${!spot.eligible && styles.member_card_faded}`}>
+                      {spot.Image ? (
+                        <Image className={styles.avatar} src={spot.Image} alt="girl" width={65} height={65} priority />
+                      ) : (
+                        <div className={styles.avatar_placeholder}></div>
+                      )}
+                      <div className={styles.member_details}>
+                        <h3 className={styles.member_name}>{spot.CollectionName}</h3>
+                        <p className={styles.member_role}>{spot.NumberOfSpots} spots</p>
+                      </div>
+                    </div>
+                  ))}
             </div>
           </div>
         </section>
@@ -286,7 +289,7 @@ const WhitelistProfile = () => {
 
 export default WhitelistProfile;
 
-const SocialRow = ({ data }: { data: SOCIALS }) => {
+const SocialRow = ({data}: {data: SOCIALS}) => {
   return (
     <tr className={styles.row}>
       <td>
@@ -317,7 +320,7 @@ const SocialRow = ({ data }: { data: SOCIALS }) => {
   );
 };
 
-const WalletRow = ({ data }: { data: string }) => {
+const WalletRow = ({data}: {data: string}) => {
   const isPrimary = (addr: string) => {
     return addr.includes('primary:');
   };

@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useQuery } from '@tanstack/react-query';
-import { userProfileDocument } from '../queries/profile';
-import { graphQLClient } from '../client';
-import { PROFILE_BASEURL } from '@/constants/url';
-import { handleError } from '../utill';
+import {useQuery} from '@tanstack/react-query';
+import {userProfileDocument} from '../queries/profile';
+import {graphQLClient} from '../client';
+import {PROFILE_BASEURL} from '@/constants/url';
+import {handleError} from '../utill';
 
 export function useFetchProfile(id: string) {
   return useQuery({
     queryKey: ['profile', id],
     queryFn: async () => {
-      const data = await graphQLClient.request<any>(userProfileDocument, { id });
+      const data = await graphQLClient.request<any>(userProfileDocument, {id});
       return data?.profile?.nodes[0];
     },
     enabled: !!id,
@@ -17,9 +17,7 @@ export function useFetchProfile(id: string) {
   });
 }
 
-
 export function useFetchEligibleCommunities(token: string) {
-
   return useQuery({
     queryKey: ['eligible communities', token],
     queryFn: async () => {
@@ -29,7 +27,7 @@ export function useFetchEligibleCommunities(token: string) {
           headers: {
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + token,
-          }
+          },
         });
 
         const data = await response.json();
