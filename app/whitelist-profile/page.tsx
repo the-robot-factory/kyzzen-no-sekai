@@ -236,7 +236,7 @@ const WhitelistProfile = () => {
               <Link href="/whitelist">View point system</Link>
             </div>
             <div className={styles.network}>
-              <p className={styles.network_text}>Rank = 0</p>
+              <p className={styles.network_text}>Rank = {profile?.leaderboardPosition}</p>
               <p className={styles.network_text}>Points = {profile?.points}</p>
             </div>
           </section>

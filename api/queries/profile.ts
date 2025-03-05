@@ -19,6 +19,7 @@ export const userProfileDocument = gql`
         instagramVerified
         points
         referralCode
+        leaderboardPosition
         referredBy
         youtubeVerified
         youtubeUsername
