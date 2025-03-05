@@ -47,8 +47,32 @@ const WhitelistSkeleton: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <div className={styles.network}>
+        <p className={styles.network_text}>You qualify under 5 out of 40 whitelist partner community allocations.</p>
+        <PartnerSkeleton />
+      </div>
     </div>
   );
 };
 
 export default WhitelistSkeleton;
+
+export const PartnerSkeleton = () => {
+  return (
+    <div className={styles.grid_section}>
+      {
+        Array.from({ length: 10 }, (_, idx) => (
+          <div key={idx} className={styles.member_card}>
+            <div className={styles.avatar_placeholder}></div>
+            <div className={styles.member_details}>
+              <div className={styles.text_loader}></div>
+              <div className={styles.text_loader}></div>
+            </div>
+          </div>
+        ))
+      }
+
+    </div>
+  )
+}

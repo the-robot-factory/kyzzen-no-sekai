@@ -209,6 +209,10 @@
   text-align: left;
 }
 
+.member_card_faded{
+  opacity: 0.5;
+}
+
 .avatar {
   border-radius: 50%;
   border: 1px solid #f2f4f7;
