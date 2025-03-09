@@ -22,7 +22,7 @@ const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({text, placement = '
       {children}
       {visible && (
         <div
-          className={`tooltip tooltip-${placement} border border-kyzzen-secondary bg-kyzzen-primary text-white rounded-md p-3 text-xs z-50`}
+          className={`tooltip tooltip-${placement}`}
         >
           <p className="w-full"> {text}</p>
         </div>
