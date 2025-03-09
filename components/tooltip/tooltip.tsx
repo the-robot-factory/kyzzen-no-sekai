@@ -21,9 +21,7 @@ const Tooltip: React.FC<PropsWithChildren<TooltipProps>> = ({text, placement = '
     <div className="tooltip-container" onMouseEnter={showTooltip} onMouseLeave={hideTooltip}>
       {children}
       {visible && (
-        <div
-          className={`tooltip tooltip-${placement}`}
-        >
+        <div className={`tooltip tooltip-${placement}`}>
           <p className="w-full"> {text}</p>
         </div>
       )}
