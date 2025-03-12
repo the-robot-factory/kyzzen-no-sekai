@@ -51,6 +51,7 @@
   left: 125%;
   transform: translateY(-30%);
 }
+
 .tooltip-bottom-start {
   top: 125%;
   left: -65%;
@@ -59,8 +60,15 @@
 
 @media (max-width: 1100px) {
   .tooltip-bottom-start {
-    left: 0 !important;
+    left: 0% !important;
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .tooltip-bottom-start {
+    left: 0% !important;
+    transform: translateX(-35%);
   }
 }
 
