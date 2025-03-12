@@ -63,6 +63,7 @@
   max-height: 20rem;
   background-color: #0c0c24;
   color: white;
+  margin-top: 0.7em;
   border-radius: 0.65rem;
   /* box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1); */
   overflow-y: auto;

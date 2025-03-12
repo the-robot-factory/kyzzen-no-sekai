@@ -172,22 +172,24 @@
 
 .panel_text h2 > span {
   display: block;
+  letter-spacing: 2px;
 }
 
 .panel_text h2 > span:first-child {
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .panel_text h2 > span:nth-child(2) {
-  font-size: 2.25em;
+  font-size: 2.15em;
 }
 
 .panel_text h2 > span:last-child {
-  font-size: 3.2em;
+  font-size: 3.1em;
 }
 
 .panel_text p {
   font-family: 'Monument', sans-serif !important;
+  letter-spacing: 2px;
   font-weight: normal;
   color: white;
   font-size: 1.6em;
@@ -289,7 +291,7 @@
 }
 
 .founder .panel_text h2 {
-  font-weight: 800;
+  font-weight: normal;
   font-size: 2.4rem;
   text-transform: uppercase;
   margin-bottom: 0.1em;
@@ -326,8 +328,8 @@
 .founder_detail h2 {
   font-family: 'Monument', sans-serif !important;
   text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: normal;
+  letter-spacing: 2px;
   font-size: 1.5em;
 }
 
@@ -340,11 +342,13 @@
 .founder_detail .x {
   background-color: #0c0c24;
   padding: 0.3em;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
 }
-
+.founder_detail .x:hover{
+  background-color: #0c0c2469;
+}
 .founder_text,
 .founder_img {
   min-height: 450px;
@@ -393,7 +397,7 @@
 }
 
 .network .panel_text h2 {
-  font-weight: 800;
+  font-weight: normal;
   font-size: 2.4rem;
   letter-spacing: 1px;
 }
@@ -492,8 +496,9 @@
 /* Title and subtitle */
 .title {
   font-family: 'Monument', sans-serif !important;
+  letter-spacing: 2px;
   font-size: 2.4em;
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 10px;
   z-index: 1;
   position: relative;
@@ -549,7 +554,7 @@
   margin: 1em 0;
   font-size: 1.1em;
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .value {
@@ -613,10 +618,13 @@
 
 .slide img {
   border-radius: 30px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .slide h2 {
   font-family: 'Monument', sans-serif !important;
+  letter-spacing: 2px;
   font-weight: normal;
   font-size: 1.7em;
   margin-bottom: 0.5em;
@@ -674,15 +682,15 @@
   }
 
   .panel_text h2 > span:first-child {
-    font-size: 2.1em;
+    font-size: 2em;
   }
 
   .panel_text h2 > span:nth-child(2) {
-    font-size: 3.23em;
+    font-size: 3.13em;
   }
 
   .panel_text h2 > span:last-child {
-    font-size: 4.7em;
+    font-size: 4.6em;
   }
 
   .panel_text p {
@@ -791,15 +799,15 @@
   }
 
   .panel_text h2 > span:first-child {
-    font-size: 1.9em;
+    font-size: 1.8em;
   }
 
   .panel_text h2 > span:nth-child(2) {
-    font-size: 3em;
+    font-size: 2.9em;
   }
 
   .panel_text h2 > span:last-child {
-    font-size: 4.3em;
+    font-size: 4.2em;
   }
 
   .panel_text p {
@@ -963,8 +971,8 @@
   .founder_detail h2 {
     font-family: 'Monument', sans-serif !important;
     text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
+    font-weight: normal;
+    letter-spacing: 2px;
     font-size: 0.8em;
   }
 
@@ -992,6 +1000,7 @@
 
   .slide h2 {
     font-family: 'Monument', sans-serif !important;
+    letter-spacing: 2px;
     font-weight: normal;
     font-size: 1.2em;
     margin-bottom: 0.5em;

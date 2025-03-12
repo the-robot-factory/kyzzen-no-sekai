@@ -3,31 +3,32 @@
 import Table from '@/components/table/table';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {SOCIAL_PROVIDERS} from '@/types/enums';
-import {useState} from 'react';
-import {SOCIALS} from '@/types/types';
-import {screens} from '@/constants/screen';
+import { SOCIAL_PROVIDERS } from '@/types/enums';
+import { useState } from 'react';
+import { SOCIALS } from '@/types/types';
+import { screens } from '@/constants/screen';
 import Tooltip from '@/components/tooltip/tooltip';
 import Link from 'next/link';
-import {useUser} from '@/context/user';
-import {useFetchEligibleCommunities, useFetchProfile} from '@/api/hooks/profile';
+import { useUser } from '@/context/user';
+import { useFetchEligibleCommunities, useFetchProfile } from '@/api/hooks/profile';
 import Modal from '@/components/modal/modal';
-import {useRegisterWhitelist} from '@/api/hooks/whitelist';
+import { useRegisterWhitelist } from '@/api/hooks/whitelist';
 import GradientButton from '@/components/button/button';
-import WhitelistSkeleton, {PartnerSkeleton} from './skeleton';
-import {KYZZEN_BASE} from '@/constants/url';
+import WhitelistSkeleton, { PartnerSkeleton } from './skeleton';
+import { KYZZEN_BASE } from '@/constants/url';
 
 const WhitelistProfile = () => {
-  const {userSession} = useUser();
+  const { userSession } = useUser();
 
-  const {data: profile, isFetching}: any = useFetchProfile(userSession?.id ?? '');
-  const {data: spots, isFetching: fetchingEligible}: any = useFetchEligibleCommunities(userSession?.token ?? '');
-  const {mutateAsync: register, isPending} = useRegisterWhitelist();
+  const { data: profile, isFetching }: any = useFetchProfile(userSession?.id ?? '');
+  const { data: spots, isFetching: fetchingEligible }: any = useFetchEligibleCommunities(userSession?.token ?? '');
+  const { mutateAsync: register, isPending } = useRegisterWhitelist();
   const [registrationModal, setRegistrationModal] = useState(false);
 
   const handleRegistration = async () => {
     await register(userSession?.token ?? '');
   };
+
 
   const socials: SOCIALS[] = [
     {
@@ -39,7 +40,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not subscribed to Kyzzen Newsletter yet.{' '}
-          <a href="https://nft-today.ghost.io/" className={styles.link_action}>
+          <a href="https://nft-today.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Subscribe here
           </a>
         </>
@@ -54,7 +55,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not following Kyzzen yet.{' '}
-          <a href="https://x.com/Kyzzen_io" className={styles.link_action}>
+          <a href="https://x.com/Kyzzen_io" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Follow Here
           </a>
         </>
@@ -69,7 +70,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Haven&apos;t joined discord server yet.{' '}
-          <a href="https://discord.gg/kyzzen" className={styles.link_action}>
+          <a href="https://discord.gg/kyzzen" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Join here
           </a>
         </>
@@ -84,7 +85,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not using Kyzzen’s Telegram Bot yet.{' '}
-          <a href="https://t.me/kyzzen_bot" className={styles.link_action}>
+          <a href="https://t.me/kyzzen_bot" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Try it out here.
           </a>
         </>
@@ -99,7 +100,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not following Kyzzen yet.{' '}
-          <a href="https://www.youtube.com/@kyzzenio" className={styles.link_action}>
+          <a href="https://www.youtube.com/@kyzzenio" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Follow here
           </a>
         </>
@@ -108,7 +109,7 @@ const WhitelistProfile = () => {
   ];
 
   const goToProfile = () => {
-    location.replace(KYZZEN_BASE + '/profile-setup');
+    window.open(KYZZEN_BASE + '/profile-setup', '_blank');
   };
 
   const spotsQualified = spots?.filter((spot: any) => spot?.eligible);
@@ -191,11 +192,11 @@ const WhitelistProfile = () => {
             </button>
           </div>
           <Table
-            header={[{name: 'Account'}, {name: 'Linked Account'}, {name: 'Status'}]}
+            header={[{ name: 'Account' }, { name: 'Linked Account' }, { name: 'Status' }]}
             body={socials}
             isRow
             Row={SocialRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
@@ -217,17 +218,17 @@ const WhitelistProfile = () => {
             </button>
           </div>
           <Table
-            header={[{name: 'Network'}, {name: 'Address'}, {name: ''}]}
+            header={[{ name: 'Network' }, { name: 'Address' }, { name: '' }]}
             body={profile?.wallets}
             isRow
             Row={WalletRow}
-            style={{margin: '0 auto', height: 'fit-content'}}
+            style={{ margin: '0 auto', height: 'fit-content' }}
             className={styles.connection_table}
           />
         </div>
 
         {/* Qualification */}
-        <div className={styles.section}>
+        <div >
           <div className={styles.section_header}>
             <h2>Qualification</h2>
           </div>
@@ -250,6 +251,7 @@ const WhitelistProfile = () => {
             </div>
           </section>
         </div>
+        <div className={styles.section}></div>
 
         <section className={styles.network_section}>
           <div className={styles.network_header}>
@@ -298,7 +300,7 @@ const WhitelistProfile = () => {
 
 export default WhitelistProfile;
 
-const SocialRow = ({data}: {data: SOCIALS}) => {
+const SocialRow = ({ data }: { data: SOCIALS }) => {
   return (
     <tr className={styles.row}>
       <td>
@@ -329,7 +331,7 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
   );
 };
 
-const WalletRow = ({data}: {data: string}) => {
+const WalletRow = ({ data }: { data: string }) => {
   const isPrimary = (addr: string) => {
     return addr.includes('primary:');
   };

@@ -1,5 +1,5 @@
 // Select.tsx
-import React, {useCallback, useMemo, useState} from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import styles from './select.module.css';
 import useClose from '@/hooks/useClose';
 
@@ -22,18 +22,18 @@ interface SelectProps {
   handleChange: (value: string, name: string, idx?: number) => void;
 }
 
-const Select = ({idx, label, name, options, defaultValue, showWarning, placement = 'left', handleChange}: SelectProps) => {
+const Select = ({ idx, label, name, options, defaultValue, showWarning, placement = 'left', handleChange }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<Option | undefined>(defaultValue);
   const ref = useClose(() => setIsOpen(false));
 
-  const toggleSelect = useCallback(() => setIsOpen(prev => !prev), []);
+  // const toggleSelect = useCallback(() => setIsOpen(prev => !prev), []);
 
   const handleSelect = useCallback(
     (option: Option) => {
       if (option.disabled) return;
 
-      const newValue = option.clickable === false ? {...option, label: option.value, value: option.value} : option;
+      const newValue = option.clickable === false ? { ...option, label: option.value, value: option.value } : option;
 
       setSelectedValue(newValue);
       setIsOpen(false);
@@ -63,7 +63,7 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
       <div className={styles.selectWrapper}>
         <div
           className={`${styles.selectInput} ${showWarning ? styles.warning : ''}`}
-          onClick={toggleSelect}
+          onMouseOver={() => setIsOpen(true)}
           role="button"
           aria-expanded={isOpen}
           aria-haspopup="listbox"

@@ -32,7 +32,7 @@
   border-bottom: 1px solid #122645;
   cursor: pointer;
   transition: background-color 0.2s;
-  font-size: 0.85em;
+  font-size: 0.95em;
 }
 
 .headerCell:hover {
@@ -84,7 +84,7 @@
   color: #e5e7eb;
   border-bottom: 1px solid #122645;
 
-  font-size: 0.85em;
+  font-size: 0.95em;
 }
 
 .emptyState {

@@ -20,6 +20,7 @@
 
 .title {
   font-family: 'Monument', sans-serif !important;
+  letter-spacing: 2px;
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -105,9 +106,12 @@
 .iconText {
   font-size: 1.2rem;
 }
-
+.modal{
+  width: 90%;
+  
+}
 .modal_title {
-  width: 400px;
+  width: 330px;
   text-align: center;
   margin: 2rem auto 0.5rem auto;
   font-size: 1.3rem;
@@ -166,6 +170,7 @@
 .divider::after {
   right: 0;
 }
+
 .divider_text {
   text-align: center;
   margin: 1rem auto 1.5rem auto;
@@ -174,4 +179,32 @@
 
 .modal_content {
   max-height: 100vh;
+}
+
+@media (max-width:1024px) {
+  .content {
+    width: 85%;
+  }
+}
+
+@media (max-width:600px) {
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .setupButton {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  
+  .signInButton {
+    font-size: 14px;
+    margin-top: 0;
+  }
 }

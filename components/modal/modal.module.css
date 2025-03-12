@@ -11,7 +11,7 @@
 }
 
 .modal_bg {
-  width: 100%;
+  width: 90%;
   height: 100%;
   position: absolute;
   z-index: 0;
@@ -20,8 +20,8 @@
 .modal {
   background-color: #0c0c24;
   min-width: 300px;
-  max-width: 80%;
-  max-height: 80vh;
+  max-width: 90%;
+  max-height: 90vh;
   position: relative;
   border-radius: 10px;
   z-index: 1;

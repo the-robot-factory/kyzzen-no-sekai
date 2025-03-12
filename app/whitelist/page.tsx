@@ -1,13 +1,17 @@
 'use client';
-import {useFetchLeaderboard, useFetchWhitelistSpots} from '@/api/hooks/whitelist';
+import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {WhitelistSpot} from '@/types/types';
+import { WhitelistSpot } from '@/types/types';
 import Table from '@/components/table/table';
+import { useState } from 'react';
 
 export default function Whitelist() {
-  const {data: spots} = useFetchWhitelistSpots();
-  const {data: leaders} = useFetchLeaderboard();
+  const { data: spots } = useFetchWhitelistSpots();
+  const { data: leaders } = useFetchLeaderboard();
+
+  const [searchText, setSearchText] = useState('')
+
 
   return (
     <div className={styles.whitelist_con}>
@@ -30,11 +34,11 @@ export default function Whitelist() {
         <section className={styles.info_section}>
           <div className={styles.leaderboard}>
             <h2 className={styles.section_title}>Leaderboard</h2>
-            <input type="text" placeholder="Search username" className={styles.search_bar} />
+            <input type="text" placeholder="Search username" value={searchText} onChange={(e) => setSearchText(e.target.value)} className={styles.search_bar} />
             <Table
-              header={[{name: 'Rank'}, {name: 'Username'}, {name: 'Points'}]}
-              body={leaders ?? []}
-              style={{margin: '0 auto', height: 'fit-content'}}
+              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
+              body={leaders?.filter((leader:Record<string,string>) => leader.username.includes(searchText))?.slice(0, 8) ?? []}
+              style={{ margin: '0 auto', height: 'fit-content' }}
               className={styles.leaderboard_table}
             />
           </div>
@@ -52,6 +56,7 @@ export default function Whitelist() {
               <li>10 pts for following each of our social media:</li>
               <ul>
                 <li>Follow our Twitter</li>
+                <li>Follow OhMeOhMy_Sol on Twitter</li>
                 <li>Join our Discord Server</li>
                 <li>Activate our Telegram Bot</li>
                 <li>Subscribe to Kyzen Newsletter</li>

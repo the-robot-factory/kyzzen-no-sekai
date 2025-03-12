@@ -21,7 +21,9 @@
   max-width: 1700px;
   margin: auto;
 }
-
+.header_logo{
+  cursor: pointer;
+}
 .header_top {
   display: flex;
   justify-content: space-between;
@@ -86,7 +88,7 @@
   color: gray;
 }
 .select_field ul {
-  border: 2px solid #122645;
+  border: 1px solid #122645;
 }
 
 @media (max-width: 1200px) {
@@ -140,10 +142,10 @@
   .header_nav ul {
     width: 100%;
     flex-direction: column;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 140px);
     padding: 1.5em;
-    border-top: 4px solid var(--primary-color);
-    border-bottom: 4px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
   }
 
   .header_nav ul li {
@@ -164,7 +166,7 @@
   .header_action {
     background-color: #0f0f1e;
     width: 100%;
-    padding: 0.5em 1.5em;
+    padding: 1em 1.5em;
   }
   .select_field ul {
     padding-bottom: 0;
