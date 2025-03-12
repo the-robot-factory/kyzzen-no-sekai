@@ -106,9 +106,8 @@
 .iconText {
   font-size: 1.2rem;
 }
-.modal{
+.modal {
   width: 90%;
-  
 }
 .modal_title {
   width: 330px;
@@ -181,14 +180,13 @@
   max-height: 100vh;
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .content {
     width: 85%;
   }
 }
 
-@media (max-width:600px) {
-
+@media (max-width: 600px) {
   .title {
     font-size: 2rem;
   }
@@ -202,7 +200,6 @@
     font-size: 14px;
   }
 
-  
   .signInButton {
     font-size: 14px;
     margin-top: 0;

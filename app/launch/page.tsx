@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import Modal from '@/components/modal/modal';
@@ -36,8 +36,7 @@ const Launch: React.FC = () => {
             </div>
             <h3 className={styles.label}>Starting Min.</h3>
             <p className={styles.value}>
-              0.40 {" "}
-              <Image src="/svg/sol-spl.svg" alt="girl" width={13} height={13} priority />
+              0.40 <Image src="/svg/sol-spl.svg" alt="girl" width={13} height={13} priority />
             </p>
           </div>
           <div className={styles.detail}>
@@ -61,17 +60,17 @@ const Launch: React.FC = () => {
           <ul>
             <li>
               Kyzzen no Sekai will be using a very unique auction-style launch mechanism created by our partners at BidHub for our
-              launch. <span onClick={() => setModals({ ...modals, launch: true })}>Show More</span>
+              launch. <span onClick={() => setModals({...modals, launch: true})}>Show More</span>
             </li>
             <li>
-              Details on Bidding: <span onClick={() => setModals({ ...modals, bidding: true })}>View</span>
+              Details on Bidding: <span onClick={() => setModals({...modals, bidding: true})}>View</span>
             </li>
             <li>
-              Benefits of BidHub&apos;s Launch Mechanism: <span onClick={() => setModals({ ...modals, benefit: true })}>View</span>
+              Benefits of BidHub&apos;s Launch Mechanism: <span onClick={() => setModals({...modals, benefit: true})}>View</span>
             </li>
           </ul>
         </div>
-        <Modal show={modals.launch} heading="LAUNCH DETAILS" hide={() => setModals({ ...modals, launch: false })}>
+        <Modal show={modals.launch} heading="LAUNCH DETAILS" hide={() => setModals({...modals, launch: false})}>
           <div className={styles.info_list}>
             <ul>
               <li>
@@ -111,7 +110,7 @@ const Launch: React.FC = () => {
             </ul>
           </div>
         </Modal>
-        <Modal show={modals.bidding} heading="DETAILS ON BIDDING:" hide={() => setModals({ ...modals, bidding: false })}>
+        <Modal show={modals.bidding} heading="DETAILS ON BIDDING:" hide={() => setModals({...modals, bidding: false})}>
           <div className={styles.info_list}>
             <ul>
               <li>
@@ -157,7 +156,7 @@ const Launch: React.FC = () => {
         <Modal
           show={modals.benefit}
           heading="Benefits of BidHub's Launch Mechanism"
-          hide={() => setModals({ ...modals, benefit: false })}
+          hide={() => setModals({...modals, benefit: false})}
         >
           <div className={styles.info_list}>
             <ul>

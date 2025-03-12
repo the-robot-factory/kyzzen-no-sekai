@@ -147,7 +147,7 @@ export default function Home() {
                     <Image src="/images/founder.png" alt="girl" width={60} height={60} priority />
                     <h2>OhMeOhMy</h2>
                     <a href="https://x.com/OhMeOhMy_Sol" target="_blank" rel="noopener noreferrer">
-                    <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" className={styles.x} />
+                      <Image src="/svg/xwhite.svg" alt="X" width={25} height={25} priority color="white" className={styles.x} />
                     </a>
                   </div>
                   <ul>
