@@ -1,24 +1,24 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './page.module.css';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import Modal from '@/components/modal/modal';
 import GradientButton from '@/components/button/button';
 import Image from 'next/image';
-import { socialProvider, walletProvider } from '@/constants/provider';
-import { useConnectAndSignMessage } from '@/api/hooks/wallet';
-import { SOCIAL_PROVIDERS_TYPE, WALLET_PROVIDERS_TYPE } from '@/types/types';
-import { useUser } from '@/context/user';
-import { useAuth } from '@/context/auth';
-import { useVerifyAuth } from '@/api/hooks/social';
-import { KYZZEN_BASE } from '@/constants/url';
+import {socialProvider, walletProvider} from '@/constants/provider';
+import {useConnectAndSignMessage} from '@/api/hooks/wallet';
+import {SOCIAL_PROVIDERS_TYPE, WALLET_PROVIDERS_TYPE} from '@/types/types';
+import {useUser} from '@/context/user';
+import {useAuth} from '@/context/auth';
+import {useVerifyAuth} from '@/api/hooks/social';
+import {KYZZEN_BASE} from '@/constants/url';
 
 const WhitelistRegistration: React.FC = () => {
   const [signInModal, setSignInModal] = useState(false);
-  const { mutateAsync: connectAndSignMessage } = useConnectAndSignMessage();
-  const { mutateAsync: verifyAuthCode } = useVerifyAuth();
-  const { linkAuth } = useAuth();
-  const { userSession, createSession } = useUser();
+  const {mutateAsync: connectAndSignMessage} = useConnectAndSignMessage();
+  const {mutateAsync: verifyAuthCode} = useVerifyAuth();
+  const {linkAuth} = useAuth();
+  const {userSession, createSession} = useUser();
 
   const router = useRouter();
 
@@ -39,10 +39,8 @@ const WhitelistRegistration: React.FC = () => {
     nav(location.pathname);
   }, []);
 
-
-
   const handleCode = async (code: string, provider: SOCIAL_PROVIDERS_TYPE) => {
-    const response = await verifyAuthCode({ provider, code, redirect_url: location.origin + location.pathname, login: true });
+    const response = await verifyAuthCode({provider, code, redirect_url: location.origin + location.pathname, login: true});
 
     if (!response?.success) return;
     if (response.account_exist && response.token && response.account?.id) {

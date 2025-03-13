@@ -58,10 +58,9 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
 
   return (
     <div ref={ref} className={styles.container} onMouseEnter={() => setIsOpen(true)}>
-      <div className={styles.selectWrapper} >
+      <div className={styles.selectWrapper}>
         <div
           className={`${styles.selectInput} ${showWarning ? styles.warning : ''}`}
-         
           role="button"
           aria-expanded={isOpen}
           aria-haspopup="listbox"

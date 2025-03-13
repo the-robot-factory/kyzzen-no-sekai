@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 
 const useClose = (callback: () => void, delay = 200) => {
   const ref = useRef<HTMLDivElement>(null);
-
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout | null = null;
