@@ -27,8 +27,6 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
   const [selectedValue, setSelectedValue] = useState<Option | undefined>(defaultValue);
   const ref = useClose(() => setIsOpen(false));
 
-  // const toggleSelect = useCallback(() => setIsOpen(prev => !prev), []);
-
   const handleSelect = useCallback(
     (option: Option) => {
       if (option.disabled) return;
@@ -59,11 +57,11 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
   }, []);
 
   return (
-    <div ref={ref} className={styles.container}>
-      <div className={styles.selectWrapper}>
+    <div ref={ref} className={styles.container} onMouseEnter={() => setIsOpen(true)}>
+      <div className={styles.selectWrapper} >
         <div
           className={`${styles.selectInput} ${showWarning ? styles.warning : ''}`}
-          onMouseOver={() => setIsOpen(true)}
+         
           role="button"
           aria-expanded={isOpen}
           aria-haspopup="listbox"

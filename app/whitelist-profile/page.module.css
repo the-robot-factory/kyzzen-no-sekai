@@ -13,7 +13,8 @@
   font-family: 'Monument', sans-serif !important;
   letter-spacing: 2px;
   font-size: 3rem;
-  font-weight: bold;
+  margin:1em auto 1.5em auto;
+  /* font-weight: 400; */
 }
 
 .profile_card {
@@ -170,10 +171,14 @@
 }
 
 .network_header a {
+  color: #005eff;
   background: -webkit-linear-gradient(90deg, #005eff 0%, #246cc1 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   cursor: pointer;
+}
+
+.network_header a:hover {
+  text-decoration: underline;
 }
 
 .network {
@@ -394,15 +399,19 @@ div.row {
   .container {
     padding: 8em 3em;
   }
+
   .profile_card {
     max-width: 90%;
   }
+
   .registration_status {
     max-width: 90%;
   }
+
   .section {
     max-width: 90%;
   }
+
   .network_section {
     width: 90%;
   }
@@ -439,9 +448,11 @@ div.row {
     padding: 0.8rem;
     max-width: 100%;
   }
+
   .network_section {
     width: 100%;
   }
+
   .register_button {
     width: 100%;
   }
@@ -473,6 +484,7 @@ div.row {
     padding: 10px;
     font-size: 13px;
   }
+
   .network_header a {
     display: none;
   }
