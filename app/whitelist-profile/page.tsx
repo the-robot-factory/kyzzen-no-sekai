@@ -250,7 +250,9 @@ const WhitelistProfile = () => {
                   <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
                 </Tooltip>
               </div>
-              <Link href="/whitelist"target='_blank'>View point system</Link>
+              <Link href="/whitelist" target="_blank">
+                View point system
+              </Link>
             </div>
             <div className={styles.network}>
               <p className={styles.network_text}>Rank = {profile?.leaderboardPosition}</p>
@@ -271,7 +273,9 @@ const WhitelistProfile = () => {
                 <Image src="/svg/tooltip.svg" alt="info" width={20} height={20} />
               </Tooltip>
             </div>
-            <Link href="/whitelist" target='_blank'>View whitelist partner communities</Link>
+            <Link href="/whitelist" target="_blank">
+              View whitelist partner communities
+            </Link>
           </div>
           <div className={styles.network}>
             <p className={styles.network_text}>
