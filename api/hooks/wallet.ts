@@ -64,7 +64,11 @@ export const getMessage = async (address: string): Promise<string> => {
   return data.random_string;
 };
 
-export const verifySignature = async (payload: {address: string;is_login:boolean, signature: string}): Promise<SignInResponse> => {
+export const verifySignature = async (payload: {
+  address: string;
+  is_login: boolean;
+  signature: string;
+}): Promise<SignInResponse> => {
   const res = await fetch(`${PROFILE_BASEURL}/user/verify_signature`, {
     method: 'POST',
     body: JSON.stringify(payload),
