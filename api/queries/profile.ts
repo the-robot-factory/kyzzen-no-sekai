@@ -21,9 +21,6 @@ export const userProfileDocument = gql`
         referralCode
         leaderboardPosition
         referredBy
-        youtubeVerified
-        youtubeUsername
-        youtubeImageURL
         wallets
         username
         updatedAt
