@@ -124,7 +124,7 @@ export class PhantomWalletAdapter extends EventEmitter implements WalletAdapter 
   }
 
   get publicKey() {
-    return this._provider?.publicKey!;
+    return this._provider?.publicKey ?? null;
   }
 
   // eslint-disable-next-line
@@ -192,40 +192,6 @@ export class PhantomWalletAdapter extends EventEmitter implements WalletAdapter 
     }
   }
 
-  // connect() {
-  //   if (!this._provider) {
-  //     return
-  //   }
-
-  //   if (!(window as any).solana.isPhantom) {
-  //     toast.error(
-  //       <Notification
-  //         title="Phantom Error"
-  //         description="Please install Phantom wallet from Chrome "
-  //       ></Notification>
-  //     )
-  //     return
-  //   }
-
-  //   // if (!(window as any).solana?.publicKey) {
-  //   //   return
-  //   // }
-
-  //   if (typeof this._provider?.listeners === "function") {
-  //     alert('next')
-  //     if (this._provider && !this._provider?.listeners("connect").length) {
-  //       console.log("this prov", this._provider)
-
-  //       this._provider?.on("connect", this._handleConnect)
-  //     }
-  //     if (!this._provider.listeners("disconnect").length) {
-  //       this._provider?.on("disconnect", this._handleDisconnect)
-  //     }
-  //     return this._provider?.connect()
-  //   } else {
-  //     return
-  //   }
-  // }
 
   disconnect() {
     if (this._wallet) {

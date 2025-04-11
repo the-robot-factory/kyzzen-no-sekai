@@ -40,7 +40,7 @@ const WhitelistProfile = () => {
         <>
           Not subscribed to Kyzzen Newsletter yet.{' '}
           <a href="https://nft-today.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
-            Subscribe here
+            Subscribe here.
           </a>
         </>
       ),
@@ -56,13 +56,13 @@ const WhitelistProfile = () => {
           <div>
             Not following Kyzzen yet.{' '}
             <a href="https://x.com/Kyzzen_io" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
-              Follow Kyzzen
+              Follow Kyzzen.
             </a>
           </div>
           <div>
             Not following OhMeOhMy_Sol yet.{' '}
             <a href="https://x.com/OhMeOhMy_Sol" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
-              Follow Kyzzen
+              Follow OhMeOhMy_Sol.
             </a>
           </div>
         </>
@@ -78,7 +78,7 @@ const WhitelistProfile = () => {
         <>
           Haven&apos;t joined discord server yet.{' '}
           <a href="https://discord.gg/kyzzen" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
-            Join here
+            Join here.
           </a>
         </>
       ),
@@ -94,21 +94,6 @@ const WhitelistProfile = () => {
           Not using Kyzzen’s Telegram Bot yet.{' '}
           <a href="https://t.me/kyzzen_bot" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Try it out here.
-          </a>
-        </>
-      ),
-    },
-    {
-      id: SOCIAL_PROVIDERS.YouTube,
-      account: 'YouTube',
-      icon: '/svg/youtube.svg',
-      linkedAccount: profile?.email,
-      status: profile?.youtubeVerified,
-      action: (
-        <>
-          Not following Kyzzen yet.{' '}
-          <a href="https://www.youtube.com/@kyzzenio" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
-            Follow here
           </a>
         </>
       ),
@@ -279,7 +264,7 @@ const WhitelistProfile = () => {
           </div>
           <div className={styles.network}>
             <p className={styles.network_text}>
-              You qualify under {spotsQualified?.length} out of {spots.length} whitelist partner community allocations.
+              You qualify under {spotsQualified?.length ?? 0} out of {spots?.length ?? 0} whitelist partner community allocations.
             </p>
             {fetchingEligible && <PartnerSkeleton />}
             <div className={styles.grid_section}>
@@ -325,13 +310,13 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
         {data.status ? (
           <span className={styles.joined}>
             {data.id === SOCIAL_PROVIDERS.Discord
-              ? "Joined Kyzzen's Discord server"
+              ? "Joined Kyzzen's Discord server."
               : data.id === SOCIAL_PROVIDERS.X
-                ? 'Following Kyzzen and OhMeOhMy_Sol'
+                ? 'Following Kyzzen and OhMeOhMy_Sol.'
                 : data.id === SOCIAL_PROVIDERS.Mail
-                  ? 'Suscribed to Kyzzen Newsletter'
+                  ? 'Suscribed to Kyzzen Newsletter.'
                   : data.id === SOCIAL_PROVIDERS.Telegram
-                    ? "Using Kyzzen'n Telegram Bot"
+                    ? "Using Kyzzen'n Telegram Bot."
                     : 'Joined ' + data.account}
           </span>
         ) : (

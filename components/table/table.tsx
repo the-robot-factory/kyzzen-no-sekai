@@ -1,7 +1,7 @@
 'use client';
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {useEffect, useState, useCallback, JSX} from 'react';
+import React, { useEffect, useState, useCallback, JSX } from 'react';
 // import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa";
 import styles from './table.module.css';
 
@@ -35,7 +35,7 @@ interface TableProps {
 type SortOrder = 'asc' | 'desc';
 
 const Table: React.FC<TableProps> = ({
-  body,
+  body = [],
   className,
   isLoading,
   refetch,
@@ -64,7 +64,7 @@ const Table: React.FC<TableProps> = ({
 
   const handleScroll = useCallback(
     async (e: React.UIEvent<HTMLDivElement>) => {
-      const {scrollTop, clientHeight, scrollHeight} = e.currentTarget;
+      const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
       const bottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) < 1;
 
       if (bottom && setOffset) {
@@ -82,7 +82,7 @@ const Table: React.FC<TableProps> = ({
   const requestSort = useCallback(
     (accessor: string) => {
       const direction: SortOrder = sortConfig.accessor === accessor && sortConfig.direction === 'desc' ? 'asc' : 'desc';
-      setSortConfig({accessor, direction});
+      setSortConfig({ accessor, direction });
 
       const sorted = [...body].sort((a, b) => {
         const valA = typeof a[accessor] === 'string' ? a[accessor].toLowerCase() : +a[accessor];
@@ -99,7 +99,7 @@ const Table: React.FC<TableProps> = ({
 
   return (
     <div className={`${styles.container} ${className}`} style={style}>
-      <div className={styles.tableWrapper} style={{height: tableHeight, ...style}} onScroll={!isEnd ? handleScroll : undefined}>
+      <div className={styles.tableWrapper} style={{ height: tableHeight, ...style }} onScroll={!isEnd ? handleScroll : undefined}>
         <table className={styles.table}>
           {header && (
             <thead className={styles.header}>
