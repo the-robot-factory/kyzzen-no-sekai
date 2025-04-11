@@ -25,6 +25,7 @@ export const userProfileDocument = gql`
         username
         updatedAt
         twitterVerified
+        twitterVerifiedOhme
         twitterUsername
         twitterImageURL
         twitterID

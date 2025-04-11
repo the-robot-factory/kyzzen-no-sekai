@@ -192,7 +192,6 @@ export class PhantomWalletAdapter extends EventEmitter implements WalletAdapter 
     }
   }
 
-
   disconnect() {
     if (this._wallet) {
       this._wallet.disconnect();
