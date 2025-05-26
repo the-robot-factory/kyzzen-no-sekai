@@ -47,9 +47,6 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
     [placement],
   );
 
-  // const displayValue = useMemo(() => {
-  //   return selectedValue?.label || '';
-  // }, [selectedValue]);
 
   const truncatedLabel = useCallback((label: string) => {
     if (label?.length <= 32) return label;
@@ -67,7 +64,6 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
         >
           {label && <label className={styles.label}>{label}</label>}
           <div className={styles.valueContainer}>
-            {/* <span className={styles.value}>{typeof displayValue === 'string' ? truncatedLabel(displayValue) : displayValue}</span> */}
             <span className={styles.value}>{defaultValue?.label}</span>
             <span className={`${styles.caret} ${isOpen ? styles.rotated : ''}`}>
               <svg

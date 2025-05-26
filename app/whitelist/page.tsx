@@ -1,14 +1,14 @@
 'use client';
-import {useFetchLeaderboard, useFetchWhitelistSpots} from '@/api/hooks/whitelist';
+import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {WhitelistSpot} from '@/types/types';
+import { WhitelistSpot } from '@/types/types';
 import Table from '@/components/table/table';
-import {useState} from 'react';
+import { useState } from 'react';
 
 export default function Whitelist() {
-  const {data: spots} = useFetchWhitelistSpots();
-  const {data: leaders} = useFetchLeaderboard();
+  const { data: spots } = useFetchWhitelistSpots();
+  const { data: leaders } = useFetchLeaderboard();
 
   const [searchText, setSearchText] = useState('');
 
@@ -41,9 +41,9 @@ export default function Whitelist() {
               className={styles.search_bar}
             />
             <Table
-              header={[{name: 'Rank'}, {name: 'Username'}, {name: 'Points'}]}
+              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
               body={leaders?.filter((leader: Record<string, string>) => leader.username.includes(searchText))?.slice(0, 8) ?? []}
-              style={{margin: '0 auto', height: 'fit-content'}}
+              style={{ margin: '0 auto', height: 'fit-content' }}
               className={styles.leaderboard_table}
             />
           </div>

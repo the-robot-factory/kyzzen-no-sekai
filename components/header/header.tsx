@@ -68,7 +68,6 @@ function Header() {
                         ]}
                         handleChange={(value: string) => {
                           if (value === 'reg') {
-                            console.log(value);
                             nav('/whitelist-reg');
                           } else {
                             nav('/whitelist');

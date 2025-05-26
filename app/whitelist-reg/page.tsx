@@ -81,7 +81,9 @@ const WhitelistRegistration: React.FC = () => {
         </p>
         <div className={styles.buttons}>
           <button className={styles.setupButton} onClick={goToProfile}>
+            <span>
             Set Up Kyzzen Profile
+            </span>
           </button>
           <button className={styles.signInButton} onClick={() => setSignInModal(true)}>
             Sign In to Kyzzen Profile

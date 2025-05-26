@@ -56,10 +56,13 @@
   background-clip: padding-box, border-box;
 }
 
-/* .setupButton:hover {
-    background: #d5ff40;
-    color: black;
-  } */
+.setupButton:hover  span{
+   color: transparent;
+  background-image: linear-gradient(90deg, #c1ff04, #0fd5ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 0.3s ease;
+}
 
 .signInButton {
   margin: 1.5em 0 0 0;
@@ -81,9 +84,7 @@
   background-clip: padding-box, border-box;
 }
 
-.signInButton:hover {
-  opacity: 0.8;
-}
+
 
 .profileIcon {
   position: absolute;

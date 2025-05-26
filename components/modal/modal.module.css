@@ -47,9 +47,8 @@
 
 .modal_close_btn {
   position: absolute;
-  right: 3%;
-  top: 8%;
-  transform: translate(3%, -50%);
+  right: 2%;
+  top: 2%;
   border: none;
   background-color: transparent;
   color: #0c0c24;
