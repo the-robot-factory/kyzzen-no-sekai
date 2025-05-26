@@ -56,8 +56,8 @@
   background-clip: padding-box, border-box;
 }
 
-.setupButton:hover  span{
-   color: transparent;
+.setupButton:hover span {
+  color: transparent;
   background-image: linear-gradient(90deg, #c1ff04, #0fd5ff);
   background-clip: text;
   -webkit-background-clip: text;
@@ -83,8 +83,6 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
-
-
 
 .profileIcon {
   position: absolute;

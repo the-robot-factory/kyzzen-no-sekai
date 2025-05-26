@@ -47,7 +47,6 @@ const Select = ({idx, label, name, options, defaultValue, showWarning, placement
     [placement],
   );
 
-
   const truncatedLabel = useCallback((label: string) => {
     if (label?.length <= 32) return label;
     return `${label.slice(0, 32)}...`;
