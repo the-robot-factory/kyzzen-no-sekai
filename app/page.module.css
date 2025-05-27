@@ -173,6 +173,7 @@
 .panel_text {
   position: relative;
   z-index: 2;
+  letter-spacing: 2px;
 }
 
 .panel_text h2 {
