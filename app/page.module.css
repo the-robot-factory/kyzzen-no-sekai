@@ -5,7 +5,7 @@
 }
 
 .main>section {
-  min-height: 100vh !important;
+  min-height: 100vh;
   scroll-snap-align: start;
 }
 
@@ -498,7 +498,9 @@
 
 /* Container styles */
 .join_us {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   text-align: center;
   color: white;
@@ -657,6 +659,18 @@
 }
 
 @media (max-width: 1200px) {
+  .main {
+    height: unset;
+    min-height: unset;
+    overflow-y: unset;
+    scroll-snap-type: unset;
+  }
+
+  .main>section {
+    min-height: unset;
+    scroll-snap-align: unset;
+  }
+
   .hero {
     overflow: hidden;
   }
@@ -786,7 +800,7 @@
     margin: auto;
     flex-direction: column;
     text-align: center;
-    gap: 2em;
+    gap: 4em;
   }
 
   .panel .founder {
@@ -851,6 +865,7 @@
     width: 400px;
     height: 500px;
   }
+
 }
 
 @media (max-width: 770px) {
