@@ -93,6 +93,6 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-body>div {
+body > div {
   scroll-snap-align: start;
 }
