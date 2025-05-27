@@ -86,3 +86,13 @@ a {
   /* height: 100vh; */
   overflow-y: auto;
 }
+
+body {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+body>div {
+  scroll-snap-align: start;
+}
