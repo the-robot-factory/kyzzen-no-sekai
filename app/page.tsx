@@ -196,7 +196,7 @@ export default function Home() {
           <div className={styles.panel_text}>
             <h2>WITH UNPRECEDENTED UTILITY FOCUSED ON ALPHA, ANALYTICS AND TOOLS</h2>
           </div>
-          
+
           <CustomCarousel slides={[<Slide key="slide1" />, <Slide2 key="slide2" />]} />
         </div>
       </section>
