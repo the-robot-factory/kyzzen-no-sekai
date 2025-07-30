@@ -37,17 +37,17 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
     setTimeout(() => setIsAutoPlaying(true), 8000);
   };
 
-  const goToPrevious = () => {
-    setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 8000);
-  };
+  // const goToPrevious = () => {
+  //   setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
+  //   setIsAutoPlaying(false);
+  //   setTimeout(() => setIsAutoPlaying(true), 8000);
+  // };
 
-  const goToNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 8000);
-  };
+  // const goToNext = () => {
+  //   setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
+  //   setIsAutoPlaying(false);
+  //   setTimeout(() => setIsAutoPlaying(true), 8000);
+  // };
 
   return (
     <div className="carousel-container">
