@@ -4,7 +4,7 @@
   top: 0%;
   left: 0%;
   background-color: aliceblue;
-  background: linear-gradient(180deg, #0f0f1e 7.16%, rgba(0, 0, 0, 0) 70.7%);
+  background: linear-gradient(180deg, #0f0f1e 7.16%, rgba(0, 0, 0, 0.063) 70.7%);
   z-index: 4;
 }
 
@@ -166,7 +166,7 @@
   .header_action {
     background-color: #0f0f1e;
     width: 100%;
-    padding: 1em 1.5em;
+    padding: 1em 1.8em;
   }
   .select_field ul {
     padding-bottom: 0;

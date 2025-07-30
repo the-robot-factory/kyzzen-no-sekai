@@ -1,0 +1,45 @@
+.carousel {
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  /* background-color: #0c0c24; */
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  background-color: #1d2939;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  /* padding: 10px; */
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton:hover {
+  color: #c6fb0b;
+}
+
+.navButton:first-of-type {
+  left: 10px;
+}
+
+.navButton:last-of-type {
+  right: 10px;
+}

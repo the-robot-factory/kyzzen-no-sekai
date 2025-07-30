@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
   },
 });
 
-export function Providers({children}: {children: React.ReactNode}) {
+function Providers({children}: {children: React.ReactNode}) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
@@ -20,3 +20,5 @@ export function Providers({children}: {children: React.ReactNode}) {
     </QueryClientProvider>
   );
 }
+
+export default Providers

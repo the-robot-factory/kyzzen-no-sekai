@@ -1,0 +1,96 @@
+.carousel-container {
+  z-index: 9;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+
+.nav-button-left {
+  left: 16px;
+}
+
+.nav-button-right {
+  right: 16px;
+}
+
+.dots-container {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 10;
+  gap: 8px;
+}
+
+.dot {
+  border: none;
+  width: 30px;
+  height: 3px;
+  padding: 0;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dot.active {
+  width: 60px;
+  background: linear-gradient(to right, #c6fb0b, #00bcd4);
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  background-color: #1d2939;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  /* padding: 10px; */
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button-left {
+  left: 16px;
+}
+
+.nav-button-right {
+  right: 16px;
+}
+
+.nav-button:hover {
+  color: #c6fb0b;
+}
