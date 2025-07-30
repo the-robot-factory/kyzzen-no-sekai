@@ -1,17 +1,17 @@
 'use client';
-import React, { useState, useEffect, ReactNode } from 'react';
-import './index.css'
+import React, {useState, useEffect, ReactNode} from 'react';
+import './index.css';
 
-const Carousel = ({ children }: { children: ReactNode[] }) => {
+const Carousel = ({children}: {children: ReactNode[]}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isForward, setIsForward] = useState(true);
 
-    useEffect(() => {
+  useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
+      setCurrentIndex(prevIndex => {
         if (isForward) {
           if (prevIndex === children.length - 1) {
             setIsForward(false);
@@ -38,17 +38,13 @@ const Carousel = ({ children }: { children: ReactNode[] }) => {
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? children.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 8000);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === children.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 8000);
   };
@@ -82,8 +78,7 @@ const Carousel = ({ children }: { children: ReactNode[] }) => {
             />
           </svg>
         </button> */}
-        <div className="cards-container"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        <div className="cards-container" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
           {React.Children.map(children, (child, index) => (
             <div key={index} className="card">
               {child}
@@ -93,11 +88,7 @@ const Carousel = ({ children }: { children: ReactNode[] }) => {
       </div>
       <div className="dots-container">
         {React.Children.map(children, (_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          />
+          <button key={index} className={`dot ${index === currentIndex ? 'active' : ''}`} onClick={() => goToSlide(index)} />
         ))}
       </div>
     </div>

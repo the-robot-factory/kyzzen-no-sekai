@@ -1,4 +1,4 @@
-import { Anton, Open_Sans } from 'next/font/google';
+import {Anton, Open_Sans} from 'next/font/google';
 import Image from 'next/image';
 import styles from './page.module.css';
 import EndlessImageScroll from '../components/endless-scroll';
@@ -41,45 +41,45 @@ const SCROLL_IMAGES = [
   '/images/image 750.png',
   '/images/image 751.png',
   '/images/image 752.png',
-].flatMap(url => Array(3).fill({ url })); // Create 12 images by repeating 4 images 3 times
+].flatMap(url => Array(3).fill({url})); // Create 12 images by repeating 4 images 3 times
 
 const HERO_IMAGES = [
-  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big },
-  { url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small },
-  { url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big },
-  { url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small },
+  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 5.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Layer 3.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 6.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 1.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 4.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 5.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 3.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 4.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Layer 1.png', width: 250, height: 350, className: styles.hero_people_big},
+  {url: '/images/Layer 2.png', width: 170, height: 250, className: styles.hero_people_small},
 ];
 
 const CAROUSEL_SLIDES = [
   {
     image: '/images/chats.svg',
     title: 'Unmatched Alpha',
-    description: 'Curated opportunities across the ecosystem, sent directly to you.'
+    description: 'Curated opportunities across the ecosystem, sent directly to you.',
   },
   {
     image: '/images/alerts.svg',
     title: 'Protect Your bags',
-    description: 'Real-time alerts on events that pose risk to your portfolio'
+    description: 'Real-time alerts on events that pose risk to your portfolio',
   },
   {
     image: '/images/portfolio.svg',
     title: 'track your portfolio',
-    description: 'With the most advanced portfolio analytics'
+    description: 'With the most advanced portfolio analytics',
   },
   {
     image: '/images/potential.svg',
     title: 'reach your full potential',
-    description: 'Receive recommendations to improve your portfolio'
+    description: 'Receive recommendations to improve your portfolio',
   },
 ];
 
@@ -137,25 +137,11 @@ function CollisionSection() {
       </div>
       <div className={styles.art}>
         <div>
-          <Image
-            src="/images/girl-card.png"
-            alt="Human artist"
-            width={380}
-            height={480}
-            priority
-            className={styles.art_girl}
-          />
+          <Image src="/images/girl-card.png" alt="Human artist" width={380} height={480} priority className={styles.art_girl} />
         </div>
         <div className={`${styles.art_vs} ${anton.className}`}>VS</div>
         <div>
-          <Image
-            src="/images/robot-card.png"
-            alt="AI robot"
-            width={380}
-            height={480}
-            priority
-            className={styles.art_robot}
-          />
+          <Image src="/images/robot-card.png" alt="AI robot" width={380} height={480} priority className={styles.art_robot} />
         </div>
       </div>
     </section>
@@ -167,18 +153,12 @@ function AboutSection() {
     <section className={`${styles.panel} ${styles.reverse}`}>
       <div className={styles.about}>
         <div className={styles.panel_text}>
-          <Image
-            src="/images/logo.png"
-            alt="No Sekai Logo"
-            width={320}
-            height={90}
-            priority
-            className={styles.about_logo}
-          />
+          <Image src="/images/logo.png" alt="No Sekai Logo" width={320} height={90} priority className={styles.about_logo} />
           <p className={styles.about_text}>
             The Ultimate <br />
             Onboarding & <br />
-            Discovery Platform<br />
+            Discovery Platform
+            <br />
             On Solana
           </p>
         </div>
@@ -210,28 +190,10 @@ function FounderSection() {
           <div className={styles.founder_text}>
             <div>
               <div className={styles.founder_detail}>
-                <Image
-                  src="/images/founder.svg"
-                  alt="OhMeOhMy profile"
-                  width={50}
-                  height={50}
-                  priority
-                />
+                <Image src="/images/founder.svg" alt="OhMeOhMy profile" width={50} height={50} priority />
                 <h2>OhMeOhMy</h2>
-                <a
-                  href="https://x.com/OhMeOhMy_Sol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow OhMeOhMy on X"
-                >
-                  <Image
-                    src="/svg/xwhite.svg"
-                    alt="X (Twitter)"
-                    width={32}
-                    height={34}
-                    priority
-                    className={styles.x}
-                  />
+                <a href="https://x.com/OhMeOhMy_Sol" target="_blank" rel="noopener noreferrer" aria-label="Follow OhMeOhMy on X">
+                  <Image src="/svg/xwhite.svg" alt="X (Twitter)" width={32} height={34} priority className={styles.x} />
                 </a>
               </div>
               <ul>
@@ -303,9 +265,7 @@ function ExperimentSection() {
 // }
 
 function UtilitySection() {
-  const slides = CAROUSEL_SLIDES.map((slide, index) => (
-    <CarouselSlide key={`slide-${index}`} {...slide} />
-  ));
+  const slides = CAROUSEL_SLIDES.map((slide, index) => <CarouselSlide key={`slide-${index}`} {...slide} />);
 
   return (
     <section className={`${styles.slides} ${styles.panel}`}>
@@ -313,15 +273,13 @@ function UtilitySection() {
         <div className={styles.panel_text}>
           <h2>WITH UNPRECEDENTED UTILITY FOCUSED ON ALPHA, ANALYTICS AND TOOLS</h2>
         </div>
-        <Carousel >
-          {slides}
-        </Carousel>
+        <Carousel>{slides}</Carousel>
       </div>
     </section>
   );
 }
 
-function CarouselSlide({ image, title, description }: { image: string; title: string; description: string }) {
+function CarouselSlide({image, title, description}: {image: string; title: string; description: string}) {
   return (
     <div className={styles.slide}>
       <Image src={image} alt={title} width={450} height={400} priority />
@@ -335,29 +293,21 @@ function CarouselSlide({ image, title, description }: { image: string; title: st
 
 function JoinUsSection() {
   const details = [
-    { icon: '/images/Featured icon.png', label: 'Date', value: 'TBD' },
-    { icon: '/images/Featured icon (1).png', label: 'Supply', value: '5,000' },
-    { icon: '/images/Featured icon (2).png', label: 'Price', value: 'TBD' }
+    {icon: '/images/Featured icon.png', label: 'Date', value: 'TBD'},
+    {icon: '/images/Featured icon (1).png', label: 'Supply', value: '5,000'},
+    {icon: '/images/Featured icon (2).png', label: 'Price', value: 'TBD'},
   ];
 
   return (
     <section className={`${styles.join_us} ${styles.panel}`}>
       <div className={styles.join_us_text}>
         <h1 className={styles.title}>JOIN US</h1>
-        <p className={styles.subtitle}>
-          As we embark on this groundbreaking experiment to redefine the NFT space forever.
-        </p>
+        <p className={styles.subtitle}>As we embark on this groundbreaking experiment to redefine the NFT space forever.</p>
         <div className={styles.details}>
-          {details.map((detail) => (
+          {details.map(detail => (
             <div key={detail.label} className={styles.detail}>
               <div className={styles.icon}>
-                <Image
-                  src={detail.icon}
-                  alt={detail.label}
-                  width={55}
-                  height={55}
-                  priority
-                />
+                <Image src={detail.icon} alt={detail.label} width={55} height={55} priority />
               </div>
               <h3 className={styles.label}>{detail.label}</h3>
               <p className={styles.value}>{detail.value}</p>

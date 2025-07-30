@@ -86,7 +86,7 @@ function Header() {
               </div>
               <div className={styles.header_action}>
                 <span>Join Us</span>
-             
+
                 <a href="https://discord.com/invite/kyzzen" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="18" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -95,7 +95,7 @@ function Header() {
                     />
                   </svg>
                 </a>
-                   <a href="https://twitter.com/Kyzzen_io" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/Kyzzen_io" target="_blank" rel="noopener noreferrer">
                   <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M4.03901 5L10.2164 12.7218L4 19H5.39907L10.8415 13.5034L15.2389 19H20L13.475 10.8438L19.2612 5H17.8621L12.8499 10.0623L8.8001 5H4.03901ZM6.09644 5.96344H8.2837L17.9422 18.0364H15.755L6.09644 5.96344Z"

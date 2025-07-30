@@ -325,8 +325,8 @@
   margin: auto;
   gap: 0;
   border: 3px solid #122645;
-border-radius: 30px;
-overflow-x: hidden;
+  border-radius: 30px;
+  overflow-x: hidden;
 }
 
 .founder_detail {
