@@ -79,7 +79,7 @@ function Header() {
                       />
                     </span>
                   </li>
-                  <li className={styles.header_list} onClick={() => nav('/')}>
+                  <li className={styles.header_list} onClick={() => nav('/art')}>
                     <span className={pathname === '/art' ? styles.active : ''}>Art</span>
                   </li>
                 </ul>
