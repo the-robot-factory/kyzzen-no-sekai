@@ -80,14 +80,15 @@
   font-size: 2rem;
 }
 
-.panel_text p , .panel_text li{
+.panel_text p,
+.panel_text li {
   font-size: 1.1rem;
   margin-bottom: 0.9rem;
 }
 .panel_text p:last-child {
   margin-bottom: 0rem;
 }
-.panel_text ul{
+.panel_text ul {
   padding-left: 2rem;
 }
 
