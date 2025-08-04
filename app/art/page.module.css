@@ -45,7 +45,6 @@
   text-align: center;
 }
 
-
 .panel_img {
   position: relative;
   text-align: center;
@@ -85,7 +84,6 @@
 .panel.single .panel_text h2 {
   display: unset;
 }
-
 
 .panel_text p,
 .panel_text li {

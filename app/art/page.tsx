@@ -35,7 +35,9 @@ function Utility() {
           <Image src="/images/art-cross.svg" alt="chats" fill priority />
         </div>
         <div className={styles.panel_text}>
-          <h2><span>2.</span>  Limitations of Traditional NFT Collections</h2>
+          <h2>
+            <span>2.</span> Limitations of Traditional NFT Collections
+          </h2>
           <p>
             Most NFT collections are generating using a layer-based system, where each trait (e.g. hair, clothes, etc.) are drawn
             as separate image files and then layered on top of each other.
@@ -59,7 +61,9 @@ function Utility() {
           <Image src="/images/art-check.svg" alt="chats" fill priority />
         </div>
         <div className={styles.panel_text}>
-          <h2><span>3.</span> Our Approach: Artist-Led, AI-Powered</h2>
+          <h2>
+            <span>3.</span> Our Approach: Artist-Led, AI-Powered
+          </h2>
           <p>
             We trained a model on the traits and completed work that were entirely drawn by a single artist, specifically for this
             new collection.
@@ -75,7 +79,8 @@ function Utility() {
         <div className={styles.panel_text}>
           <h2>4. The Result</h2>
           <p>
-            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true <br />collaboration between human creativity and machine precision
+            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true <br />
+            collaboration between human creativity and machine precision
           </p>
         </div>
         <div className={styles.panel_img}>
