@@ -274,7 +274,7 @@ function UtilitySection() {
           <h2>WITH UNPRECEDENTED UTILITY FOCUSED ON ALPHA, ANALYTICS AND TOOLS</h2>
         </div>
         <div>
-        <Carousel>{slides}</Carousel>
+          <Carousel>{slides}</Carousel>
         </div>
       </div>
     </section>
