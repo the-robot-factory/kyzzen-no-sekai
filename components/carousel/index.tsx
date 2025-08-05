@@ -80,7 +80,7 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
         </button> */}
         <div className="cards-container" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
           {React.Children.map(children, (child, index) => (
-            <div key={index} className="card" style={{width: `${window.innerWidth}px`, margin: 'auto'}}>
+            <div key={index} className="card">
               {child}
             </div>
           ))}
