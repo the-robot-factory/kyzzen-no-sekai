@@ -273,7 +273,9 @@ function UtilitySection() {
         <div className={styles.panel_text}>
           <h2>WITH UNPRECEDENTED UTILITY FOCUSED ON ALPHA, ANALYTICS AND TOOLS</h2>
         </div>
+        <div>
         <Carousel>{slides}</Carousel>
+        </div>
       </div>
     </section>
   );

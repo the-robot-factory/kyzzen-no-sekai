@@ -1,8 +1,8 @@
 'use client';
-import React, {useState, useEffect, ReactNode} from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import './index.css';
 
-const Carousel = ({children}: {children: ReactNode[]}) => {
+const Carousel = ({ children }: { children: ReactNode[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isForward, setIsForward] = useState(true);
@@ -78,9 +78,9 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
             />
           </svg>
         </button> */}
-        <div className="cards-container" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
+        <div className="cards-container" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {React.Children.map(children, (child, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card" style={{ width: `${window.innerWidth}px`, margin:'auto' }}>
               {child}
             </div>
           ))}
