@@ -42,7 +42,7 @@ function Utility() {
           <Image src="/images/portfolio.svg" alt="chats" fill priority />
         </div>
       </section>
-      <section className={`${styles.panel} ${styles.single}`}>
+      <section className={`${styles.panel} ${styles.single} ${styles.last}`}>
         <div className={styles.panel_text}>
           <h2>Reach your full potential</h2>
           <p>Receive recommendations to improve your portfolio</p>
