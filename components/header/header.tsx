@@ -57,6 +57,9 @@ function Header() {
                   {/* <li className={styles.header_list} onClick={() => nav('/launch')}>
                     <span className={pathname === '/launch' ? styles.active : ''}>Launch</span>
                   </li> */}
+                    <li className={styles.header_list} onClick={() => nav('/art')}>
+                    <span className={pathname === '/art' ? styles.active : ''}>Art</span>
+                  </li>
                   <li className={styles.header_list} onClick={() => nav('/utility')}>
                     <span className={pathname === '/utility' ? styles.active : ''}>Utility</span>
                   </li>
@@ -79,8 +82,8 @@ function Header() {
                       />
                     </span>
                   </li>
-                  <li className={styles.header_list} onClick={() => nav('/art')}>
-                    <span className={pathname === '/art' ? styles.active : ''}>Art</span>
+                  <li className={styles.header_list} onClick={() => window.open("https://kyzzen.io","_blank")}>
+                    <span className={pathname === '/art' ? styles.active : ''}>About Kyzzen</span>
                   </li>
                 </ul>
               </div>

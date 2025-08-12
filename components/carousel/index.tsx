@@ -37,22 +37,22 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
     setTimeout(() => setIsAutoPlaying(true), 8000);
   };
 
-  // const goToPrevious = () => {
-  //   setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
-  //   setIsAutoPlaying(false);
-  //   setTimeout(() => setIsAutoPlaying(true), 8000);
-  // };
+  const goToPrevious = () => {
+    setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 8000);
+  };
 
-  // const goToNext = () => {
-  //   setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
-  //   setIsAutoPlaying(false);
-  //   setTimeout(() => setIsAutoPlaying(true), 8000);
-  // };
+  const goToNext = () => {
+    setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 8000);
+  };
 
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-        {/* <button
+        <button
           className="nav-button nav-button-left"
           onClick={goToPrevious}
         >
@@ -61,7 +61,7 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M15.2071 6.29289C15.5976 6.68342 15.5976 7.31658 15.2071 7.70711L10.9142 12L15.2071 16.2929C15.5976 16.6834 15.5976 17.3166 15.2071 17.7071C14.8166 18.0976 14.1834 18.0976 13.7929 17.7071L8.79289 12.7071C8.40237 12.3166 8.40237 11.6834 8.79289 11.2929L13.7929 6.29289C14.1834 5.90237 14.8166 5.90237 15.2071 6.29289Z"
-              fill="white"
+              fill="currentColor"
             />
           </svg>
         </button>
@@ -74,10 +74,10 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M8.79289 6.29289C9.18342 5.90237 9.81658 5.90237 10.2071 6.29289L15.2071 11.2929C15.5976 11.6834 15.5976 12.3166 15.2071 12.7071L10.2071 17.7071C9.81658 18.0976 9.18342 18.0976 8.79289 17.7071C8.40237 17.3166 8.40237 16.6834 8.79289 16.2929L13.0858 12L8.79289 7.70711C8.40237 7.31658 8.40237 6.68342 8.79289 6.29289Z"
-              fill="white"
+              fill="currentColor"
             />
           </svg>
-        </button> */}
+        </button>
         <div className="cards-container" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
           {React.Children.map(children, (child, index) => (
             <div key={index} className="card">

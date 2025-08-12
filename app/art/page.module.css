@@ -69,6 +69,7 @@
   display: flex;
   gap: 0.8rem;
 }
+
 .panel.single .panel_text h2 {
   display: unset;
 }
@@ -78,21 +79,25 @@
   font-size: 1.1rem;
   margin-bottom: 0.9rem;
 }
+
 .panel_text p:last-child {
   margin-bottom: 0rem;
 }
+
 .panel_text ul {
   padding-left: 2rem;
 }
 
 @media (max-width: 1025px) {
   .heading {
-    padding: 4em 4em 2em 4em;
+    padding: 8em 4em 2em 4em;
   }
 
   .panel {
     padding: 2em 4em;
+    align-items: start;
   }
+
 
   .heading_text h2 {
     font-size: 3rem;
@@ -108,6 +113,15 @@
 
   .panel_text p {
     font-size: 0.9rem;
+  }
+
+  .panel_text li {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .panel.single {
+    gap: 2em;
   }
 }
 
@@ -125,6 +139,10 @@
   }
 
   .panel_text p {
+    font-size: 0.7rem;
+  }
+
+  .panel_text li {
     font-size: 0.7rem;
   }
 }

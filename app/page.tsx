@@ -136,12 +136,12 @@ function CollisionSection() {
         </div>
       </div>
       <div className={styles.art}>
-        <div>
-          <Image src="/images/girl-card.png" alt="Human artist" width={380} height={480} priority className={styles.art_girl} />
+        <div className={styles.art_girlcon}>
+          <Image src="/images/girl.png" alt="Human artist" width={300} height={400} priority className={styles.art_girl} />
         </div>
         <div className={`${styles.art_vs} ${anton.className}`}>VS</div>
-        <div>
-          <Image src="/images/robot-card.png" alt="AI robot" width={380} height={480} priority className={styles.art_robot} />
+        <div className={styles.art_robotcon}>
+          <Image src="/images/robot-angry.png" alt="AI robot" width={380} height={340} priority className={styles.art_robot} />
         </div>
       </div>
     </section>
