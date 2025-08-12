@@ -52,10 +52,7 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-        <button
-          className="nav-button nav-button-left"
-          onClick={goToPrevious}
-        >
+        <button className="nav-button nav-button-left" onClick={goToPrevious}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
@@ -65,10 +62,7 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
             />
           </svg>
         </button>
-        <button
-          className="nav-button nav-button-right"
-          onClick={goToNext}
-        >
+        <button className="nav-button nav-button-right" onClick={goToNext}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"

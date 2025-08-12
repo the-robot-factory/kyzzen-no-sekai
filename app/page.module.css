@@ -5,7 +5,7 @@
   scroll-snap-type: y mandatory;
 }
 
-.main>section {
+.main > section {
   min-height: 100vh;
   scroll-snap-align: start;
 }
@@ -149,21 +149,21 @@
   color: white;
 }
 
-.panel_text h2>span {
+.panel_text h2 > span {
   display: block;
   font-weight: normal;
   letter-spacing: 2px;
 }
 
-.panel_text h2>span:first-child {
+.panel_text h2 > span:first-child {
   font-size: 1.34em;
 }
 
-.panel_text h2>span:nth-child(2) {
+.panel_text h2 > span:nth-child(2) {
   font-size: 2.17em;
 }
 
-.panel_text h2>span:last-child {
+.panel_text h2 > span:last-child {
   font-size: 3.1em;
 }
 
@@ -244,7 +244,6 @@
   bottom: 0%;
   right: 0%;
   z-index: 1;
-
 }
 
 .art_girlcon {
@@ -259,7 +258,6 @@
 .art_girl {
   position: relative;
   z-index: 2;
-
 }
 
 .art_girlcon::after {
@@ -273,7 +271,6 @@
   bottom: 0%;
   right: 0%;
   z-index: 1;
-
 }
 
 .art_vs {
@@ -737,7 +734,7 @@
     scroll-snap-type: unset;
   }
 
-  .main>section {
+  .main > section {
     min-height: unset;
     scroll-snap-align: unset;
   }
@@ -791,15 +788,15 @@
     padding: 0 2em;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 2em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 3.13em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 4.6em;
   }
 
@@ -897,15 +894,15 @@
     min-height: 50vh;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1.8em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 2.9em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 4.2em;
   }
 
@@ -936,15 +933,15 @@
     font-size: 5.1rem;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1.6em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 2.5em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 3.6em;
   }
 
@@ -1002,15 +999,15 @@
     min-height: 30vh;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 1.6em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 2.4em;
   }
 

@@ -34,7 +34,8 @@
   right: 16px;
 }
 
-.nav-button-left:hover, .nav-button-right:hover{
+.nav-button-left:hover,
+.nav-button-right:hover {
   color: #c6fb0b;
 }
 .dots-container {
