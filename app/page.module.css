@@ -1,8 +1,8 @@
 /* ===== BASE STYLES ===== */
 .main {
-  height: 100vh;
+  /* height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; */
 }
 
 .main > section {

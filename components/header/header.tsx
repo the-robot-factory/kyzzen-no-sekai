@@ -83,7 +83,7 @@ function Header() {
                     </span>
                   </li>
                   <li className={styles.header_list} onClick={() => window.open('https://kyzzen.io', '_blank')}>
-                    <span className={pathname === '/art' ? styles.active : ''}>About Kyzzen</span>
+                    <span>About Kyzzen</span>
                   </li>
                 </ul>
               </div>
