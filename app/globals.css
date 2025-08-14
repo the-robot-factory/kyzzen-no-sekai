@@ -82,3 +82,34 @@ a {
   /* height: 100vh; */
   /* overflow-y: auto; */
 }
+
+
+.loader {
+  position: fixed !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -2000%;
+  right: -2000%;
+  bottom: -2000%;
+  left: -2000%;
+  background-color: #0000006e;
+  text-align: center;
+  z-index: 999999;
+}
+
+.loader-det {
+  background-color: var(--gray-900);
+  border-radius: 10px;
+  width: 200px;
+  padding: 1em;
+
+  & img {
+    width: 100px !important;
+  }
+
+  & p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
