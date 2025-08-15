@@ -1,10 +1,4 @@
 /* ===== BASE STYLES ===== */
-.main {
-  /* height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; */
-}
-
 .main > section {
   min-height: 100vh;
   scroll-snap-align: start;

@@ -38,23 +38,7 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-main {
-  /* margin: 0 2em; */
-}
 
-@media (max-width: 1100px) {
-  main {
-    /* display: none; */
-    /* margin: 0 1em; */
-  }
-}
-
-@media (max-width: 600px) {
-  main {
-    /* display: none; */
-    /* margin: 0 1em; */
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -74,14 +58,9 @@ a {
 }
 
 .con {
-  /* position: relative; */
-  /* border: 8px solid var(--primary-color); */
-  /* background-color: #f2f4f7; */
   background-color: #101828;
   max-width: 1800px;
   margin: auto;
-  /* height: 100vh; */
-  /* overflow-y: auto; */
 }
 
 .loader {
