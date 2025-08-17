@@ -101,8 +101,7 @@
   color: #c6fb0b;
 }
 
-
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .carousel-container {
     margin-top: 0rem;
   }
