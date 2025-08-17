@@ -38,14 +38,17 @@
 .nav-button-right:hover {
   color: #c6fb0b;
 }
+
 .dots-container {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* position: absolute; */
+  /* bottom: -40px; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   display: flex;
+  justify-content: center;
   z-index: 10;
   gap: 8px;
+  margin-top: 3rem;
 }
 
 .dot {
@@ -87,13 +90,24 @@
 }
 
 .nav-button-left {
-  left: 16px;
+  left: 0%;
 }
 
 .nav-button-right {
-  right: 16px;
+  right: 0%;
 }
 
 .nav-button:hover {
   color: #c6fb0b;
+}
+
+
+@media (max-width:500px) {
+  .carousel-container {
+    margin-top: 0rem;
+  }
+
+  .dots-container {
+    margin-top: 1rem;
+  }
 }

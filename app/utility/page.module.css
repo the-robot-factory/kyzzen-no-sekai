@@ -78,6 +78,7 @@
 
   .panel {
     padding: 2em 4em;
+    gap: 2em;
   }
 
   .heading_text h2 {

@@ -38,7 +38,18 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(44, 41, 54);
+}
 
 * {
   box-sizing: border-box;
@@ -59,7 +70,7 @@ a {
 
 .con {
   background-color: #101828;
-  max-width: 1800px;
+  max-width: 1500px;
   margin: auto;
 }
 
@@ -92,3 +103,5 @@ a {
     font-weight: 500;
   }
 }
+
+@media (min-width) {}

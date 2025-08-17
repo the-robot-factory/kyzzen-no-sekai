@@ -63,8 +63,8 @@ const EndlessImageScroll: React.FC<EndlessImageScrollProps> = ({images, directio
           className={image.className}
           key={`${index}`}
           src={image.url}
-          width={image.width || 200}
-          height={image.height || 200}
+          width={image.width || 180}
+          height={image.height || 180}
           alt=""
           style={{
             // width: '200px',

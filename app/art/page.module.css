@@ -41,6 +41,7 @@
 }
 
 .panel_img img {
+  border-radius: 8px;
   position: relative !important;
   width: 90% !important;
 }
@@ -95,6 +96,7 @@
 
   .panel {
     padding: 2em 4em;
+    gap: 2em;
     align-items: start;
   }
 
@@ -112,11 +114,13 @@
 
   .panel_text p {
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
   .panel_text li {
     text-align: left;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
   .panel.single {
