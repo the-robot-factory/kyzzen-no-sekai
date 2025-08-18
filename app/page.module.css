@@ -101,6 +101,7 @@
 
 .panel.slides {
   width: 100vw;
+  max-width: 1500px !important;
   background-color: #0f0f1e;
   color: white;
 }
