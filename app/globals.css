@@ -99,7 +99,6 @@ a {
 }
 
 @keyframes pulse-zoom {
-
   0%,
   100% {
     transform: scale(1);
@@ -110,4 +109,5 @@ a {
   }
 }
 
-@media (min-width) {}
+@media (min-width) {
+}
