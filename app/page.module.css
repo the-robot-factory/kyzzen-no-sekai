@@ -120,10 +120,25 @@
 .single {
   min-height: calc(100vh - 16em);
   padding: 8em 0;
-  background-image: url('/images/scroller.png');
+  background-image: url('/images/experiment.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.experiment_con{
+  position: relative;
+}
+.experiment_con::after {
+  content: '';
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg, #0f0f1e 7.16%, rgba(0, 0, 0, 0.641) 97.7%);
 }
 
 /* ===== SHARED TEXT STYLES ===== */
@@ -537,7 +552,7 @@
   width: 100%;
   text-align: center;
   color: white;
-  background-image: url('/images/hero.png');
+  background-image: url('/images/join.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
