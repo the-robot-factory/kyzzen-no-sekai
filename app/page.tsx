@@ -220,7 +220,7 @@ function FounderSection() {
 
 function ExperimentSection() {
   return (
-    <section className={styles.single+ " " + styles.experiment_con}>
+    <section className={styles.single + ' ' + styles.experiment_con}>
       <div className={styles.experiment}>
         <div className={styles.panel_text}>
           <h2>Is about to launch the biggest AI art experiment</h2>

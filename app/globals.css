@@ -90,19 +90,24 @@ a {
 
 .loader-det {
   background-color: var(--gray-900);
-  border-radius: 10px;
-  width: 200px;
-  padding: 1em;
+  /* border-radius: 10px;
+  padding: 1em; */
+}
 
-  & img {
-    width: 100px !important;
+.loader-det img {
+  animation: pulse-zoom 1.2s infinite;
+}
+
+@keyframes pulse-zoom {
+
+  0%,
+  100% {
+    transform: scale(1);
   }
 
-  & p {
-    font-size: 15px;
-    font-weight: 500;
+  50% {
+    transform: scale(1.15);
   }
 }
 
-@media (min-width) {
-}
+@media (min-width) {}

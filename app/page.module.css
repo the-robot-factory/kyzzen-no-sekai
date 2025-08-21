@@ -125,7 +125,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.experiment_con{
+.experiment_con {
   position: relative;
 }
 .experiment_con::after {
