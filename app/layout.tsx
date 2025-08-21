@@ -1,4 +1,5 @@
 // import type {Metadata} from 'next';
+'use client';
 import {Open_Sans} from 'next/font/google';
 import './globals.css';
 import Header from '../components/header/header';

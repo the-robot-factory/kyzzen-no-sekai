@@ -1,3 +1,4 @@
+'use client';
 import {Anton, Open_Sans} from 'next/font/google';
 import Image from 'next/image';
 import styles from './page.module.css';
