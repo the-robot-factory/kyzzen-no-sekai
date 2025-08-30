@@ -1,5 +1,5 @@
 'use client';
-import { Open_Sans } from 'next/font/google';
+import {Open_Sans} from 'next/font/google';
 import Image from 'next/image';
 import styles from './page.module.css';
 
@@ -26,7 +26,6 @@ function Utility() {
         </div>
       </section>
 
-      
       <section className={`${styles.panel} ${styles.single}`}>
         <div className={styles.panel_text}>
           <h2>PREMIUM TOOLS</h2>
@@ -36,7 +35,7 @@ function Utility() {
           <Image src="/images/lst.svg" alt="chats" fill priority />
         </div>
       </section>
-   <section className={`${styles.panel} ${styles.single}`}>
+      <section className={`${styles.panel} ${styles.single}`}>
         <div className={styles.panel_text}>
           <h2>portfolio tracking</h2>
           <p>With the most advanced portfolio analytics</p>
@@ -64,7 +63,6 @@ function Utility() {
         </div>
       </section>
 
-    
       <section className={`${styles.panel} ${styles.single} ${styles.last}`}>
         <div className={styles.panel_text}>
           <h2>Reach your full potential</h2>

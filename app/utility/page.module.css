@@ -129,7 +129,7 @@
     gap: 2.3em;
   }
 
-  .panel.single{
+  .panel.single {
     grid-template-columns: auto;
   }
 
