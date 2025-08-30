@@ -1,14 +1,14 @@
 'use client';
-import {useFetchLeaderboard, useFetchWhitelistSpots} from '@/api/hooks/whitelist';
+import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import {WhitelistSpot} from '@/types/types';
+import { WhitelistSpot } from '@/types/types';
 import Table from '@/components/table/table';
-import {useState} from 'react';
+import { useState } from 'react';
 
 export default function Whitelist() {
-  const {data: spots} = useFetchWhitelistSpots();
-  const {data: leaders} = useFetchLeaderboard();
+  const { data: spots } = useFetchWhitelistSpots();
+  const { data: leaders } = useFetchLeaderboard();
 
   const [searchText, setSearchText] = useState('');
 
@@ -22,12 +22,15 @@ export default function Whitelist() {
             <ul className={styles.hero_list}>
               <li>500 spots are available via our Leaderboard.</li>
               <li>
-                1,500 spots are allocated to <a className={styles.partner_link}>50 partner communities</a>.
+                1,500 spots are allocated to <a href='#partner-communities' className={styles.partner_link}>50 communities</a>.
               </li>
             </ul>
-            <button className={styles.cta}>
-              <span className={styles.cta_text}>View more details</span>
-            </button>
+            <a href='#partner-communities'>
+              <button className={styles.cta}>
+                <span className={styles.cta_text}>View more details</span>
+              </button>
+            </a>
+
           </div>
         </div>
         <div className={styles.info_section}>
@@ -41,9 +44,9 @@ export default function Whitelist() {
               className={styles.search_bar}
             />
             <Table
-              header={[{name: 'Rank'}, {name: 'Username'}, {name: 'Points'}]}
-              body={leaders?.filter((leader: Record<string, string>) => leader.username.includes(searchText))?.slice(0, 8) ?? []}
-              style={{margin: '0 auto', height: 'fit-content'}}
+              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
+              body={leaders?.filter((leader: Record<string, string>) => leader.username.includes(searchText))?.slice(0, 7) ?? []}
+              style={{ margin: '0 auto', height: 'fit-content' }}
               className={styles.leaderboard_table}
             />
           </div>
@@ -65,15 +68,15 @@ export default function Whitelist() {
                 <li>Join our Discord Server</li>
                 <li>Activate our Telegram Bot</li>
                 <li>Subscribe to Kyzen Newsletter</li>
-                <li>Follow our YouTube</li>
-                <li>Follow our Instagram</li>
+                {/* <li>Follow our YouTube</li>
+                <li>Follow our Instagram</li> */}
               </ul>
               <li>1 pt for each Kyzen Academy course completed.</li>
               <li>5 pts for each referral (must connect at least 1 social).</li>
             </ul>
           </div>
         </div>
-        <div className={styles.network_section}>
+        <div id='partner-communities' className={styles.network_section}>
           <div className={styles.network}>
             <h2 className={styles.network_title}>Whitelist Communities</h2>
 

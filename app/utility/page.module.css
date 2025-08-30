@@ -21,7 +21,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4em;
+  gap: 3em;
   /* min-height: calc(100vh - 16em); */
   padding: 4em 8em;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .panel.single {
-  grid-template-columns: auto;
+  grid-template-columns: 80%;
   text-align: center;
 }
 
@@ -127,6 +127,10 @@
     grid-template-columns: auto;
     text-align: center;
     gap: 2.3em;
+  }
+
+  .panel.single{
+    grid-template-columns: auto;
   }
 
   .panel::after {

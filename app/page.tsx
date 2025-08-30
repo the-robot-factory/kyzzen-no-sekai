@@ -38,11 +38,61 @@ const openSans = Open_Sans({
 // ];
 
 const SCROLL_IMAGES = [
-  '/images/image 749.png',
-  '/images/image 750.png',
-  '/images/image 751.png',
-  '/images/image 752.png',
-].flatMap(url => Array(3).fill({url})); // Create 12 images by repeating 4 images 3 times
+  '/models/1.jpg',
+  '/models/2.jpg',
+  '/models/4.jpg',
+  '/models/3.jpg',
+  '/models/5.jpg',
+  '/models/7.jpg',
+  '/models/6.jpg',
+  '/models/8.jpg',
+  '/models/12.jpg',
+  '/models/9.jpg',
+  '/models/10.jpg',
+  '/models/14.jpg',
+  '/models/11.jpg',
+  '/models/15.jpg',
+  '/models/13.jpg',
+  '/models/16.jpg',
+  '/models/17.jpg',
+  '/models/21.jpg',
+  '/models/18.jpg',
+  '/models/22.jpg',
+  '/models/19.jpg',
+  '/models/52.jpg',
+  '/models/20.jpg',
+  '/models/47.jpg',
+  '/models/23.jpg',
+  '/models/26.jpg',
+  '/models/46.jpg',
+  '/models/24.jpg',
+  '/models/25.jpg',
+  '/models/27.jpg',
+  '/models/28.jpg',
+  '/models/38.jpg',
+  '/models/29.jpg',
+  '/models/30.jpg',
+  '/models/31.jpg',
+  '/models/51.jpg',
+  '/models/44.jpg',
+  '/models/32.jpg',
+  '/models/33.jpg',
+  '/models/34.jpg',
+  '/models/35.jpg',
+  '/models/36.jpg',
+  '/models/37.jpg',
+  '/models/39.jpg',
+  '/models/48.jpg',
+  '/models/40.jpg',
+  '/models/53.jpg',
+  '/models/41.jpg',
+  '/models/42.jpg',
+  '/models/43.jpg',
+  '/models/45.jpg',
+  '/models/49.jpg',
+  '/models/50.jpg',
+  '/models/54.jpg',
+].flatMap(url => Array(1).fill({url}));
 
 const HERO_IMAGES = [
   {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
@@ -226,11 +276,11 @@ function ExperimentSection() {
         <div className={styles.panel_text}>
           <h2>Is about to launch the biggest AI art experiment</h2>
         </div>
-        <EndlessImageScroll images={SCROLL_IMAGES} />
+        <EndlessImageScroll images={SCROLL_IMAGES.slice(0, 27)} />
         <div className={styles.panel_text}>
           <h2 className={styles.exp2}>to push the limits of generative art and creativity itself</h2>
         </div>
-        <EndlessImageScroll images={SCROLL_IMAGES} direction="left" />
+        <EndlessImageScroll images={SCROLL_IMAGES.slice(27)} direction="left" />
       </div>
     </section>
   );

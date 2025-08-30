@@ -39,7 +39,7 @@ const WhitelistProfile = () => {
       action: (
         <>
           Not subscribed to Kyzzen Newsletter yet.{' '}
-          <a href="https://nft-today.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
+          <a href="https://solana-pulse.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Subscribe here.
           </a>
         </>
@@ -321,7 +321,7 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
                 : data.id === SOCIAL_PROVIDERS.Mail
                   ? 'Suscribed to Kyzzen Newsletter.'
                   : data.id === SOCIAL_PROVIDERS.Telegram
-                    ? "Using Kyzzen'n Telegram Bot."
+                    ? "Using Kyzzen's Telegram Bot."
                     : 'Joined ' + data.account}
           </span>
         ) : (

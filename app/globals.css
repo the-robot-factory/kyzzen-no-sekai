@@ -30,6 +30,7 @@ body {
   overflow: hidden;
   background-color: #0f0f1e;
   color: var(--foreground);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -70,7 +71,7 @@ a {
 
 .con {
   background-color: #101828;
-  max-width: 1500px;
+  max-width: 1600px;
   margin: auto;
 }
 
