@@ -269,7 +269,7 @@ const WhitelistProfile = () => {
           </div>
           <div className={styles.network}>
             <p className={styles.network_text}>
-              You qualify under {spotsQualified?.length ?? 0} out of {spots?.length ?? 0} whitelist partner community allocations.
+              You qualify under {spotsQualified?.length ?? 0} out of {spots?.length ?? 0} whitelist partner community raffles.
             </p>
             {fetchingEligible && <PartnerSkeleton />}
             <div className={styles.grid_section}>

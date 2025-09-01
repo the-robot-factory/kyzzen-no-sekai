@@ -49,7 +49,7 @@ const WhitelistSkeleton: React.FC = () => {
       </div>
 
       <div className={styles.network}>
-        <p className={styles.network_text}>You qualify under 5 out of 40 whitelist partner community allocations.</p>
+        <p className={styles.network_text}>You qualify under 5 out of 40 whitelist partner community raffles.</p>
         <PartnerSkeleton />
       </div>
     </div>
