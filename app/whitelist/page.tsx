@@ -24,7 +24,7 @@ export default function Whitelist() {
               <li>
                 1,500 spots are allocated to{' '}
                 <a href="#partner-communities" className={styles.partner_link}>
-                  50 communities
+                  partner communities
                 </a>
                 .
               </li>
