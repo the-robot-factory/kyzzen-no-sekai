@@ -1,14 +1,14 @@
 'use client';
-import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
+import {useFetchLeaderboard, useFetchWhitelistSpots} from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { WhitelistSpot } from '@/types/types';
+import {WhitelistSpot} from '@/types/types';
 import Table from '@/components/table/table';
-import { useState } from 'react';
+import {useState} from 'react';
 
 export default function Whitelist() {
-  const { data: spots } = useFetchWhitelistSpots();
-  const { data: leaders } = useFetchLeaderboard();
+  const {data: spots} = useFetchWhitelistSpots();
+  const {data: leaders} = useFetchLeaderboard();
 
   const [searchText, setSearchText] = useState('');
 
@@ -20,11 +20,13 @@ export default function Whitelist() {
           <div className={styles.hero_content}>
             <h1 className={styles.hero_title}>WHITELIST</h1>
             <ul className={styles.hero_list}>
-              <li>500 spots are available via our
+              <li>
+                500 spots are available via our
                 <a href="#leaderboard" className={styles.partner_link}>
                   Leaderboard
                 </a>
-                . </li>
+                .{' '}
+              </li>
               <li>
                 1,500 spots are allocated to{' '}
                 <a href="#partner-communities" className={styles.partner_link}>
@@ -51,9 +53,9 @@ export default function Whitelist() {
               className={styles.search_bar}
             />
             <Table
-              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
+              header={[{name: 'Rank'}, {name: 'Username'}, {name: 'Points'}]}
               body={leaders?.filter((leader: Record<string, string>) => leader.username.includes(searchText))?.slice(0, 7) ?? []}
-              style={{ margin: '0 auto', height: 'fit-content' }}
+              style={{margin: '0 auto', height: 'fit-content'}}
               className={styles.leaderboard_table}
             />
           </div>
