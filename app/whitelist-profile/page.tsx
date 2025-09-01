@@ -38,7 +38,7 @@ const WhitelistProfile = () => {
       status: profile?.emailVerified,
       action: (
         <>
-          Not subscribed to Kyzzen Newsletter yet.{' '}
+          Not subscribed to Solana Pulse yet.{' '}
           <a href="https://solana-pulse.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
             Subscribe here.
           </a>
@@ -319,7 +319,7 @@ const SocialRow = ({data}: {data: SOCIALS}) => {
               : data.id === SOCIAL_PROVIDERS.X
                 ? 'Following Kyzzen and OhMeOhMy_Sol.'
                 : data.id === SOCIAL_PROVIDERS.Mail
-                  ? 'Suscribed to Kyzzen Newsletter.'
+                  ? 'Suscribed to Solana Pulse.'
                   : data.id === SOCIAL_PROVIDERS.Telegram
                     ? "Using Kyzzen's Telegram Bot."
                     : 'Joined ' + data.account}
