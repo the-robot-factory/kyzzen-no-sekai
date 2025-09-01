@@ -76,7 +76,7 @@ export default function Whitelist() {
                 <li>Follow OhMeOhMy_Sol on Twitter</li>
                 <li>Join our Discord Server</li>
                 <li>Activate our Telegram Bot</li>
-                <li>Subscribe to Kyzen Newsletter</li>
+                <li>Subscribe to Solana Pulse</li>
                 {/* <li>Follow our YouTube</li>
                 <li>Follow our Instagram</li> */}
               </ul>
