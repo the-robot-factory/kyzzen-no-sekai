@@ -8,4 +8,3 @@ export const anton = Anton({
 export const openSans = Open_Sans({
   subsets: ['latin'],
 });
-

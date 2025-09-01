@@ -3,8 +3,8 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import EndlessImageScroll from '../components/endless-scroll';
 import Carousel from '../components/carousel';
-import { CAROUSEL_SLIDES, SCROLL_IMAGES } from '@/constants/data';
-import { anton, openSans } from '@/constants/fonts';
+import {CAROUSEL_SLIDES, SCROLL_IMAGES} from '@/constants/data';
+import {anton, openSans} from '@/constants/fonts';
 
 function Home() {
   return (
@@ -212,8 +212,7 @@ function JoinUsSection() {
 
 export default Home;
 
-
- const HERO_IMAGES = [
+const HERO_IMAGES = [
   {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
   {url: '/images/Artboard 14.png', width: 170, height: 250, className: styles.hero_people_small},
   {url: '/images/Artboard 13.png', width: 310, height: 430, className: styles.hero_people_big},
@@ -237,7 +236,6 @@ export default Home;
   {url: '/images/Artboard 11.png', width: 310, height: 430, className: styles.hero_people_big},
   {url: '/images/Artboard 18.png', width: 170, height: 250, className: styles.hero_people_small},
 ];
-
 
 // function NetworkSection() {
 //   return (
