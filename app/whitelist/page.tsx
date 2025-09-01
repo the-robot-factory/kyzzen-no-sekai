@@ -21,7 +21,7 @@ export default function Whitelist() {
             <h1 className={styles.hero_title}>WHITELIST</h1>
             <ul className={styles.hero_list}>
               <li>
-                500 spots are available via our
+                500 spots are available via our{' '}
                 <a href="#leaderboard" className={styles.partner_link}>
                   Leaderboard
                 </a>
