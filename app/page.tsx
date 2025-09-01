@@ -1,146 +1,10 @@
 'use client';
-import {Anton, Open_Sans} from 'next/font/google';
 import Image from 'next/image';
 import styles from './page.module.css';
 import EndlessImageScroll from '../components/endless-scroll';
 import Carousel from '../components/carousel';
-
-const anton = Anton({
-  subsets: ['latin'],
-  weight: '400',
-});
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-});
-
-// const NETWORK_MEMBERS = [
-//   { name: 'JemmyJemm', role: 'MonkeDAO Co-Founder' },
-//   { name: 'CryptoApe', role: 'MultiChain Advisors, Founder' },
-//   { name: 'PapiChuloGrim', role: 'MultiChain Advisors CMO' },
-//   { name: 'Zeneca', role: 'Zen Academy Founder' },
-//   { name: 'Genuine Articles', role: 'GeckoDAO Founder' },
-//   { name: 'Voshy', role: 'GREED Academy Founder' },
-//   { name: 'unjustmouse', role: 'GREED Academy Education Head' },
-//   { name: 'Turnt Up Dylan', role: 'Dead King Society Founder' },
-//   { name: 'draxx.ts.sol', role: 'Fox Federation Founder' },
-//   { name: 'HoTsAuCe', role: 'NFT Radar Manager' },
-//   { name: 'Nom', role: 'Bonk Co-Founder' },
-//   { name: 'Kais', role: 'Okay Bears Founder' },
-//   { name: 'Easy', role: 'BoDoggos Founder' },
-//   { name: 'Solarians', role: 'RoboDAO Council Member' },
-//   { name: 'NFP', role: 'Pesky Penguins Co-Founder' },
-//   { name: 'Solana Sensei', role: 'Sensei / Namaste Founder' },
-//   { name: 'Timon', role: 'Meerkat Founder' },
-//   { name: 'DogeFather', role: 'Doge Capital Founder' },
-//   { name: 'DJ Trix', role: 'Fearless Bulls Club Founder' },
-//   { name: 'SOK', role: 'Raposa Founder' },
-// ];
-
-const SCROLL_IMAGES = [
-  '/models/1.jpg',
-  '/models/2.jpg',
-  '/models/4.jpg',
-  '/models/3.jpg',
-  '/models/5.jpg',
-  '/models/7.jpg',
-  '/models/6.jpg',
-  '/models/8.jpg',
-  '/models/12.jpg',
-  '/models/9.jpg',
-  '/models/10.jpg',
-  '/models/14.jpg',
-  '/models/11.jpg',
-  '/models/15.jpg',
-  '/models/13.jpg',
-  '/models/16.jpg',
-  '/models/17.jpg',
-  '/models/21.jpg',
-  '/models/18.jpg',
-  '/models/22.jpg',
-  '/models/19.jpg',
-  '/models/52.jpg',
-  '/models/20.jpg',
-  '/models/47.jpg',
-  '/models/23.jpg',
-  '/models/26.jpg',
-  '/models/46.jpg',
-  '/models/24.jpg',
-  '/models/25.jpg',
-  '/models/27.jpg',
-  '/models/28.jpg',
-  '/models/38.jpg',
-  '/models/29.jpg',
-  '/models/30.jpg',
-  '/models/31.jpg',
-  '/models/51.jpg',
-  '/models/44.jpg',
-  '/models/32.jpg',
-  '/models/33.jpg',
-  '/models/34.jpg',
-  '/models/35.jpg',
-  '/models/36.jpg',
-  '/models/37.jpg',
-  '/models/39.jpg',
-  '/models/48.jpg',
-  '/models/40.jpg',
-  '/models/53.jpg',
-  '/models/41.jpg',
-  '/models/42.jpg',
-  '/models/43.jpg',
-  '/models/45.jpg',
-  '/models/49.jpg',
-  '/models/50.jpg',
-  '/models/54.jpg',
-].flatMap(url => Array(1).fill({url}));
-
-const HERO_IMAGES = [
-  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 14.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 13.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 12.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 3.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 17.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 21.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 8.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 7.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 22.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 20.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 10.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 15.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 19.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 6.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 9.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 16.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 23.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 4.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 11.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 18.png', width: 170, height: 250, className: styles.hero_people_small},
-];
-
-const CAROUSEL_SLIDES = [
-  {
-    image: '/images/chats.svg',
-    title: 'Unmatched Alpha',
-    description: 'Curated opportunities across the ecosystem, sent directly to you.',
-  },
-  {
-    image: '/images/alerts.svg',
-    title: 'Protect Your bags',
-    description: 'Real-time alerts on events that pose risk to your portfolio',
-  },
-  {
-    image: '/images/portfolio.svg',
-    title: 'track your portfolio',
-    description: 'With the most advanced portfolio analytics',
-  },
-  {
-    image: '/images/potential.svg',
-    title: 'reach your full potential',
-    description: 'Receive recommendations to improve your portfolio',
-  },
-];
+import { CAROUSEL_SLIDES, SCROLL_IMAGES } from '@/constants/data';
+import { anton, openSans } from '@/constants/fonts';
 
 function Home() {
   return (
@@ -276,52 +140,15 @@ function ExperimentSection() {
         <div className={styles.panel_text}>
           <h2>Is about to launch the biggest AI art experiment</h2>
         </div>
-        <EndlessImageScroll images={SCROLL_IMAGES.slice(0, 27)} />
+        <EndlessImageScroll images={SCROLL_IMAGES} />
         <div className={styles.panel_text}>
           <h2 className={styles.exp2}>to push the limits of generative art and creativity itself</h2>
         </div>
-        <EndlessImageScroll images={SCROLL_IMAGES.slice(27)} direction="left" />
+        <EndlessImageScroll images={SCROLL_IMAGES} direction="left" />
       </div>
     </section>
   );
 }
-
-// function NetworkSection() {
-//   return (
-//     <section className={`${styles.panel} ${styles.network}`}>
-//       <div className={styles.panel_text}>
-//         <p className={openSans.className}>And supported by the</p>
-//         <h2>KYZZEN NETWORK</h2>
-//       </div>
-//       <div className={styles.network}>
-//         <div className={styles.grid_section}>
-//           {NETWORK_MEMBERS.map((member, index) => (
-//             <NetworkMemberCard key={member.name} member={member} index={index} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// function NetworkMemberCard({ member, index }) {
-//   return (
-//     <div className={styles.member_card}>
-//       <Image
-//         className={styles.avatar}
-//         src={`/images/image 75${index % 3}.png`}
-//         alt={`${member.name} avatar`}
-//         width={75}
-//         height={75}
-//         priority
-//       />
-//       <div className={styles.member_details}>
-//         <h3 className={styles.member_name}>{member.name}</h3>
-//         <p className={styles.member_role}>{member.role}</p>
-//       </div>
-//     </div>
-//   );
-// }
 
 function UtilitySection() {
   const slides = CAROUSEL_SLIDES.map((slide, index) => <CarouselSlide key={`slide-${index}`} {...slide} />);
@@ -384,3 +211,67 @@ function JoinUsSection() {
 }
 
 export default Home;
+
+
+ const HERO_IMAGES = [
+  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 14.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 13.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 12.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 3.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 17.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 21.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 8.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 7.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 22.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 20.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 10.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 15.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 19.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 6.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 9.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 16.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 23.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 4.png', width: 170, height: 250, className: styles.hero_people_small},
+  {url: '/images/Artboard 11.png', width: 310, height: 430, className: styles.hero_people_big},
+  {url: '/images/Artboard 18.png', width: 170, height: 250, className: styles.hero_people_small},
+];
+
+
+// function NetworkSection() {
+//   return (
+//     <section className={`${styles.panel} ${styles.network}`}>
+//       <div className={styles.panel_text}>
+//         <p className={openSans.className}>And supported by the</p>
+//         <h2>KYZZEN NETWORK</h2>
+//       </div>
+//       <div className={styles.network}>
+//         <div className={styles.grid_section}>
+//           {NETWORK_MEMBERS.map((member, index) => (
+//             <NetworkMemberCard key={member.name} member={member} index={index} />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// function NetworkMemberCard({ member, index }) {
+//   return (
+//     <div className={styles.member_card}>
+//       <Image
+//         className={styles.avatar}
+//         src={`/images/image 75${index % 3}.png`}
+//         alt={`${member.name} avatar`}
+//         width={75}
+//         height={75}
+//         priority
+//       />
+//       <div className={styles.member_details}>
+//         <h3 className={styles.member_name}>{member.name}</h3>
+//         <p className={styles.member_role}>{member.role}</p>
+//       </div>
+//     </div>
+//   );
+// }
