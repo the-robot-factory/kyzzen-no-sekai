@@ -62,7 +62,7 @@ export default function Whitelist() {
                 <li>Twitter/X</li>
                 <li>Discord</li>
                 <li>Telegram</li>
-                <li>Meta/Instagram</li>
+                {/* <li>Meta/Instagram</li> */}
               </ul>
               <li>10 pts for following each of our social media:</li>
               <ul>
