@@ -43,7 +43,6 @@ export function useFetchEligibleCommunities(token: string) {
   });
 }
 
-
 export function useFetchPointBreakdown(token: string) {
   return useQuery({
     queryKey: ['point breakdown', token],

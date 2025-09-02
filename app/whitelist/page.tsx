@@ -1,15 +1,15 @@
 'use client';
-import { useFetchLeaderboard, useFetchWhitelistSpots } from '@/api/hooks/whitelist';
+import {useFetchLeaderboard, useFetchWhitelistSpots} from '@/api/hooks/whitelist';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { WhitelistSpot } from '@/types/types';
+import {WhitelistSpot} from '@/types/types';
 import Table from '@/components/table/table';
-import { useState } from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 
 export default function Whitelist() {
-  const { data: spots } = useFetchWhitelistSpots();
-  const { data: leaders } = useFetchLeaderboard();
+  const {data: spots} = useFetchWhitelistSpots();
+  const {data: leaders} = useFetchLeaderboard();
 
   const [searchText, setSearchText] = useState('');
 
@@ -36,12 +36,11 @@ export default function Whitelist() {
                 .
               </li>
             </ul>
-            <Link href={"/whitelist-reg"}>
+            <Link href={'/whitelist-reg'}>
               <button className={styles.cta}>
                 <span className={styles.cta_text}>Register for whitelist</span>
               </button>
             </Link>
-
           </div>
         </div>
         <div id="leaderboard" className={styles.info_section}>
@@ -55,9 +54,9 @@ export default function Whitelist() {
               className={styles.search_bar}
             />
             <Table
-              header={[{ name: 'Rank' }, { name: 'Username' }, { name: 'Points' }]}
+              header={[{name: 'Rank'}, {name: 'Username'}, {name: 'Points'}]}
               body={leaders?.filter((leader: Record<string, string>) => leader.username.includes(searchText))?.slice(0, 7) ?? []}
-              style={{ margin: '0 auto', height: 'fit-content' }}
+              style={{margin: '0 auto', height: 'fit-content'}}
               className={styles.leaderboard_table}
             />
           </div>
@@ -74,14 +73,55 @@ export default function Whitelist() {
               </ul>
               <li>10 pts for following each of our social media:</li>
               <ul>
-                <li>Follow our <a href="https://x.com/Kyzzen_io" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Twitter</a></li>
-                <li>Follow OhMeOhMy_Sol on <a href="https://x.com/OhMeOhMy_Sol" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Twitter</a></li>
-                <li>Join our <a href="https://discord.gg/kyzzen" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Discord Server</a></li>
-                <li>Activate our <a href="https://t.me/kyzzen_bot" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Telegram Bot</a></li>
-                <li>Subscribe to <a href="https://solana-pulse.ghost.io/" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Solana Pulse</a></li>
+                <li>
+                  Follow our{' '}
+                  <a href="https://x.com/Kyzzen_io" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  Follow OhMeOhMy_Sol on{' '}
+                  <a href="https://x.com/OhMeOhMy_Sol" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  Join our{' '}
+                  <a href="https://discord.gg/kyzzen" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
+                    Discord Server
+                  </a>
+                </li>
+                <li>
+                  Activate our{' '}
+                  <a href="https://t.me/kyzzen_bot" target="_blank" rel="noopener noreferrer" className={styles.link_action}>
+                    Telegram Bot
+                  </a>
+                </li>
+                <li>
+                  Subscribe to{' '}
+                  <a
+                    href="https://solana-pulse.ghost.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link_action}
+                  >
+                    Solana Pulse
+                  </a>
+                </li>
               </ul>
               <li>10 pts for each referral that is registered for our WL</li>
-              <li>3 pts for each <a href="https://www.kyzzen.io/academy?category=featured&sub=featured" target="_blank" rel="noopener noreferrer" className={styles.link_action}>Kyzzen Academy</a> course completed</li>
+              <li>
+                3 pts for each{' '}
+                <a
+                  href="https://www.kyzzen.io/academy?category=featured&sub=featured"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link_action}
+                >
+                  Kyzzen Academy
+                </a>{' '}
+                course completed
+              </li>
               <li>1 pt / 1 SOL / day staked with Kyzzen Validator</li>
               <li>1 pt for daily login to Kyzzen Profile</li>
             </ul>

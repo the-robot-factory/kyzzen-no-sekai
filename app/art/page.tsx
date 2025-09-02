@@ -80,8 +80,8 @@ function Utility() {
         <div className={styles.panel_text}>
           <h2>4. The Result</h2>
           <p>
-            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true
-            collaboration between human creativity and machine precision
+            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true collaboration
+            between human creativity and machine precision
           </p>
         </div>
         <div className={styles.panel_img}>
