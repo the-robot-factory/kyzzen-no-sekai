@@ -48,6 +48,7 @@
 .hero_list li {
   position: relative;
   padding-left: 2em;
+  line-height: 1.5;
   font-weight: 400;
 }
 
@@ -197,6 +198,7 @@
   list-style-type: square;
   padding-left: 20px;
   font-size: 1.1rem;
+  font-weight: 300;
 }
 
 .point_list ul {
@@ -293,6 +295,22 @@
   .network_section {
     padding: 1em 3em;
   }
+
+  .search_bar::placeholder {
+    font-size: 1.3rem;
+  }
+
+  .hero_list {
+    font-size: 1.6rem;
+  }
+
+  .leaderboard_table {
+    font-size: 1.3rem;
+  }
+
+  .point_list {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -331,6 +349,18 @@
 
   .point_system {
     padding: 1rem;
+  }
+
+  .search_bar::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .leaderboard_table {
+    font-size: 1.1rem;
+  }
+
+  .point_list {
+    font-size: 1.1rem;
   }
 
   .info_section {
