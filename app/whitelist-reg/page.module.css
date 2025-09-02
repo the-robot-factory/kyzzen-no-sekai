@@ -22,13 +22,13 @@
   font-family: 'Monument', sans-serif !important;
   letter-spacing: 2px;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 10px 0 20px;
 }
 
@@ -105,9 +105,11 @@
 .iconText {
   font-size: 1.2rem;
 }
+
 .modal {
   width: 90%;
 }
+
 .modal_title {
   width: 330px;
   text-align: center;
@@ -194,12 +196,18 @@
     font-size: 1rem;
   }
 
+  .buttons {
+    flex-wrap: wrap;
+  }
+
   .setupButton {
+    width: 100%;
     margin-top: 0;
     font-size: 14px;
   }
 
   .signInButton {
+    width: 100%;
     font-size: 14px;
     margin-top: 0;
   }

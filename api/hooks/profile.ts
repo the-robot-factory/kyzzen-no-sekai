@@ -42,3 +42,30 @@ export function useFetchEligibleCommunities(token: string) {
     retry: false,
   });
 }
+
+
+export function useFetchPointBreakdown(token: string) {
+  return useQuery({
+    queryKey: ['point breakdown', token],
+    queryFn: async () => {
+      try {
+        const response = await fetch(PROFILE_BASEURL + '/user/get_profile_point_data', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token,
+          },
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.message);
+        return data?.data;
+      } catch (error: unknown) {
+        handleError(error, (error as Error)?.message ?? 'Failed to register');
+        throw error;
+      }
+    },
+    enabled: !!token,
+    retry: false,
+  });
+}

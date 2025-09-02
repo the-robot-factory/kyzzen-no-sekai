@@ -58,10 +58,25 @@ const WhitelistSkeleton: React.FC = () => {
 
 export default WhitelistSkeleton;
 
+
+export const PointSkeleton = () => {
+  return (
+    <div>
+      {[...Array(5)].map((_, index) => (
+        <div key={index} className={styles.connection_row}>
+          <div className={styles.icon_loader}></div>
+          <div className={styles.text_loader}></div>
+          <div className={styles.text_loader}></div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export const PartnerSkeleton = () => {
   return (
     <div className={styles.grid_section}>
-      {Array.from({length: 10}, (_, idx) => (
+      {Array.from({ length: 10 }, (_, idx) => (
         <div key={idx} className={styles.member_card}>
           <div className={styles.avatar_placeholder}></div>
           <div className={styles.member_details}>

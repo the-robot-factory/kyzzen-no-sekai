@@ -11,7 +11,7 @@
   justify-content: center;
   border-top: none;
   background-image: url('/images/whitelist.png');
-  background-position: bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -35,7 +35,7 @@
   font-family: 'Monument', sans-serif !important;
   letter-spacing: 2px;
   font-size: 5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .hero_list {
@@ -120,6 +120,8 @@
   font-weight: bold;
   font-family: 'Monument', sans-serif !important;
   letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .search_bar {
@@ -215,10 +217,11 @@
 .network_title {
   margin: 1em 0;
   color: white;
-  font-family: 'Monument', sans-serif !important;
-  font-weight: bold;
-  letter-spacing: 2px;
   font-size: 3.2rem;
+  font-family: 'Monument', sans-serif !important;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 /* Grid Section */
@@ -334,6 +337,10 @@
     gap: 20px;
     padding: 1em 1em;
   }
+
+  .network_title {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -378,4 +385,11 @@
   .point_list ul {
     padding-left: 20px;
   }
+}
+
+
+.link_action {
+  color: #005eff;
+  background: -webkit-linear-gradient(90deg, #005eff 10%, #246cc1 100%);
+  -webkit-background-clip: text;
 }

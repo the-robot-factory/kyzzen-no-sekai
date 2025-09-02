@@ -12,7 +12,7 @@ function Utility() {
     <main className={styles.main}>
       <section className={`${styles.heading} ${openSans.className}`}>
         <div className={styles.heading_text}>
-          <h2>Our Art</h2>
+          <h2>OUR ART</h2>
         </div>
       </section>
       <section className={`${styles.panel}`}>
@@ -20,15 +20,15 @@ function Utility() {
           <Image src="/images/fighter.svg" alt="chats" fill priority />
         </div>
         <div className={styles.panel_text}>
-          <h2>1. Art vs AI alpha</h2>
+          <h2>1. Art vs AI</h2>
           <p>
-            NFTs were meant to empower artists — but now, AI-generated collections are flooding the space, making it harder for
+            NFTs were meant to empower artists - but now, AI-generated collections are flooding the space, making it harder for
             real artists to stand out.
           </p>
 
           <p>This shift has sparked a growing divide between human creators and machine output.</p>
 
-          <p>But what if AI wasn’t the enemy — but a tool for artists instead?</p>
+          <p>But what if AI wasn’t the enemy - but a tool for artists instead?</p>
         </div>
       </section>
       <section className={`${styles.panel} ${styles.reverse}`}>
@@ -80,7 +80,7 @@ function Utility() {
         <div className={styles.panel_text}>
           <h2>4. The Result</h2>
           <p>
-            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true <br />
+            A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true
             collaboration between human creativity and machine precision
           </p>
         </div>

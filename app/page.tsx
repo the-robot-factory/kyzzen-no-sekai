@@ -109,7 +109,7 @@ function FounderSection() {
           <p className={openSans.className}>one of Solana&apos;s earliest OGs</p>
         </div>
         <div className={styles.founder_con}>
-          <div className={styles.founder_img}/>
+          <div className={styles.founder_img} />
           <div className={styles.founder_text}>
             <div>
               <div className={styles.founder_detail}>

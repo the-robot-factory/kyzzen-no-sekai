@@ -12,7 +12,7 @@ function Utility() {
     <main className={styles.main}>
       <section className={`${styles.heading} ${openSans.className}`}>
         <div className={styles.heading_text}>
-          <h2>Utility</h2>
+          <h2>UTILITY</h2>
           <p>The most useful NFT for your Solana journey.</p>
         </div>
       </section>
@@ -32,13 +32,13 @@ function Utility() {
           <p>Exclusive access to our most cutting-edge analytics.</p>
         </div>
         <div className={styles.panel_img}>
-          <Image src="/images/lst.svg" alt="chats" fill priority />
+          <Image src="/images/lst.png" alt="chats" fill priority />
         </div>
       </section>
       <section className={`${styles.panel} ${styles.single}`}>
         <div className={styles.panel_text}>
           <h2>portfolio tracking</h2>
-          <p>With the most advanced portfolio analytics</p>
+          <p>With the most advanced portfolio analytics.</p>
         </div>
         <div className={styles.panel_img}>
           <Image src="/images/portfolio.svg" alt="chats" fill priority />
@@ -59,14 +59,14 @@ function Utility() {
         </div>
         <div className={styles.panel_text}>
           <h2>Protect Your bags</h2>
-          <p>Real-time alerts on events that pose risk to your portfolio</p>
+          <p>Real-time alerts on events that pose risk to your portfolio.</p>
         </div>
       </section>
 
       <section className={`${styles.panel} ${styles.single} ${styles.last}`}>
         <div className={styles.panel_text}>
           <h2>Reach your full potential</h2>
-          <p>Receive recommendations to improve your portfolio</p>
+          <p>Receive recommendations to improve your portfolio.</p>
         </div>
         <div className={styles.panel_img}>
           <Image src="/images/potential.svg" alt="chats" fill priority />
