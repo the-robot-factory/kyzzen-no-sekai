@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import styles from './header.module.css';
 import {usePathname, useRouter} from 'next/navigation';
-import Select from '../select/select';
+// import Select from '../select/select';
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -58,12 +58,12 @@ function Header() {
                     <span className={pathname === '/launch' ? styles.active : ''}>Launch</span>
                   </li> */}
                   <li className={styles.header_list} onClick={() => nav('/art')}>
-                    <span className={pathname === '/art' ? styles.active : ''}>Art</span>
+                    <span className={pathname === '/art' ? styles.active + ' ' + styles.first : ''}>Art</span>
                   </li>
                   <li className={styles.header_list} onClick={() => nav('/utility')}>
-                    <span className={pathname === '/utility' ? styles.active : ''}>Utility</span>
+                    <span className={pathname === '/utility' ? styles.active + ' ' + styles.second : ''}>Utility</span>
                   </li>
-                  <li className={styles.header_list + ' ' + styles.select_field}>
+                  {/* <li className={styles.header_list + ' ' + styles.select_field}>
                     <span className={pathname === '/whitelist' ? styles.active : ''}>
                       <Select
                         name={'whitelist'}
@@ -81,7 +81,7 @@ function Header() {
                         }}
                       />
                     </span>
-                  </li>
+                  </li> */}
                   <li className={styles.header_list} onClick={() => window.open('https://www.kyzzen.io/about', '_blank')}>
                     <span>About Kyzzen</span>
                   </li>

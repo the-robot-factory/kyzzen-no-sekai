@@ -1,0 +1,179 @@
+/* carousel.css */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: 3rem auto 0 auto;
+  overflow: hidden;
+  user-select: none;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  z-index: 10;
+}
+
+.carousel-nav:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.carousel-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #1d2939;
+  color: white;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.carousel-btn:hover {
+  color: #c6fb0b;
+}
+
+
+.carousel-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.carousel-item {
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.prev-carousel-item {
+  position: absolute;
+}
+
+.slide-out-next {
+  animation: slideOutNext 0.9s ease-in forwards;
+}
+
+.slide-out-prev {
+  animation: slideOutPrev 0.9s ease-in forwards;
+}
+
+.slide-in-next {
+  animation: slideInNext 0.9s ease-in forwards;
+}
+
+.slide-in-prev {
+  animation: slideInPrev 0.9s ease-in forwards;
+}
+
+
+
+@keyframes slideOutPrev {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutNext {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInNext {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInPrev {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.carousel-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.icon-large {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  border: none;
+  width: 30px;
+  height: 3px;
+  padding: 0;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.dot.active {
+  width: 60px;
+  background: linear-gradient(to right, #c6fb0b, #00bcd4);
+}

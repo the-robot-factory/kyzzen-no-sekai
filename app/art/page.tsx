@@ -28,12 +28,12 @@ function Utility() {
 
           <p>This shift has sparked a growing divide between human creators and machine output.</p>
 
-          <p>But what if AI wasn’t the enemy - but a tool for artists instead?</p>
+          <p>But what if AI wasn’t the enemy, but a tool for artists instead?</p>
         </div>
       </section>
       <section className={`${styles.panel} ${styles.reverse}`}>
         <div className={styles.panel_img}>
-          <Image src="/images/art-cross.svg" alt="chats" fill priority />
+          <Image src="/images/art-cross.png" alt="chats" fill priority />
         </div>
         <div className={styles.panel_text}>
           <h2>
@@ -59,7 +59,7 @@ function Utility() {
       </section>
       <section className={`${styles.panel}`}>
         <div className={styles.panel_img}>
-          <Image src="/images/art-check.svg" alt="chats" fill priority />
+          <Image src="/images/art-check.png" alt="chats" fill priority />
         </div>
         <div className={styles.panel_text}>
           <h2>
@@ -81,13 +81,14 @@ function Utility() {
           <h2>4. The Result</h2>
           <p>
             A generative NFT collection with unparalleled diversity and rich visual storytelling, every piece a true collaboration
-            between human creativity and machine precision
+            between human creativity and machine precision.
           </p>
         </div>
         <div className={styles.panel_img}>
           <Image src="/images/together.svg" alt="chats" fill priority />
         </div>
-      </section>
+        <br/><br/><br/>
+      </section> 
     </main>
   );
 }

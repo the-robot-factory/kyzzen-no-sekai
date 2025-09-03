@@ -127,6 +127,14 @@
   .panel.single {
     gap: 2em;
   }
+
+  .panel.single .panel_img img {
+    width: 100% !important;
+  }
+
+  .panel.single .panel_text h2 {
+    display: block;
+  }
 }
 
 @media (max-width: 821px) {
@@ -215,6 +223,10 @@
 
   .panel.single .panel_img img {
     width: 100% !important;
+  }
+
+  .panel.single .panel_text h2 {
+    display: block;
   }
 
   .panel.single::after {

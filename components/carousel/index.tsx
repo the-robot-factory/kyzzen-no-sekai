@@ -1,92 +1,110 @@
-'use client';
-import React, {useState, useEffect, ReactNode} from 'react';
-import './index.css';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, AlertCircle } from "lucide-react";
+import "./carousel.css";
 
-const Carousel = ({children}: {children: ReactNode[]}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isForward, setIsForward] = useState(true);
+export default function Carousel({
+  items = [],
+  startIndex = 0,
+  autoPlay = false,
+  autoPlayInterval = 10000,
+}: any) {
+  const length = useMemo(() => (Array.isArray(items) ? items.length : 0), [items]);
+
+  const safeStart = length > 0 ? Math.min(Math.max(0, startIndex), length - 1) : 0;
+  const [current, setCurrent] = useState(safeStart);
+  const [direction, setDirection] = useState("next");
+  useEffect(() => {
+    setCurrent((prev) => {
+      if (length === 0) return 0;
+      return Math.min(prev, length - 1);
+    });
+  }, [length]);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!autoPlay || length <= 1) return;
+    const id = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % length);
+    }, Math.max(1000, autoPlayInterval));
+    return () => clearInterval(id);
+  }, [autoPlay, autoPlayInterval, length]);
 
-    const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => {
-        if (isForward) {
-          if (prevIndex === children.length - 1) {
-            setIsForward(false);
-            return prevIndex - 1;
-          }
-          return prevIndex + 1;
-        } else {
-          if (prevIndex === 0) {
-            setIsForward(true);
-            return prevIndex + 1;
-          }
-          return prevIndex - 1;
-        }
-      });
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, children.length, isForward]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 8000);
+  const next = () => {
+    setDirection("next");
+    setCurrent((prev) => (length === 0 ? prev : (prev + 1) % length));
   };
 
-  const goToPrevious = () => {
-    setCurrentIndex(prevIndex => (prevIndex === 0 ? children.length - 1 : prevIndex - 1));
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 8000);
+  const prev = () => {
+    setDirection("prev");
+
+    setCurrent((prev) => (length === 0 ? prev : (prev - 1 + length) % length));
   };
 
-  const goToNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 8000);
-  };
+  const hasItems = length > 0;
+  const canNavigate = length > 1;
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-wrapper">
-        <button className="nav-button nav-button-left" onClick={goToPrevious}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M15.2071 6.29289C15.5976 6.68342 15.5976 7.31658 15.2071 7.70711L10.9142 12L15.2071 16.2929C15.5976 16.6834 15.5976 17.3166 15.2071 17.7071C14.8166 18.0976 14.1834 18.0976 13.7929 17.7071L8.79289 12.7071C8.40237 12.3166 8.40237 11.6834 8.79289 11.2929L13.7929 6.29289C14.1834 5.90237 14.8166 5.90237 15.2071 6.29289Z"
-              fill="currentColor"
-            />
-          </svg>
+    <div className="carousel">
+      <div className="carousel-nav">
+        <button
+          onClick={prev}
+          disabled={current === 0}
+          aria-label="Previous"
+          className="carousel-btn"
+        >
+          <ChevronLeft className="icon" />
         </button>
-        <button className="nav-button nav-button-right" onClick={goToNext}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M8.79289 6.29289C9.18342 5.90237 9.81658 5.90237 10.2071 6.29289L15.2071 11.2929C15.5976 11.6834 15.5976 12.3166 15.2071 12.7071L10.2071 17.7071C9.81658 18.0976 9.18342 18.0976 8.79289 17.7071C8.40237 17.3166 8.40237 16.6834 8.79289 16.2929L13.0858 12L8.79289 7.70711C8.40237 7.31658 8.40237 6.68342 8.79289 6.29289Z"
-              fill="currentColor"
-            />
-          </svg>
+        <button
+          onClick={next}
+          disabled={current == (length - 1)}
+          aria-label="Next"
+          className="carousel-btn"
+        >
+          <ChevronRight className="icon" />
         </button>
-        <div className="cards-container" style={{transform: `translateX(-${currentIndex * 100}%)`}}>
-          {React.Children.map(children, (child, index) => (
-            <div key={index} className="card">
-              {child}
+      </div>
+
+      <div className="carousel-stage">
+        {hasItems ?
+          (
+            <>
+              <div
+                key={current}
+                className={`carousel-item ${direction === "next" ? "slide-in-next" : "slide-in-prev"}`}
+              >
+                {items[current]}
+              </div>
+              <div
+                key={`prev-${current}`}
+                className={`carousel-item prev-carousel-item ${direction === "next" ? "slide-out-prev" : "slide-out-next"}`}
+              >
+                {items[(direction === "next" ? (current - 1 + length) % length : (current + 1) % length)]}
+              </div>
+            </>
+          )
+          : (
+            <div className="carousel-empty">
+              <AlertCircle className="icon-large" />
+              <p>No items to display.</p>
+              <p className="hint">Pass an array of React nodes to the <code>items</code> prop.</p>
             </div>
+          )}
+      </div>
+
+      {canNavigate && (
+        <div className="carousel-dots">
+          {items.map((_: any, index: number) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              className={`dot ${index === current ? "active" : ""}`}
+            />
           ))}
         </div>
-      </div>
-      <div className="dots-container">
-        {React.Children.map(children, (_, index) => (
-          <button key={index} className={`dot ${index === currentIndex ? 'active' : ''}`} onClick={() => goToSlide(index)} />
-        ))}
-      </div>
+      )}
     </div>
   );
-};
+}
 
-export default Carousel;
+

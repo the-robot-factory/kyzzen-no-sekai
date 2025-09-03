@@ -21,9 +21,11 @@
   max-width: 1700px;
   margin: auto;
 }
+
 .header_logo {
   cursor: pointer;
 }
+
 .header_top {
   display: flex;
   justify-content: space-between;
@@ -87,6 +89,7 @@
 .header_action svg:hover {
   color: gray;
 }
+
 .select_field ul {
   border: 1px solid #122645;
 }
@@ -154,11 +157,19 @@
     font-size: 17px;
   }
 
-  .header_nav ul li:hover::before,
-  .active::before {
+  .header_nav ul li:hover::before{
     width: 60px !important;
   }
 
+  .header_nav ul:first-child li:hover::before,
+  .first::before {
+    width: 30px !important;
+  }
+  .header_nav ul:nth-child(2) li:hover::before,
+  .second::before {
+    width: 47px !important;
+  }
+ 
   .header_nav .header_list:hover::before {
     height: 0px;
   }
@@ -168,6 +179,7 @@
     width: 100%;
     padding: 1em 1.8em;
   }
+
   .select_field ul {
     padding-bottom: 0;
     position: relative;
@@ -176,6 +188,7 @@
     border: none;
     height: fit-content;
   }
+
   .select_field ul li {
     width: fit-content;
     background-color: transparent;

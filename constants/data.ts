@@ -63,16 +63,27 @@ export const CAROUSEL_SLIDES = [
     title: 'Unmatched Alpha',
     description: 'Curated opportunities across the ecosystem, sent directly to you.',
   },
+    {
+    image: '/images/lst.png',
+    title: 'Premium Tools',
+    description: 'Curated opportunities across the ecosystem, sent directly to you.',
+  },
+    {
+    image: '/images/portfolio.svg',
+    title: 'Portfolio Tracker',
+    description: 'With the most advanced portfolio analytics',
+  },
+    {
+    image: '/images/project.png',
+    title: 'Portfolio Snapshots',
+    description: 'Real-time alerts on events that pose risk to your portfolio',
+  },
   {
     image: '/images/alerts.svg',
     title: 'Protect Your bags',
     description: 'Real-time alerts on events that pose risk to your portfolio',
   },
-  {
-    image: '/images/portfolio.svg',
-    title: 'track your portfolio',
-    description: 'With the most advanced portfolio analytics',
-  },
+
   {
     image: '/images/potential.svg',
     title: 'reach your full potential',
