@@ -13,7 +13,6 @@
   margin: 0 auto;
   margin-top: 3rem;
   max-width: 1250px !important;
-
 }
 
 .carousel-wrapper {
@@ -104,7 +103,6 @@
   .nav-button-right {
     right: 20%;
   }
-
 }
 
 @media (max-width: 500px) {

@@ -50,7 +50,6 @@
   color: #c6fb0b;
 }
 
-
 .carousel-stage {
   display: flex;
   align-items: center;
@@ -87,8 +86,6 @@
 .slide-in-prev {
   animation: slideInPrev 0.9s ease-in forwards;
 }
-
-
 
 @keyframes slideOutPrev {
   from {

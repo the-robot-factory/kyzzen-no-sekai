@@ -87,8 +87,10 @@ function Utility() {
         <div className={styles.panel_img}>
           <Image src="/images/together.svg" alt="chats" fill priority />
         </div>
-        <br/><br/><br/>
-      </section> 
+        <br />
+        <br />
+        <br />
+      </section>
     </main>
   );
 }

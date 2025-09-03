@@ -74,7 +74,7 @@
 @media (max-width: 1025px) {
   .heading {
     padding: 4em 4em 2em 4em;
-  margin-top: 3rem;
+    margin-top: 3rem;
   }
 
   .panel {
@@ -120,7 +120,7 @@
 @media (max-width: 500px) {
   .heading {
     padding: 7em 4em 1em 4em;
-  margin-top: 0rem;
+    margin-top: 0rem;
   }
 
   .panel {

@@ -62,7 +62,7 @@ const Carousel = ({children}: {children: ReactNode[]}) => {
             />
           </svg>
         </button>
-        <button className="nav-button nav-button-right" onClick={goToNext}  disabled={currentIndex === (children.length -1)}>
+        <button className="nav-button nav-button-right" onClick={goToNext} disabled={currentIndex === children.length - 1}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"

@@ -63,17 +63,17 @@ export const CAROUSEL_SLIDES = [
     title: 'Unmatched Alpha',
     description: 'Curated opportunities across the ecosystem, sent directly to you.',
   },
-    {
+  {
     image: '/images/lst.png',
     title: 'Premium Tools',
     description: 'Curated opportunities across the ecosystem, sent directly to you.',
   },
-    {
+  {
     image: '/images/portfolio.svg',
     title: 'Portfolio Tracker',
     description: 'With the most advanced portfolio analytics',
   },
-    {
+  {
     image: '/images/project.png',
     title: 'Portfolio Snapshots',
     description: 'Real-time alerts on events that pose risk to your portfolio',

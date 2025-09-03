@@ -157,7 +157,7 @@
     font-size: 17px;
   }
 
-  .header_nav ul li:hover::before{
+  .header_nav ul li:hover::before {
     width: 60px !important;
   }
 
@@ -169,7 +169,7 @@
   .second::before {
     width: 47px !important;
   }
- 
+
   .header_nav .header_list:hover::before {
     height: 0px;
   }
