@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import type {Metadata} from 'next';
+import {Open_Sans} from 'next/font/google';
 import './globals.css';
 import Header from '../components/header/header';
-import { ToastContainer, Slide } from 'react-toastify';
+import {ToastContainer, Slide} from 'react-toastify';
 import Providers from './providers';
 
 const sans = Open_Sans({
@@ -29,24 +29,24 @@ export const metadata: Metadata = {
     'NFT utilities',
   ],
   openGraph: {
-    title: "Kyzzen No Sekai",
-  description:
-    'Kyzzen no Sekai is an upcoming Solana NFT project by Kyzzen.io, the ultimate onboarding & discovery platform on Solana. Learn more about us today!',
-    url: "https://kyzzenworld.io",
-    siteName: "Kyzzen No Sekai",
+    title: 'Kyzzen No Sekai',
+    description:
+      'Kyzzen no Sekai is an upcoming Solana NFT project by Kyzzen.io, the ultimate onboarding & discovery platform on Solana. Learn more about us today!',
+    url: 'https://kyzzenworld.io',
+    siteName: 'Kyzzen No Sekai',
     images: [
       {
-        url: "https://kyzzenworld.io/og.png",
+        url: 'https://kyzzenworld.io/og.png',
         width: 1200,
         height: 630,
-        alt: "Kyzzen Preview",
+        alt: 'Kyzzen Preview',
       },
     ],
-    type: "website",
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    images: ["https://kyzzenworld.io/og.png"],
+    card: 'summary_large_image',
+    images: ['https://kyzzenworld.io/og.png'],
   },
 };
 
