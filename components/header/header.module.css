@@ -145,7 +145,7 @@
   .header_nav ul {
     width: 100%;
     flex-direction: column;
-    height: calc(100vh - 140px);
+    height: calc(100vh - 132px);
     padding: 1.5em;
     border-top: 1px solid var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
