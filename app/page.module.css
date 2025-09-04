@@ -1,5 +1,5 @@
 /* ===== BASE STYLES ===== */
-.main>section {
+.main > section {
   /* min-height: 100vh; */
   /* scroll-snap-align: start; */
 }
@@ -157,21 +157,21 @@
   color: white;
 }
 
-.panel_text h2>span {
+.panel_text h2 > span {
   display: block;
   font-weight: normal;
   letter-spacing: 2px;
 }
 
-.panel_text h2>span:first-child {
+.panel_text h2 > span:first-child {
   font-size: 1.34em;
 }
 
-.panel_text h2>span:nth-child(2) {
+.panel_text h2 > span:nth-child(2) {
   font-size: 2.17em;
 }
 
-.panel_text h2>span:last-child {
+.panel_text h2 > span:last-child {
   font-size: 3.1em;
 }
 
@@ -335,7 +335,7 @@
   background-color: #c6fb0b;
 }
 
-.founder>div {
+.founder > div {
   width: 100%;
 }
 
@@ -718,7 +718,7 @@
     scroll-snap-type: unset;
   }
 
-  .main>section {
+  .main > section {
     min-height: unset;
     scroll-snap-align: unset;
   }
@@ -772,15 +772,15 @@
     padding: 0 2em;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 2em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 3.13em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 4.6em;
   }
 
@@ -970,15 +970,15 @@
     width: 100%;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1.8em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 2.9em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 4.2em;
   }
 
@@ -1056,15 +1056,15 @@
     width: 100%;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1.6em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 2.5em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 3.6em;
   }
 
@@ -1152,15 +1152,15 @@
     width: 100%;
   }
 
-  .panel_text h2>span:first-child {
+  .panel_text h2 > span:first-child {
     font-size: 1em;
   }
 
-  .panel_text h2>span:nth-child(2) {
+  .panel_text h2 > span:nth-child(2) {
     font-size: 1.6em;
   }
 
-  .panel_text h2>span:last-child {
+  .panel_text h2 > span:last-child {
     font-size: 2.4em;
   }
 
@@ -1257,8 +1257,6 @@
   .founder_detail h2 {
     font-size: 1.4em;
   }
-
-
 
   .founder_detail .x {
     padding: 0.2em;

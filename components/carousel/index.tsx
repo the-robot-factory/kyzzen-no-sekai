@@ -44,10 +44,10 @@ export default function Carousel({items = [], startIndex = 0, autoPlay = false, 
   return (
     <div className="carousel">
       <div className="carousel-nav">
-        <button onClick={prev}  aria-label="Previous" className="carousel-btn">
+        <button onClick={prev} aria-label="Previous" className="carousel-btn">
           <ChevronLeft className="icon" />
         </button>
-        <button onClick={next}  aria-label="Next" className="carousel-btn">
+        <button onClick={next} aria-label="Next" className="carousel-btn">
           <ChevronRight className="icon" />
         </button>
       </div>
