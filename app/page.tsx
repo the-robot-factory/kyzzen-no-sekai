@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Image from 'next/image';
 import styles from './page.module.css';
 import EndlessImageScroll from '../components/endless-scroll';
-import {CAROUSEL_SLIDES, SCROLL_IMAGES} from '@/constants/data';
-import {anton, openSans} from '@/constants/fonts';
+import { CAROUSEL_SLIDES, SCROLL_IMAGES } from '@/constants/data';
+import { anton, openSans } from '@/constants/fonts';
 import Carousel from '@/components/carousel';
 
 function Home() {
@@ -60,11 +61,11 @@ function CollisionSection() {
       </div>
       <div className={styles.art}>
         <div className={styles.art_girlcon}>
-          <Image src="/images/girl.png" alt="Human artist" width={350} height={400} priority className={styles.art_girl} />
+          <img src="/images/girl.png" alt="Human artist" className={styles.art_girl} />
         </div>
         <div className={`${styles.art_vs} ${anton.className}`}>VS</div>
         <div className={styles.art_robotcon}>
-          <Image src="/images/robot.png" alt="AI robot" width={350} height={400} priority className={styles.art_robot} />
+          <img src="/images/robot.png" alt="AI robot" className={styles.art_robot} />
         </div>
       </div>
     </section>
@@ -87,12 +88,12 @@ function AboutSection() {
         </div>
       </div>
       <div className={`${styles.art} ${styles.about}`}>
-        <Image
+        <img
           src="/images/kyzzen.png"
           alt="Kyzzen platform preview"
-          width={700}
-          height={450}
-          priority
+          // width={700}
+          // height={450}
+          // priority
           className={styles.art_kyzzen}
         />
       </div>
@@ -167,7 +168,7 @@ function UtilitySection() {
   );
 }
 
-function CarouselSlide({image, title, description}: {image: string; title: string; description: string}) {
+function CarouselSlide({ image, title, description }: { image: string; title: string; description: string }) {
   return (
     <div className={styles.slide}>
       <Image src={image} alt={title} width={450} height={400} priority />
@@ -181,9 +182,9 @@ function CarouselSlide({image, title, description}: {image: string; title: strin
 
 function JoinUsSection() {
   const details = [
-    {icon: '/images/Featured icon.png', label: 'Date', value: 'TBD'},
-    {icon: '/images/Featured icon (1).png', label: 'Supply', value: 'TBD'},
-    {icon: '/images/Featured icon (2).png', label: 'Price', value: 'TBD'},
+    { icon: '/images/Featured icon.png', label: 'Date', value: 'TBD' },
+    { icon: '/images/Featured icon (1).png', label: 'Supply', value: 'TBD' },
+    { icon: '/images/Featured icon (2).png', label: 'Price', value: 'TBD' },
   ];
 
   return (
@@ -213,28 +214,28 @@ function JoinUsSection() {
 export default Home;
 
 const HERO_IMAGES = [
-  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 14.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 13.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 12.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 3.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 17.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 21.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 8.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 7.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 22.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 20.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 10.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 15.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 19.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 6.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 9.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 16.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 23.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 4.png', width: 170, height: 250, className: styles.hero_people_small},
-  {url: '/images/Artboard 11.png', width: 310, height: 430, className: styles.hero_people_big},
-  {url: '/images/Artboard 18.png', width: 170, height: 250, className: styles.hero_people_small},
+  { url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 14.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 13.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 12.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 3.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 17.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 21.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 8.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 7.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 22.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 20.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 10.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 2.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 15.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 19.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 6.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 9.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 16.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 23.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 4.png', width: 170, height: 250, className: styles.hero_people_small },
+  { url: '/images/Artboard 11.png', width: 310, height: 430, className: styles.hero_people_big },
+  { url: '/images/Artboard 18.png', width: 170, height: 250, className: styles.hero_people_small },
 ];
 
 // function NetworkSection() {

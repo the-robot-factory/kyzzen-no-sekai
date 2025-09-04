@@ -1,5 +1,5 @@
 /* ===== BASE STYLES ===== */
-.main > section {
+.main>section {
   /* min-height: 100vh; */
   /* scroll-snap-align: start; */
 }
@@ -83,7 +83,7 @@
   height: 100%;
   z-index: 1;
   /* background-color: rgba(0, 0, 0, 0.615) ; */
-  background: linear-gradient(180deg, #0f0f1ee1 7.16%, rgba(0, 0, 0, 0.21) 97.7%);
+  background: linear-gradient(180deg, #0f0f1ef0 7.16%, rgba(0, 0, 0, 0) 97.7%);
 }
 
 .panel.reverse {
@@ -157,21 +157,21 @@
   color: white;
 }
 
-.panel_text h2 > span {
+.panel_text h2>span {
   display: block;
   font-weight: normal;
   letter-spacing: 2px;
 }
 
-.panel_text h2 > span:first-child {
+.panel_text h2>span:first-child {
   font-size: 1.34em;
 }
 
-.panel_text h2 > span:nth-child(2) {
+.panel_text h2>span:nth-child(2) {
   font-size: 2.17em;
 }
 
-.panel_text h2 > span:last-child {
+.panel_text h2>span:last-child {
   font-size: 3.1em;
 }
 
@@ -193,7 +193,7 @@
 }
 
 .panel .about {
-  width: 40%;
+  width: 50%;
 }
 
 .about_logo {
@@ -220,6 +220,7 @@
 
 .art_kyzzen {
   position: relative;
+  height: unset !important;
   animation: scale 5s ease-in-out infinite;
   z-index: 2;
 }
@@ -252,8 +253,8 @@
 
 .art_vs {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 45%;
   z-index: 3;
   transform: translate(-50%, -30%);
   font-weight: normal;
@@ -334,7 +335,7 @@
   background-color: #c6fb0b;
 }
 
-.founder > div {
+.founder>div {
   width: 100%;
 }
 
@@ -717,7 +718,7 @@
     scroll-snap-type: unset;
   }
 
-  .main > section {
+  .main>section {
     min-height: unset;
     scroll-snap-align: unset;
   }
@@ -771,15 +772,15 @@
     padding: 0 2em;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 2em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 3.13em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 4.6em;
   }
 
@@ -791,12 +792,14 @@
 
   .art_robot {
     width: 460px;
-    height: 560px;
+    height: unset;
+    /* height: 560px; */
   }
 
   .art_girl {
     width: 460px;
-    height: 560px;
+    height: unset;
+    /* height: 560px; */
   }
 
   .art_vs {
@@ -881,12 +884,14 @@
 
   .art_robot {
     width: 400px;
-    height: 450px;
+    height: unset;
+    /* height: 450px; */
   }
 
   .art_girl {
     width: 400px;
-    height: 450px;
+    height: unset;
+    /* height: 450px; */
   }
 
   .about_text {
@@ -905,6 +910,7 @@
   .art_kyzzen {
     margin: auto;
     width: 85% !important;
+    height: unset;
   }
 
   .founder_con {
@@ -964,15 +970,15 @@
     width: 100%;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1.8em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 2.9em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 4.2em;
   }
 
@@ -1006,6 +1012,7 @@
 
   .art_kyzzen {
     width: 100% !important;
+    height: unset;
   }
 
   .founder_con {
@@ -1049,26 +1056,26 @@
     width: 100%;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1.6em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 2.5em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 3.6em;
   }
 
   .art_robot {
     width: 350px;
-    height: 430px;
+    height: unset;
   }
 
   .art_girl {
     width: 350px;
-    height: 430px;
+    height: unset;
   }
 
   .founder_con {
@@ -1145,15 +1152,15 @@
     width: 100%;
   }
 
-  .panel_text h2 > span:first-child {
+  .panel_text h2>span:first-child {
     font-size: 1em;
   }
 
-  .panel_text h2 > span:nth-child(2) {
+  .panel_text h2>span:nth-child(2) {
     font-size: 1.6em;
   }
 
-  .panel_text h2 > span:last-child {
+  .panel_text h2>span:last-child {
     font-size: 2.4em;
   }
 
@@ -1183,13 +1190,17 @@
   }
 
   .art_robot {
-    width: 200px;
-    height: 230px;
+    width: 100% !important;
+    height: unset;
+    /* width: 200px;
+    height: 230px; */
   }
 
   .art_girl {
-    width: 200px;
-    height: 230px;
+    width: 100% !important;
+    height: unset;
+    /* width: 200px;
+    height: 230px; */
   }
 
   .art_vs {
@@ -1199,8 +1210,9 @@
   }
 
   .art_kyzzen {
-    width: 330px;
-    height: 220px;
+    width: 100% !important;
+    height: unset;
+    /* height: 220px; */
   }
 
   .experiment h2,
@@ -1234,6 +1246,10 @@
     min-height: 300px;
   }
 
+  .founder_img {
+    background-position: center;
+  }
+
   .founder_detail {
     padding-left: 0em;
   }
@@ -1242,10 +1258,7 @@
     font-size: 1.4em;
   }
 
-  .founder_detail img:first-child {
-    /* width: 40px;
-    height: 40px; */
-  }
+
 
   .founder_detail .x {
     padding: 0.2em;

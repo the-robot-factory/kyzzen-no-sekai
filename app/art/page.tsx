@@ -40,7 +40,7 @@ function Utility() {
             <span>2.</span> Limitations of Traditional NFT Collections
           </h2>
           <p>
-            Most NFT collections are generating using a layer-based system, where each trait (e.g. hair, clothes, etc.) are drawn
+            Most NFT collections are generated using a layer-based system, where each trait (e.g. hair, clothes, etc.) are drawn
             as separate image files and then layered on top of each other.
           </p>
           <p>This results in 2 major restrictions:</p>
@@ -87,9 +87,6 @@ function Utility() {
         <div className={styles.panel_img}>
           <Image src="/images/together.svg" alt="chats" fill priority />
         </div>
-        <br />
-        <br />
-        <br />
       </section>
     </main>
   );
