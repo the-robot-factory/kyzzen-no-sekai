@@ -71,22 +71,22 @@ export const CAROUSEL_SLIDES = [
   {
     image: '/images/portfolio.svg',
     title: 'Portfolio Tracker',
-    description: 'With the most advanced portfolio analytics',
+    description: 'With the most advanced portfolio analytics.',
   },
   {
     image: '/images/project.png',
     title: 'Portfolio Snapshots',
-    description: 'Real-time alerts on events that pose risk to your portfolio',
+    description: 'Real-time alerts on events that pose risk to your portfolio.',
   },
   {
     image: '/images/alerts.svg',
     title: 'Protect Your bags',
-    description: 'Real-time alerts on events that pose risk to your portfolio',
+    description: 'Real-time alerts on events that pose risk to your portfolio.',
   },
 
   {
     image: '/images/potential.svg',
     title: 'reach your full potential',
-    description: 'Receive recommendations to improve your portfolio',
+    description: 'Receive recommendations to improve your portfolio.',
   },
 ];
