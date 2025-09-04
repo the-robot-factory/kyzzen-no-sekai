@@ -174,3 +174,10 @@
   width: 60px;
   background: linear-gradient(to right, #c6fb0b, #00bcd4);
 }
+
+
+@media (max-width:500px) {
+  .carousel-nav {
+    top: 30%;
+  }
+}
