@@ -135,6 +135,7 @@ export function ConnectionProvider({children = undefined as any}) {
         }
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [connection]);
 
   useEffect(() => {
